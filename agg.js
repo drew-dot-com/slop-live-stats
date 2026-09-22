@@ -12,12 +12,32 @@ export const SOURCES = {
 
 const usdc = (minor) => Number(BigInt(minor)) / 1e6;
 
+const PROVIDER_ALIASES = { 'openai-codex': 'openai', 'z.ai': 'zai', 'z-ai': 'zai', 'moonshot-ai': 'moonshotai', 'spacexai': 'xai', 'x-ai': 'xai' };
+function modelKey(a) {
+  const p0 = String(a.provider || '').trim().toLowerCase();
+  const provider = PROVIDER_ALIASES[p0] || p0;
+  let model = String(a.model || '').trim().toLowerCase();
+  for (const pre of [provider + '/', 'openai/', 'anthropic/', 'xai/', 'google/']) if (model.startsWith(pre)) model = model.slice(pre.length);
+  return provider + '/' + model;
+}
+
+export function aggregateModels(lb) {
+  const A = lb.attributions || [];
+  const by = {};
+  let signed = 0;
+  for (const a of A) {
+    const k = modelKey(a);
+    by[k] = by[k] || { key: k, declarations: 0, signed: 0 };
+    by[k].declarations++;
+    if (a.run) { by[k].signed++; signed++; }
+  }
+  const list = Object.values(by).sort((x, y) => y.declarations - x.declarations);
+  return { declarations: A.length, signed, distinctModels: list.length, top: list.slice(0, 6) };
+}
+
 export function aggregateLeaderboard(lb) {
   const cats = {};
   for (const e of lb.ledger) cats[e.category] = (cats[e.category] || 0) + 1;
-  const scores = lb.leaders.map((l) => l.score).sort((a, b) => b - a);
-  const total = scores.reduce((a, b) => a + b, 0);
-  const top10 = scores.slice(0, 10).reduce((a, b) => a + b, 0);
   const cov = lb.attributionCoverage || {};
   return {
     generatedAt: lb.generatedAt,
@@ -32,7 +52,6 @@ export function aggregateLeaderboard(lb) {
     invalidMarkers: (lb.invalidAttributionMarkers || []).length,
     modelDeclarations: (lb.attributions || []).length,
     receiptCoverage: cov.eligibleSourceCount ? { valid: cov.validSourceCount, eligible: cov.eligibleSourceCount } : null,
-    top10Share: total ? top10 / total : null,
     openPullRequests: lb.source?.counts?.openPullRequests ?? null,
   };
 }
@@ -112,6 +131,7 @@ export async function loadAll(fetchJson) {
   return {
     builtAt: new Date().toISOString(),
     leaderboard: aggregateLeaderboard(lb),
+    models: aggregateModels(lb),
     money: {
       transfers: disclosures.reduce((a, d) => a + d.transfers, 0),
       paidUsdc: disclosures.reduce((a, d) => a + d.paidUsdc, 0),

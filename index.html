@@ -83,6 +83,23 @@
   <p>Only work a maintainer merged or accepted appears here. Scoring rule <code id="rule">slop-score-v2</code>, published on <a href="https://slop.cash/how-it-works">slop.cash/how-it-works</a>.</p>
   <div class="scroll"><table id="outcomes"><tbody></tbody></table></div>
 
+  <h2>Which models merge</h2>
+  <p>Every merged pull request and accepted review can carry a declaration of the model that did the work. This counts those declarations next to the outcomes they were made on. Model identity is self-reported and adds no points; a device-signed receipt binds a run to its declaration but does not verify which model produced the work. Full breakdown on <a href="https://slop.cash/models">slop.cash/models</a>.</p>
+  <div class="scroll"><table id="models">
+    <thead><tr><th>Model</th><th class="num">Declarations</th><th class="num">Share</th><th class="num">Signed receipts</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <p class="desc" id="models-line"></p>
+
+  <h2>Where these contributors ship the rest of the year</h2>
+  <p>A cross-reference of the leaderboard against public GitHub, pinned by hash in the Slop repository as of 17 September 2026. None of it adds points. It is here because it says who a funded repo is put in front of.</p>
+  <ul>
+    <li><strong>77%</strong> build AI agents or LLM tooling as their primary focus.</li>
+    <li><strong>3,770 merged pull requests across 451 outside repositories</strong> since 1 January 2026.</li>
+    <li>Merged this year into huggingface/transformers, openai/whisper, astral-sh/uv, ggml-org/whisper.cpp, ghostty-org/ghostty and openclaw/openclaw, among others.</li>
+  </ul>
+  <p class="desc">Snapshot, method and caveats: <a href="https://slop.cash/sponsors">slop.cash/sponsors</a>.</p>
+
   <h2>Pools</h2>
   <div class="scroll"><table id="projects">
     <thead><tr><th>Project</th><th>Repository</th><th class="num">Monthly cap</th><th>Rail</th><th>Status</th></tr></thead>
@@ -141,7 +158,6 @@
       ['Accepted reviews', L.substantiveReviews],
       ['Evaluated contributions outside GitHub', L.evaluatedContributions],
       ['Scored contributors', L.contributors],
-      ['Share of points held by the top 10', L.top10Share === null ? 'n/a' : Math.round(100 * L.top10Share) + '%'],
       ['Window', `${day(L.window.from)} to ${day(L.window.to)}`],
     ];
     $('#outcomes tbody').innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td class="num">${typeof v === 'number' ? n(v) : esc(v)}</td></tr>`).join('');
@@ -152,6 +168,10 @@
       const st = [esc(p.status), p.authority === 'verified' ? '<span class="pill ok">authority verified</span>' : `<span class="pill">authority ${esc(p.authority || 'unverified')}</span>`].join(' ');
       return `<tr><td><strong>${esc(p.name)}</strong></td><td>${p.repository ? `<a href="${esc(p.repository)}">${esc(p.repository.replace('https://github.com/', ''))}</a>` : ''}</td><td class="num">${cap}</td><td>${rail}</td><td>${st}</td></tr>`;
     }).join('');
+
+    const Mo = s.models;
+    $('#models tbody').innerHTML = Mo.top.map((m) => `<tr><td><code>${esc(m.key)}</code></td><td class="num">${n(m.declarations)}</td><td class="num">${Math.round(100 * m.declarations / Mo.declarations)}%</td><td class="num">${n(m.signed)}</td></tr>`).join('');
+    $('#models-line').textContent = `${n(Mo.declarations)} declarations across ${n(Mo.distinctModels)} distinct provider/model pairs in the window; ${n(Mo.signed)} carry a device-signed receipt.`;
 
     const pr = s.proposal;
     $('#proposal-line').innerHTML = `First frozen proposal: <strong>${esc(pr.projectId)} ${esc(pr.cycleId)}</strong>, ${pr.allocations} proposed allocations under a ${usd(pr.capUsdc)} cap, generated ${day(pr.generatedAt)}. State <code>${esc(pr.status)}</code>, approved ${usd(pr.approvedUsdc)}. Proposed is not approved, and approved is not paid. <a href="https://slop.cash/cycles">slop.cash/cycles</a>`;
