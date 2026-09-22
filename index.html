@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop Cash live record</title>
+<meta name="description" content="Live numbers for Slop Cash from public files: scored contributors, accepted outcomes, and every USDC transfer that has reached a contributor.">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #fcfcfb; --surface: #ffffff; --line: #e6e5e0;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #8a8985;
+    --accent: #2a78d6; --soft: #dbe8f8;
+    --live: #1f9d55; --live-soft: #dff3e6;
+    --warn-bg: #fff7e6; --warn-line: #f0d9a8;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141413; --surface: #1a1a19; --line: #2c2c2a;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8a8985;
+      --accent: #3987e5; --soft: #1f3552;
+      --live: #3fbf74; --live-soft: #173a25;
+      --warn-bg: #2a2416; --warn-line: #4d3f1f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em; }
+  h2 { font-size: 1.25rem; margin: 48px 0 12px; }
+  p { margin: 0 0 12px; max-width: 72ch; }
+  .sub { color: var(--ink-2); font-size: 1.05rem; }
+  .stamp { color: var(--ink-3); font-size: 0.85rem; font-family: var(--mono); margin-top: 6px; }
+  .stamp .live { color: var(--live); }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 28px 0 0; }
+  .tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; min-width: 0; }
+  .tile .label { color: var(--ink-2); font-size: 0.85rem; }
+  .tile .value { font-size: 2.1rem; font-weight: 700; line-height: 1.15; margin: 4px 0 2px; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .tile .note { color: var(--ink-3); font-size: 0.8rem; }
+  .tile.money { border-color: var(--live); }
+  .tile.money .value { color: var(--live); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--ink-2); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .scroll { overflow-x: auto; }
+  .desc { color: var(--ink-2); font-size: 0.9rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { font-family: var(--mono); font-size: 0.85em; background: var(--soft); padding: 1px 5px; border-radius: 4px; }
+  .callout { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 10px; padding: 14px 18px; margin: 12px 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .pill { display: inline-block; border-radius: 4px; padding: 0 6px; font-size: 0.75rem; font-family: var(--mono); background: var(--soft); color: var(--accent); white-space: nowrap; }
+  .pill.ok { background: var(--live-soft); color: var(--live); }
+  ul { padding-left: 20px; } li { margin-bottom: 6px; max-width: 74ch; }
+  footer { margin-top: 56px; color: var(--ink-3); font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 16px; }
+  @media (max-width: 560px) { h1 { font-size: 1.7rem; } .tile .value { font-size: 1.8rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Slop Cash, by the public record.</h1>
+  <p class="sub">Every number on this page is computed in your browser from files anyone can open: the live leaderboard on slop.cash and the Slop repository on GitHub. Nothing here is typed in by hand.</p>
+  <div class="stamp" id="stamp">Loading snapshot…</div>
+
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Money that has reached contributors</h2>
+  <p>USDC transfers on Solana mainnet, finalized on chain, for the August 2026 contribution month. Every signature is published in the repository and reconciled row by row against the frozen preparation for each pool.</p>
+  <div class="scroll"><table id="money">
+    <thead><tr><th>Pool</th><th class="num">Cap</th><th class="num">Allocated</th><th class="num">Paid</th><th class="num">Transfers</th><th class="num">Unclaimed</th><th>Sent</th><th>Record</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="callout">
+    <p><strong>How these were sent.</strong> The project creator signed and broadcast these transfers directly from the project's own wallet, which is how Slop is designed: Slop never holds funds or keys. They went out before the verified settlement flow (proposal, 14-day public review, approval, fail-closed verifier) ran for August, so slop.cash still shows August as unsettled. The repository records them as <code>sent-outside-verified-flow</code> with a reconciliation that found zero unmatched transfers and no row with a registered wallet above the $2.00 minimum left unpaid. The first cycle to run through the verified flow end to end is the next milestone.</p>
+    <p><span id="unclaimed-line"></span> Unclaimed amounts belong to contributors who had not registered a payout wallet when the month was frozen. No platform fee was collected on either pool.</p>
+  </div>
+
+  <h2>Accepted outcomes, last <span id="window-days">35</span> days</h2>
+  <p>Only work a maintainer merged or accepted appears here. Scoring rule <code id="rule">slop-score-v2</code>, published on <a href="https://slop.cash/how-it-works">slop.cash/how-it-works</a>.</p>
+  <div class="scroll"><table id="outcomes"><tbody></tbody></table></div>
+
+  <h2>Pools</h2>
+  <div class="scroll"><table id="projects">
+    <thead><tr><th>Project</th><th>Repository</th><th class="num">Monthly cap</th><th>Rail</th><th>Status</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <p class="desc" id="proposal-line"></p>
+
+  <h2>Where the numbers come from</h2>
+  <ul>
+    <li><a href="https://slop.cash/data/leaderboard.json">slop.cash/data/leaderboard.json</a>: scored contributors, the ledger of merged pull requests and accepted reviews, rejected attribution markers, and receipt coverage. Regenerated by the site's own scheduled refresh.</li>
+    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/disclosures">disclosures/</a> in the Slop repository: one JSON record per pool for the August 2026 transfers, each row bound to a Solana signature.</li>
+    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/projects">projects/</a>: each pool's manifest, changed only by reviewed pull request.</li>
+    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/cycles">cycles/</a>: frozen proposals and their review windows.</li>
+  </ul>
+  <p class="desc">Model identity on Slop is self-reported and adds no points. A signed receipt binds a device to its declaration; it does not verify which model produced the work. Contributor counts cover the rolling scoring window, not all time.</p>
+
+  <footer>
+    Built by Drew Pierson for <a href="https://slop.cash">Slop Cash</a>. Source for this page: <a href="https://github.com/drew-dot-com/slop-live-stats">github.com/drew-dot-com/slop-live-stats</a>.
+  </footer>
+</main>
+<script type="module">
+  import { loadAll } from './agg.js';
+  const $ = (s) => document.querySelector(s);
+  const n = (x, d = 0) => x.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const usd = (x) => '$' + n(x, 2);
+  const day = (iso) => new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const when = (iso) => new Date(iso).toLocaleString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function render(s, live) {
+    const L = s.leaderboard, M = s.money;
+    const tile = (label, value, note, cls = '') => `<div class="tile ${cls}"><div class="label">${label}</div><div class="value">${value}</div><div class="note">${note}</div></div>`;
+    const cov = L.receiptCoverage ? Math.round(100 * L.receiptCoverage.valid / L.receiptCoverage.eligible) : null;
+    $('#tiles').innerHTML =
+      tile('USDC paid to contributors', usd(M.paidUsdc), `${M.transfers} finalized transfers, August 2026, every signature public`, 'money') +
+      tile('Accepted outcomes', n(L.outcomes), `${n(L.mergedPullRequests)} merged PRs, ${n(L.substantiveReviews)} accepted reviews, last ${L.window.days} days`) +
+      tile('Scored contributors', n(L.contributors), `across ${L.repositories.length} repositories, last ${L.window.days} days`) +
+      tile('Bad markers rejected', n(L.invalidMarkers), 'attribution claims the verifier refused') +
+      tile('Model declarations', n(L.modelDeclarations), cov === null ? 'self-reported, add no points' : `${cov}% of eligible outcomes carry one; self-reported, add no points`) +
+      tile('Open pull requests', L.openPullRequests === null ? 'n/a' : n(L.openPullRequests), 'queued for maintainer review right now');
+
+    $('#money tbody').innerHTML = M.pools.map((p) => `<tr>
+      <td><strong>${esc(p.projectId)}</strong> <span class="pill">${esc(p.month)}</span></td>
+      <td class="num">${usd(p.capUsdc)}</td><td class="num">${usd(p.allocatedUsdc)}</td>
+      <td class="num"><strong>${usd(p.paidUsdc)}</strong></td><td class="num">${p.transfers} of ${p.rows} rows</td>
+      <td class="num">${usd(p.unclaimedUsdc)} (${p.unclaimedRows})</td>
+      <td>${p.firstAt ? day(p.firstAt) : ''}</td>
+      <td><a href="https://github.com/SlopDotCash/slopdotcash/blob/develop/disclosures/${esc(p.projectId)}-${esc(p.month)}-direct-payments.json">JSON</a>${p.exampleSignature ? ` · <a href="https://solscan.io/tx/${esc(p.exampleSignature)}">example tx</a>` : ''}</td>
+    </tr>`).join('') + `<tr><td><strong>Total</strong></td><td class="num"></td><td class="num">${usd(M.allocatedUsdc)}</td><td class="num"><strong>${usd(M.paidUsdc)}</strong></td><td class="num">${M.transfers}</td><td class="num">${usd(M.unclaimedUsdc)}</td><td></td><td></td></tr>`;
+    $('#unclaimed-line').textContent = `${usd(M.unclaimedUsdc)} of the ${usd(M.allocatedUsdc)} allocated across both pools is unclaimed.`;
+
+    $('#window-days').textContent = L.window.days;
+    $('#rule').textContent = L.ruleVersion;
+    const rows = [
+      ['Merged pull requests', L.mergedPullRequests],
+      ['Accepted reviews', L.substantiveReviews],
+      ['Evaluated contributions outside GitHub', L.evaluatedContributions],
+      ['Scored contributors', L.contributors],
+      ['Share of points held by the top 10', L.top10Share === null ? 'n/a' : Math.round(100 * L.top10Share) + '%'],
+      ['Window', `${day(L.window.from)} to ${day(L.window.to)}`],
+    ];
+    $('#outcomes tbody').innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td class="num">${typeof v === 'number' ? n(v) : esc(v)}</td></tr>`).join('');
+
+    $('#projects tbody').innerHTML = s.projects.map((p) => {
+      const cap = p.kind === 'external-prize-share' ? `<a href="${esc(p.prize || '#')}">external prize</a>` : esc(p.capDisplay || '');
+      const rail = p.chain ? esc(p.chain) + ' USDC' : (p.kind === 'external-prize-share' ? 'prize share' : '');
+      const st = [esc(p.status), p.authority === 'verified' ? '<span class="pill ok">authority verified</span>' : `<span class="pill">authority ${esc(p.authority || 'unverified')}</span>`].join(' ');
+      return `<tr><td><strong>${esc(p.name)}</strong></td><td>${p.repository ? `<a href="${esc(p.repository)}">${esc(p.repository.replace('https://github.com/', ''))}</a>` : ''}</td><td class="num">${cap}</td><td>${rail}</td><td>${st}</td></tr>`;
+    }).join('');
+
+    const pr = s.proposal;
+    $('#proposal-line').innerHTML = `First frozen proposal: <strong>${esc(pr.projectId)} ${esc(pr.cycleId)}</strong>, ${pr.allocations} proposed allocations under a ${usd(pr.capUsdc)} cap, generated ${day(pr.generatedAt)}. State <code>${esc(pr.status)}</code>, approved ${usd(pr.approvedUsdc)}. Proposed is not approved, and approved is not paid. <a href="https://slop.cash/cycles">slop.cash/cycles</a>`;
+
+    $('#stamp').innerHTML = live
+      ? `<span class="live">● Live</span> · leaderboard generated ${when(L.generatedAt)} · repository read just now`
+      : `Snapshot ${when(s.builtAt)} · fetching live sources…`;
+  }
+
+  try {
+    const snap = await fetch('data/snapshot.json').then((r) => r.json());
+    render(snap, false);
+  } catch (e) { console.error('snapshot', e); }
+  try {
+    const live = await loadAll((u) => fetch(u, { cache: 'default' }).then((r) => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); }));
+    render(live, true);
+  } catch (e) {
+    console.error('live', e);
+    const st = $('#stamp'); st.innerHTML = st.innerHTML.replace('fetching live sources…', 'live refresh failed, showing snapshot');
+  }
+</script>
+</body>
+</html>
