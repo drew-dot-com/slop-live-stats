@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-09-25T12:14:03.146Z",
+  "builtAt": "2026-09-25T17:32:20.928Z",
   "leaderboard": {
-    "generatedAt": "2026-09-25T05:14:36.889Z",
+    "generatedAt": "2026-09-25T12:08:01.739Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-21T05:05:17.000Z",
-      "to": "2026-09-25T05:05:17.000Z"
+      "from": "2026-08-21T11:58:49.000Z",
+      "to": "2026-09-25T11:58:49.000Z"
     },
     "repositories": [
       {
@@ -28,38 +28,38 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 66,
-    "outcomes": 5690,
-    "mergedPullRequests": 3054,
-    "substantiveReviews": 2629,
-    "evaluatedContributions": 7,
-    "invalidMarkers": 2141,
-    "modelDeclarations": 3152,
+    "contributors": 62,
+    "outcomes": 5590,
+    "mergedPullRequests": 2965,
+    "substantiveReviews": 2620,
+    "evaluatedContributions": 5,
+    "invalidMarkers": 2058,
+    "modelDeclarations": 3020,
     "receiptCoverage": {
-      "valid": 2329,
-      "eligible": 5681
+      "valid": 2260,
+      "eligible": 5581
     },
-    "openPullRequests": 374
+    "openPullRequests": 379
   },
   "models": {
-    "declarations": 3152,
-    "signed": 546,
-    "distinctModels": 57,
+    "declarations": 3020,
+    "signed": 542,
+    "distinctModels": 55,
     "top": [
       {
         "key": "xai/grok-4.6",
-        "declarations": 812,
+        "declarations": 808,
         "signed": 9
       },
       {
         "key": "openai/gpt-5.6-sol",
-        "declarations": 736,
-        "signed": 90
+        "declarations": 628,
+        "signed": 87
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 318,
-        "signed": 241
+        "declarations": 308,
+        "signed": 237
       },
       {
         "key": "opencode/ox-alpha",
@@ -68,13 +68,13 @@
       },
       {
         "key": "anthropic/claude-opus-4-8",
-        "declarations": 137,
+        "declarations": 133,
         "signed": 0
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 122,
-        "signed": 60
+        "declarations": 123,
+        "signed": 61
       }
     ]
   },
