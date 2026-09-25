@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-09-25T05:24:15.872Z",
+  "builtAt": "2026-09-25T12:14:03.146Z",
   "leaderboard": {
-    "generatedAt": "2026-09-25T00:48:47.351Z",
+    "generatedAt": "2026-09-25T05:14:36.889Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-21T00:40:09.000Z",
-      "to": "2026-09-25T00:40:09.000Z"
+      "from": "2026-08-21T05:05:17.000Z",
+      "to": "2026-09-25T05:05:17.000Z"
     },
     "repositories": [
       {
@@ -29,36 +29,36 @@
       }
     ],
     "contributors": 66,
-    "outcomes": 5789,
-    "mergedPullRequests": 3123,
-    "substantiveReviews": 2659,
+    "outcomes": 5690,
+    "mergedPullRequests": 3054,
+    "substantiveReviews": 2629,
     "evaluatedContributions": 7,
-    "invalidMarkers": 2237,
-    "modelDeclarations": 3266,
+    "invalidMarkers": 2141,
+    "modelDeclarations": 3152,
     "receiptCoverage": {
-      "valid": 2395,
-      "eligible": 5780
+      "valid": 2329,
+      "eligible": 5681
     },
-    "openPullRequests": 373
+    "openPullRequests": 374
   },
   "models": {
-    "declarations": 3266,
-    "signed": 539,
-    "distinctModels": 58,
+    "declarations": 3152,
+    "signed": 546,
+    "distinctModels": 57,
     "top": [
       {
         "key": "xai/grok-4.6",
-        "declarations": 827,
+        "declarations": 812,
         "signed": 9
       },
       {
         "key": "openai/gpt-5.6-sol",
-        "declarations": 824,
-        "signed": 91
+        "declarations": 736,
+        "signed": 90
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 327,
+        "declarations": 318,
         "signed": 241
       },
       {
@@ -68,13 +68,13 @@
       },
       {
         "key": "anthropic/claude-opus-4-8",
-        "declarations": 143,
+        "declarations": 137,
         "signed": 0
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 119,
-        "signed": 57
+        "declarations": 122,
+        "signed": 60
       }
     ]
   },
