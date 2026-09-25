@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-09-24T21:48:44.555Z",
+  "builtAt": "2026-09-25T05:24:15.872Z",
   "leaderboard": {
-    "generatedAt": "2026-09-24T17:29:44.618Z",
+    "generatedAt": "2026-09-25T00:48:47.351Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-20T17:18:24.000Z",
-      "to": "2026-09-24T17:18:24.000Z"
+      "from": "2026-08-21T00:40:09.000Z",
+      "to": "2026-09-25T00:40:09.000Z"
     },
     "repositories": [
       {
@@ -22,49 +22,43 @@
         "projectId": "asi"
       },
       {
-        "id": "heirlabs/element-sdk",
-        "displayName": "heirlabs/element-sdk",
-        "url": "https://github.com/heirlabs/element-sdk",
-        "projectId": "heir-elements-sdk"
-      },
-      {
         "id": "elizaOS/proximityprize",
         "displayName": "SlopDotCash/proximityprize",
         "url": "https://github.com/SlopDotCash/proximityprize",
         "projectId": "delta-star"
       }
     ],
-    "contributors": 69,
-    "outcomes": 5852,
-    "mergedPullRequests": 3158,
-    "substantiveReviews": 2687,
+    "contributors": 66,
+    "outcomes": 5789,
+    "mergedPullRequests": 3123,
+    "substantiveReviews": 2659,
     "evaluatedContributions": 7,
-    "invalidMarkers": 2356,
-    "modelDeclarations": 3367,
+    "invalidMarkers": 2237,
+    "modelDeclarations": 3266,
     "receiptCoverage": {
-      "valid": 2451,
-      "eligible": 5843
+      "valid": 2395,
+      "eligible": 5780
     },
-    "openPullRequests": 415
+    "openPullRequests": 373
   },
   "models": {
-    "declarations": 3367,
-    "signed": 527,
-    "distinctModels": 60,
+    "declarations": 3266,
+    "signed": 539,
+    "distinctModels": 58,
     "top": [
       {
         "key": "xai/grok-4.6",
-        "declarations": 869,
+        "declarations": 827,
         "signed": 9
       },
       {
         "key": "openai/gpt-5.6-sol",
-        "declarations": 859,
+        "declarations": 824,
         "signed": 91
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 328,
+        "declarations": 327,
         "signed": 241
       },
       {
@@ -74,13 +68,13 @@
       },
       {
         "key": "anthropic/claude-opus-4-8",
-        "declarations": 158,
+        "declarations": 143,
         "signed": 0
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 118,
-        "signed": 56
+        "declarations": 119,
+        "signed": 57
       }
     ]
   },
@@ -182,7 +176,7 @@
     {
       "id": "heir-elements-sdk",
       "name": "Heir Elements SDK",
-      "status": "active",
+      "status": "paused",
       "kind": "monthly-pool",
       "capDisplay": "$100",
       "chain": "solana",
