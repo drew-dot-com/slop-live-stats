@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-09-25T17:32:20.928Z",
+  "builtAt": "2026-09-25T21:49:29.099Z",
   "leaderboard": {
-    "generatedAt": "2026-09-25T12:08:01.739Z",
+    "generatedAt": "2026-09-25T17:30:01.960Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-21T11:58:49.000Z",
-      "to": "2026-09-25T11:58:49.000Z"
+      "from": "2026-08-21T17:18:43.000Z",
+      "to": "2026-09-25T17:18:43.000Z"
     },
     "repositories": [
       {
@@ -28,23 +28,23 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 62,
-    "outcomes": 5590,
-    "mergedPullRequests": 2965,
-    "substantiveReviews": 2620,
-    "evaluatedContributions": 5,
-    "invalidMarkers": 2058,
-    "modelDeclarations": 3020,
+    "contributors": 60,
+    "outcomes": 5472,
+    "mergedPullRequests": 2900,
+    "substantiveReviews": 2568,
+    "evaluatedContributions": 4,
+    "invalidMarkers": 1981,
+    "modelDeclarations": 2925,
     "receiptCoverage": {
-      "valid": 2260,
-      "eligible": 5581
+      "valid": 2189,
+      "eligible": 5463
     },
-    "openPullRequests": 379
+    "openPullRequests": 397
   },
   "models": {
-    "declarations": 3020,
-    "signed": 542,
-    "distinctModels": 55,
+    "declarations": 2925,
+    "signed": 523,
+    "distinctModels": 53,
     "top": [
       {
         "key": "xai/grok-4.6",
@@ -53,18 +53,18 @@
       },
       {
         "key": "openai/gpt-5.6-sol",
-        "declarations": 628,
+        "declarations": 586,
         "signed": 87
-      },
-      {
-        "key": "anthropic/claude-opus-5",
-        "declarations": 308,
-        "signed": 237
       },
       {
         "key": "opencode/ox-alpha",
         "declarations": 295,
         "signed": 1
+      },
+      {
+        "key": "anthropic/claude-opus-5",
+        "declarations": 290,
+        "signed": 219
       },
       {
         "key": "anthropic/claude-opus-4-8",
