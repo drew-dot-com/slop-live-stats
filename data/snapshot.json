@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-09-26T16:45:32.749Z",
+  "builtAt": "2026-09-26T21:34:41.209Z",
   "leaderboard": {
-    "generatedAt": "2026-09-26T11:42:02.195Z",
+    "generatedAt": "2026-09-26T16:38:23.622Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-22T11:33:36.000Z",
-      "to": "2026-09-26T11:33:36.000Z"
+      "from": "2026-08-22T16:30:10.000Z",
+      "to": "2026-09-26T16:30:10.000Z"
     },
     "repositories": [
       {
@@ -29,20 +29,20 @@
       }
     ],
     "contributors": 58,
-    "outcomes": 5335,
-    "mergedPullRequests": 2781,
-    "substantiveReviews": 2551,
-    "evaluatedContributions": 3,
-    "invalidMarkers": 1878,
-    "modelDeclarations": 2775,
+    "outcomes": 5333,
+    "mergedPullRequests": 2776,
+    "substantiveReviews": 2555,
+    "evaluatedContributions": 2,
+    "invalidMarkers": 1879,
+    "modelDeclarations": 2777,
     "receiptCoverage": {
-      "valid": 2100,
-      "eligible": 5326
+      "valid": 2102,
+      "eligible": 5324
     },
-    "openPullRequests": 332
+    "openPullRequests": 329
   },
   "models": {
-    "declarations": 2775,
+    "declarations": 2777,
     "signed": 534,
     "distinctModels": 52,
     "top": [
