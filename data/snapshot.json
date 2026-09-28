@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-09-28T14:28:44.905Z",
+  "builtAt": "2026-09-28T23:30:16.333Z",
   "leaderboard": {
-    "generatedAt": "2026-09-28T05:39:46.318Z",
+    "generatedAt": "2026-09-28T14:17:57.087Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-24T05:33:24.000Z",
-      "to": "2026-09-28T05:33:24.000Z"
+      "from": "2026-08-24T14:09:03.000Z",
+      "to": "2026-09-28T14:09:03.000Z"
     },
     "repositories": [
       {
@@ -29,21 +29,21 @@
       }
     ],
     "contributors": 58,
-    "outcomes": 4471,
-    "mergedPullRequests": 1782,
-    "substantiveReviews": 2689,
+    "outcomes": 4446,
+    "mergedPullRequests": 1770,
+    "substantiveReviews": 2676,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1400,
-    "modelDeclarations": 1691,
+    "invalidMarkers": 1392,
+    "modelDeclarations": 1687,
     "receiptCoverage": {
-      "valid": 1605,
-      "eligible": 4470
+      "valid": 1602,
+      "eligible": 4446
     },
-    "openPullRequests": 60
+    "openPullRequests": 63
   },
   "models": {
-    "declarations": 1691,
-    "signed": 563,
+    "declarations": 1687,
+    "signed": 564,
     "distinctModels": 51,
     "top": [
       {
@@ -53,8 +53,8 @@
       },
       {
         "key": "openai/gpt-5.6-sol",
-        "declarations": 193,
-        "signed": 39
+        "declarations": 191,
+        "signed": 37
       },
       {
         "key": "anthropic/claude-opus-4-8",
@@ -63,8 +63,8 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 164,
-        "signed": 85
+        "declarations": 165,
+        "signed": 87
       },
       {
         "key": "opencode/muse-spark-1.3-contributor-free",
