@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-09-27T21:37:22.939Z",
+  "builtAt": "2026-09-28T05:53:06.030Z",
   "leaderboard": {
-    "generatedAt": "2026-09-27T17:09:14.288Z",
+    "generatedAt": "2026-09-27T21:32:43.312Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-23T17:03:28.000Z",
-      "to": "2026-09-27T17:03:28.000Z"
+      "from": "2026-08-23T21:26:16.000Z",
+      "to": "2026-09-27T21:26:16.000Z"
     },
     "repositories": [
       {
@@ -29,21 +29,21 @@
       }
     ],
     "contributors": 59,
-    "outcomes": 4665,
-    "mergedPullRequests": 1993,
-    "substantiveReviews": 2672,
+    "outcomes": 4745,
+    "mergedPullRequests": 2008,
+    "substantiveReviews": 2737,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1576,
-    "modelDeclarations": 2041,
+    "invalidMarkers": 1623,
+    "modelDeclarations": 2086,
     "receiptCoverage": {
-      "valid": 1758,
-      "eligible": 4663
+      "valid": 1803,
+      "eligible": 4743
     },
-    "openPullRequests": 64
+    "openPullRequests": 61
   },
   "models": {
-    "declarations": 2041,
-    "signed": 551,
+    "declarations": 2086,
+    "signed": 559,
     "distinctModels": 51,
     "top": [
       {
@@ -68,8 +68,8 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 136,
-        "signed": 66
+        "declarations": 153,
+        "signed": 72
       },
       {
         "key": "opencode/muse-spark-1.3-contributor-free",
