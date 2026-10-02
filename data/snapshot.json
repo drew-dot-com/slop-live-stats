@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-02T13:10:42.813Z",
+  "builtAt": "2026-10-02T22:33:25.612Z",
   "leaderboard": {
-    "generatedAt": "2026-10-02T05:55:25.725Z",
+    "generatedAt": "2026-10-02T20:49:36.721Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-28T05:50:02.000Z",
-      "to": "2026-10-02T05:50:02.000Z"
+      "from": "2026-08-28T20:42:50.000Z",
+      "to": "2026-10-02T20:42:50.000Z"
     },
     "repositories": [
       {
@@ -29,22 +29,22 @@
       }
     ],
     "contributors": 55,
-    "outcomes": 4429,
-    "mergedPullRequests": 1515,
-    "substantiveReviews": 2914,
+    "outcomes": 4549,
+    "mergedPullRequests": 1528,
+    "substantiveReviews": 3021,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1581,
-    "modelDeclarations": 1898,
+    "invalidMarkers": 1659,
+    "modelDeclarations": 1989,
     "receiptCoverage": {
-      "valid": 1830,
-      "eligible": 4429
+      "valid": 1920,
+      "eligible": 4549
     },
-    "openPullRequests": 66
+    "openPullRequests": 111
   },
   "models": {
-    "declarations": 1898,
-    "signed": 598,
-    "distinctModels": 49,
+    "declarations": 1989,
+    "signed": 612,
+    "distinctModels": 50,
     "top": [
       {
         "key": "anthropic/claude-opus-5",
@@ -53,8 +53,8 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 270,
-        "signed": 99
+        "declarations": 305,
+        "signed": 100
       },
       {
         "key": "anthropic/claude-opus-4-8",
@@ -67,14 +67,14 @@
         "signed": 17
       },
       {
-        "key": "opencode/muse-spark-1.3-contributor-free",
-        "declarations": 132,
-        "signed": 1
+        "key": "anthropic/claude-opus-5-5",
+        "declarations": 144,
+        "signed": 2
       },
       {
-        "key": "anthropic/claude-opus-5-5",
-        "declarations": 119,
-        "signed": 2
+        "key": "opencode/muse-spark-1.3-contributor-free",
+        "declarations": 137,
+        "signed": 1
       }
     ]
   },
