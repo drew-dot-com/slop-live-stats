@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-03T05:44:13.117Z",
+  "builtAt": "2026-10-03T12:01:49.653Z",
   "leaderboard": {
-    "generatedAt": "2026-10-02T23:01:12.812Z",
+    "generatedAt": "2026-10-03T05:33:43.654Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-28T22:55:09.000Z",
-      "to": "2026-10-02T22:55:09.000Z"
+      "from": "2026-08-29T05:26:55.000Z",
+      "to": "2026-10-03T05:26:55.000Z"
     },
     "repositories": [
       {
@@ -29,20 +29,20 @@
       }
     ],
     "contributors": 55,
-    "outcomes": 4573,
-    "mergedPullRequests": 1531,
-    "substantiveReviews": 3042,
+    "outcomes": 4571,
+    "mergedPullRequests": 1530,
+    "substantiveReviews": 3041,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1672,
-    "modelDeclarations": 2005,
+    "invalidMarkers": 1670,
+    "modelDeclarations": 2003,
     "receiptCoverage": {
-      "valid": 1936,
-      "eligible": 4573
+      "valid": 1934,
+      "eligible": 4571
     },
-    "openPullRequests": 118
+    "openPullRequests": 152
   },
   "models": {
-    "declarations": 2005,
+    "declarations": 2003,
     "signed": 615,
     "distinctModels": 51,
     "top": [
@@ -53,7 +53,7 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 311,
+        "declarations": 310,
         "signed": 101
       },
       {
