@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-03T21:45:38.041Z",
+  "builtAt": "2026-10-04T06:20:54.202Z",
   "leaderboard": {
-    "generatedAt": "2026-10-03T20:37:55.113Z",
+    "generatedAt": "2026-10-03T22:41:30.827Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-29T20:33:40.000Z",
-      "to": "2026-10-03T20:33:40.000Z"
+      "from": "2026-08-29T22:35:41.000Z",
+      "to": "2026-10-03T22:35:41.000Z"
     },
     "repositories": [
       {
@@ -28,28 +28,28 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 55,
-    "outcomes": 4601,
-    "mergedPullRequests": 1533,
-    "substantiveReviews": 3068,
+    "contributors": 56,
+    "outcomes": 4626,
+    "mergedPullRequests": 1539,
+    "substantiveReviews": 3087,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1689,
-    "modelDeclarations": 2022,
+    "invalidMarkers": 1702,
+    "modelDeclarations": 2037,
     "receiptCoverage": {
-      "valid": 1953,
-      "eligible": 4601
+      "valid": 1968,
+      "eligible": 4626
     },
-    "openPullRequests": 209
+    "openPullRequests": 219
   },
   "models": {
-    "declarations": 2022,
-    "signed": 615,
+    "declarations": 2037,
+    "signed": 618,
     "distinctModels": 51,
     "top": [
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 313,
-        "signed": 101
+        "declarations": 316,
+        "signed": 102
       },
       {
         "key": "anthropic/claude-opus-5",
@@ -63,7 +63,7 @@
       },
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 157,
+        "declarations": 166,
         "signed": 2
       },
       {
