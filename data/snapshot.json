@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-04T12:52:16.501Z",
+  "builtAt": "2026-10-04T21:56:19.724Z",
   "leaderboard": {
-    "generatedAt": "2026-10-04T06:06:32.007Z",
+    "generatedAt": "2026-10-04T12:37:51.182Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-30T06:02:14.000Z",
-      "to": "2026-10-04T06:02:14.000Z"
+      "from": "2026-08-30T12:31:02.000Z",
+      "to": "2026-10-04T12:31:02.000Z"
     },
     "repositories": [
       {
@@ -29,37 +29,37 @@
       }
     ],
     "contributors": 57,
-    "outcomes": 5456,
-    "mergedPullRequests": 1698,
-    "substantiveReviews": 3758,
+    "outcomes": 5927,
+    "mergedPullRequests": 1819,
+    "substantiveReviews": 4108,
     "evaluatedContributions": 0,
-    "invalidMarkers": 2225,
-    "modelDeclarations": 2607,
+    "invalidMarkers": 2476,
+    "modelDeclarations": 2863,
     "receiptCoverage": {
-      "valid": 2535,
-      "eligible": 5456
+      "valid": 2790,
+      "eligible": 5927
     },
-    "openPullRequests": 118
+    "openPullRequests": 124
   },
   "models": {
-    "declarations": 2607,
-    "signed": 664,
+    "declarations": 2863,
+    "signed": 669,
     "distinctModels": 51,
     "top": [
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 463,
+        "declarations": 537,
         "signed": 107
       },
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 424,
+        "declarations": 533,
         "signed": 2
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 309,
-        "signed": 261
+        "declarations": 306,
+        "signed": 258
       },
       {
         "key": "anthropic/claude-opus-4-8",
@@ -67,14 +67,14 @@
         "signed": 0
       },
       {
-        "key": "stealth/space-bunny-alpha",
-        "declarations": 140,
-        "signed": 140
+        "key": "openrouter/stealth/space-bunny-alpha",
+        "declarations": 164,
+        "signed": 0
       },
       {
-        "key": "openai/gpt-5.6-sol",
-        "declarations": 139,
-        "signed": 17
+        "key": "stealth/space-bunny-alpha",
+        "declarations": 147,
+        "signed": 147
       }
     ]
   },
