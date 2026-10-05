@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-05T06:13:22.499Z",
+  "builtAt": "2026-10-05T15:16:31.902Z",
   "leaderboard": {
-    "generatedAt": "2026-10-04T23:13:22.285Z",
+    "generatedAt": "2026-10-05T10:28:42.627Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-30T23:08:03.000Z",
-      "to": "2026-10-04T23:08:03.000Z"
+      "from": "2026-08-31T10:22:14.000Z",
+      "to": "2026-10-05T10:22:14.000Z"
     },
     "repositories": [
       {
@@ -28,53 +28,53 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 57,
-    "outcomes": 6345,
-    "mergedPullRequests": 1919,
-    "substantiveReviews": 4426,
+    "contributors": 58,
+    "outcomes": 7127,
+    "mergedPullRequests": 2114,
+    "substantiveReviews": 5013,
     "evaluatedContributions": 0,
-    "invalidMarkers": 2690,
-    "modelDeclarations": 3101,
+    "invalidMarkers": 2918,
+    "modelDeclarations": 3509,
     "receiptCoverage": {
-      "valid": 3028,
-      "eligible": 6345
+      "valid": 3436,
+      "eligible": 7127
     },
-    "openPullRequests": 120
+    "openPullRequests": 124
   },
   "models": {
-    "declarations": 3101,
-    "signed": 696,
+    "declarations": 3509,
+    "signed": 873,
     "distinctModels": 52,
     "top": [
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 629,
-        "signed": 2
+        "declarations": 708,
+        "signed": 13
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 604,
-        "signed": 107
+        "declarations": 701,
+        "signed": 110
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 305,
-        "signed": 257
+        "declarations": 303,
+        "signed": 255
       },
       {
         "key": "openrouter/stealth/space-bunny-alpha",
-        "declarations": 193,
+        "declarations": 213,
         "signed": 0
+      },
+      {
+        "key": "stealth/space-bunny-alpha",
+        "declarations": 192,
+        "signed": 192
       },
       {
         "key": "anthropic/claude-opus-4-8",
         "declarations": 168,
         "signed": 0
-      },
-      {
-        "key": "stealth/space-bunny-alpha",
-        "declarations": 166,
-        "signed": 166
       }
     ]
   },
