@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-04T21:56:19.724Z",
+  "builtAt": "2026-10-05T06:13:22.499Z",
   "leaderboard": {
-    "generatedAt": "2026-10-04T12:37:51.182Z",
+    "generatedAt": "2026-10-04T23:13:22.285Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-30T12:31:02.000Z",
-      "to": "2026-10-04T12:31:02.000Z"
+      "from": "2026-08-30T23:08:03.000Z",
+      "to": "2026-10-04T23:08:03.000Z"
     },
     "repositories": [
       {
@@ -29,37 +29,42 @@
       }
     ],
     "contributors": 57,
-    "outcomes": 5927,
-    "mergedPullRequests": 1819,
-    "substantiveReviews": 4108,
+    "outcomes": 6345,
+    "mergedPullRequests": 1919,
+    "substantiveReviews": 4426,
     "evaluatedContributions": 0,
-    "invalidMarkers": 2476,
-    "modelDeclarations": 2863,
+    "invalidMarkers": 2690,
+    "modelDeclarations": 3101,
     "receiptCoverage": {
-      "valid": 2790,
-      "eligible": 5927
+      "valid": 3028,
+      "eligible": 6345
     },
-    "openPullRequests": 124
+    "openPullRequests": 120
   },
   "models": {
-    "declarations": 2863,
-    "signed": 669,
-    "distinctModels": 51,
+    "declarations": 3101,
+    "signed": 696,
+    "distinctModels": 52,
     "top": [
       {
-        "key": "deepseek/deepseek-v4-flash",
-        "declarations": 537,
-        "signed": 107
-      },
-      {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 533,
+        "declarations": 629,
         "signed": 2
       },
       {
+        "key": "deepseek/deepseek-v4-flash",
+        "declarations": 604,
+        "signed": 107
+      },
+      {
         "key": "anthropic/claude-opus-5",
-        "declarations": 306,
-        "signed": 258
+        "declarations": 305,
+        "signed": 257
+      },
+      {
+        "key": "openrouter/stealth/space-bunny-alpha",
+        "declarations": 193,
+        "signed": 0
       },
       {
         "key": "anthropic/claude-opus-4-8",
@@ -67,14 +72,9 @@
         "signed": 0
       },
       {
-        "key": "openrouter/stealth/space-bunny-alpha",
-        "declarations": 164,
-        "signed": 0
-      },
-      {
         "key": "stealth/space-bunny-alpha",
-        "declarations": 147,
-        "signed": 147
+        "declarations": 166,
+        "signed": 166
       }
     ]
   },
