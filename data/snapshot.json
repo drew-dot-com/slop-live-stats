@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-05T15:16:31.902Z",
+  "builtAt": "2026-10-06T00:19:53.843Z",
   "leaderboard": {
-    "generatedAt": "2026-10-05T10:28:42.627Z",
+    "generatedAt": "2026-10-05T23:27:20.253Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-08-31T10:22:14.000Z",
-      "to": "2026-10-05T10:22:14.000Z"
+      "from": "2026-08-31T23:19:05.000Z",
+      "to": "2026-10-05T23:19:05.000Z"
     },
     "repositories": [
       {
@@ -28,33 +28,33 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 58,
-    "outcomes": 7127,
-    "mergedPullRequests": 2114,
-    "substantiveReviews": 5013,
+    "contributors": 60,
+    "outcomes": 7562,
+    "mergedPullRequests": 2282,
+    "substantiveReviews": 5280,
     "evaluatedContributions": 0,
-    "invalidMarkers": 2918,
-    "modelDeclarations": 3509,
+    "invalidMarkers": 3022,
+    "modelDeclarations": 3699,
     "receiptCoverage": {
-      "valid": 3436,
-      "eligible": 7127
+      "valid": 3624,
+      "eligible": 7562
     },
-    "openPullRequests": 124
+    "openPullRequests": 125
   },
   "models": {
-    "declarations": 3509,
-    "signed": 873,
-    "distinctModels": 52,
+    "declarations": 3699,
+    "signed": 960,
+    "distinctModels": 58,
     "top": [
       {
-        "key": "anthropic/claude-opus-5-5",
-        "declarations": 708,
-        "signed": 13
+        "key": "deepseek/deepseek-v4-flash",
+        "declarations": 755,
+        "signed": 110
       },
       {
-        "key": "deepseek/deepseek-v4-flash",
-        "declarations": 701,
-        "signed": 110
+        "key": "anthropic/claude-opus-5-5",
+        "declarations": 711,
+        "signed": 13
       },
       {
         "key": "anthropic/claude-opus-5",
@@ -63,18 +63,18 @@
       },
       {
         "key": "openrouter/stealth/space-bunny-alpha",
-        "declarations": 213,
+        "declarations": 220,
         "signed": 0
       },
       {
         "key": "stealth/space-bunny-alpha",
-        "declarations": 192,
-        "signed": 192
+        "declarations": 203,
+        "signed": 203
       },
       {
-        "key": "anthropic/claude-opus-4-8",
-        "declarations": 168,
-        "signed": 0
+        "key": "anthropic/claude-sonnet-5-5",
+        "declarations": 201,
+        "signed": 122
       }
     ]
   },
