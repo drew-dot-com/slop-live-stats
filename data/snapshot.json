@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-07T13:55:58.525Z",
+  "builtAt": "2026-10-07T23:18:46.067Z",
   "leaderboard": {
-    "generatedAt": "2026-10-07T11:11:45.275Z",
+    "generatedAt": "2026-10-07T20:33:12.030Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-02T11:04:37.000Z",
-      "to": "2026-10-07T11:04:37.000Z"
+      "from": "2026-09-02T20:26:43.000Z",
+      "to": "2026-10-07T20:26:43.000Z"
     },
     "repositories": [
       {
@@ -29,32 +29,32 @@
       }
     ],
     "contributors": 61,
-    "outcomes": 8225,
-    "mergedPullRequests": 2404,
-    "substantiveReviews": 5821,
+    "outcomes": 8259,
+    "mergedPullRequests": 2400,
+    "substantiveReviews": 5859,
     "evaluatedContributions": 0,
-    "invalidMarkers": 3310,
-    "modelDeclarations": 4112,
+    "invalidMarkers": 3330,
+    "modelDeclarations": 4139,
     "receiptCoverage": {
-      "valid": 4035,
-      "eligible": 8225
+      "valid": 4062,
+      "eligible": 8259
     },
-    "openPullRequests": 138
+    "openPullRequests": 158
   },
   "models": {
-    "declarations": 4112,
-    "signed": 1080,
+    "declarations": 4139,
+    "signed": 1084,
     "distinctModels": 56,
     "top": [
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 911,
-        "signed": 118
+        "declarations": 917,
+        "signed": 119
       },
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 752,
-        "signed": 17
+        "declarations": 763,
+        "signed": 18
       },
       {
         "key": "zai/glm-5.3-flash",
@@ -63,13 +63,13 @@
       },
       {
         "key": "anthropic/claude-sonnet-5-5",
-        "declarations": 274,
-        "signed": 152
+        "declarations": 284,
+        "signed": 162
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 257,
-        "signed": 221
+        "declarations": 246,
+        "signed": 210
       },
       {
         "key": "openrouter/stealth/space-bunny-alpha",
