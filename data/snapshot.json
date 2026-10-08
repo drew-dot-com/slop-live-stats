@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-07T23:18:46.067Z",
+  "builtAt": "2026-10-08T06:39:11.416Z",
   "leaderboard": {
-    "generatedAt": "2026-10-07T20:33:12.030Z",
+    "generatedAt": "2026-10-07T23:15:51.147Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-02T20:26:43.000Z",
-      "to": "2026-10-07T20:26:43.000Z"
+      "from": "2026-09-02T23:08:54.000Z",
+      "to": "2026-10-07T23:08:54.000Z"
     },
     "repositories": [
       {
@@ -39,7 +39,7 @@
       "valid": 4062,
       "eligible": 8259
     },
-    "openPullRequests": 158
+    "openPullRequests": 159
   },
   "models": {
     "declarations": 4139,
