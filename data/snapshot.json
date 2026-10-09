@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-08T23:33:26.617Z",
+  "builtAt": "2026-10-09T06:42:20.277Z",
   "leaderboard": {
-    "generatedAt": "2026-10-08T06:24:12.019Z",
+    "generatedAt": "2026-10-09T04:17:37.360Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-03T06:16:30.000Z",
-      "to": "2026-10-08T06:16:30.000Z"
+      "from": "2026-09-04T04:08:22.000Z",
+      "to": "2026-10-09T04:08:22.000Z"
     },
     "repositories": [
       {
@@ -28,48 +28,48 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 61,
-    "outcomes": 8227,
-    "mergedPullRequests": 2388,
-    "substantiveReviews": 5839,
+    "contributors": 71,
+    "outcomes": 9613,
+    "mergedPullRequests": 2867,
+    "substantiveReviews": 6746,
     "evaluatedContributions": 0,
-    "invalidMarkers": 3318,
-    "modelDeclarations": 4126,
+    "invalidMarkers": 3799,
+    "modelDeclarations": 4843,
     "receiptCoverage": {
-      "valid": 4049,
-      "eligible": 8227
+      "valid": 4766,
+      "eligible": 9292
     },
-    "openPullRequests": 204
+    "openPullRequests": 124
   },
   "models": {
-    "declarations": 4126,
-    "signed": 1077,
-    "distinctModels": 56,
+    "declarations": 4843,
+    "signed": 1306,
+    "distinctModels": 57,
     "top": [
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 917,
+        "declarations": 1123,
         "signed": 119
       },
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 763,
-        "signed": 18
-      },
-      {
-        "key": "zai/glm-5.3-flash",
-        "declarations": 295,
-        "signed": 275
+        "declarations": 861,
+        "signed": 32
       },
       {
         "key": "anthropic/claude-sonnet-5-5",
-        "declarations": 284,
-        "signed": 162
+        "declarations": 452,
+        "signed": 310
+      },
+      {
+        "key": "zai/glm-5.3-flash",
+        "declarations": 308,
+        "signed": 288
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 239,
-        "signed": 203
+        "declarations": 228,
+        "signed": 192
       },
       {
         "key": "openrouter/stealth/space-bunny-alpha",
