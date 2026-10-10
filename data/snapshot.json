@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-10T06:22:49.578Z",
+  "builtAt": "2026-10-10T13:02:59.623Z",
   "leaderboard": {
-    "generatedAt": "2026-10-10T05:27:50.914Z",
+    "generatedAt": "2026-10-10T07:38:52.729Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-05T05:19:05.000Z",
-      "to": "2026-10-10T05:19:05.000Z"
+      "from": "2026-09-05T07:30:35.000Z",
+      "to": "2026-10-10T07:30:35.000Z"
     },
     "repositories": [
       {
@@ -29,41 +29,41 @@
       }
     ],
     "contributors": 78,
-    "outcomes": 6057,
-    "mergedPullRequests": 3293,
-    "substantiveReviews": 2764,
+    "outcomes": 5949,
+    "mergedPullRequests": 3269,
+    "substantiveReviews": 2680,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1878,
-    "modelDeclarations": 2217,
+    "invalidMarkers": 1820,
+    "modelDeclarations": 2155,
     "receiptCoverage": {
-      "valid": 2140,
-      "eligible": 5642
+      "valid": 2108,
+      "eligible": 5525
     },
-    "openPullRequests": 10
+    "openPullRequests": 28
   },
   "models": {
-    "declarations": 2217,
-    "signed": 539,
+    "declarations": 2155,
+    "signed": 532,
     "distinctModels": 54,
     "top": [
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 287,
+        "declarations": 294,
         "signed": 5
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 239,
+        "declarations": 237,
         "signed": 100
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 199,
-        "signed": 162
+        "declarations": 181,
+        "signed": 158
       },
       {
         "key": "anthropic/claude-opus-4-8",
-        "declarations": 143,
+        "declarations": 139,
         "signed": 0
       },
       {
