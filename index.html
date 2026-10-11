@@ -84,7 +84,7 @@
   <div class="scroll"><table id="cycles">
     <thead><tr><th>Month</th><th>Pools</th><th class="num">Merged PRs</th><th class="num">Accepted reviews</th><th class="num">Contributors</th><th>State</th><th>Record</th></tr></thead>
     <tbody>
-      <tr class="fixed"><td>July 2026</td><td>eliza</td><td class="num">4,766</td><td class="num">14</td><td class="num">25</td><td>Unfunded trial, proposal never approved</td><td><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/cycles/eliza/2026-07">cycles/eliza/2026-07</a></td></tr>
+      <tr class="fixed"><td>July 2026</td><td>eliza</td><td class="num">4,766</td><td class="num">14</td><td class="num">25</td><td>Trial, proposal never approved</td><td><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/cycles/eliza/2026-07">cycles/eliza/2026-07</a></td></tr>
       <tr class="fixed"><td>August 2026</td><td>eliza, asi</td><td class="num">5,588</td><td class="num">2,674</td><td class="num">108 + 26</td><td>Sent, 72 transfers</td><td><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/funding/preparations">funding/preparations</a></td></tr>
     </tbody>
   </table></div>
@@ -165,9 +165,7 @@
   }
   function monthState(pools) {
     const states = pools.map(poolState);
-    let out = new Set(states).size === 1 ? states[0] : pools.map((c, i) => `${c.projectId}: ${states[i]}`).join('; ');
-    if (pools.length && pools.every((c) => c.capUsdc === 0)) out += pools.length > 1 ? '; pools not funded' : '; pool not funded';
-    return out;
+    return new Set(states).size === 1 ? states[0] : pools.map((c, i) => `${c.projectId}: ${states[i]}`).join('; ');
   }
 
   function renderCycles(months) {
@@ -243,8 +241,7 @@
     $('#outcomes tbody').innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td class="num">${typeof v === 'number' ? n(v) : esc(v)}</td></tr>`).join('');
 
     $('#projects tbody').innerHTML = s.projects.map((p) => {
-      const unfunded = p.kind === 'monthly-pool' && p.committedMinor === '0' && p.capDisplay && p.capDisplay !== '$0';
-      const cap = p.kind === 'external-prize-share' ? `<a href="${esc(p.prize || '#')}">external prize</a>` : esc(p.capDisplay || '') + (unfunded ? ' <span class="pill">not funded yet</span>' : '');
+      const cap = p.kind === 'external-prize-share' ? `<a href="${esc(p.prize || '#')}">external prize</a>` : esc(p.capDisplay || '');
       const rail = p.chain ? esc(p.chain) + ' USDC' : (p.kind === 'external-prize-share' ? 'prize share' : '');
       const st = [esc(p.status), p.authority === 'verified' ? '<span class="pill ok">authority verified</span>' : `<span class="pill">authority ${esc(p.authority || 'unverified')}</span>`].join(' ');
       return `<tr><td><strong>${esc(p.name)}</strong></td><td>${p.repository ? `<a href="${esc(p.repository)}">${esc(p.repository.replace('https://github.com/', ''))}</a>` : ''}</td><td class="num">${cap}</td><td>${rail}</td><td>${st}</td></tr>`;
