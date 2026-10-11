@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-11T19:06:38.565Z",
+  "builtAt": "2026-10-11T22:28:02.388Z",
   "sources": {
     "projects": [
       "asi",
@@ -44,12 +44,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-11T13:15:03.094Z",
+    "generatedAt": "2026-10-11T19:34:39.360Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-06T13:03:52.000Z",
-      "to": "2026-10-11T13:03:52.000Z"
+      "from": "2026-09-06T19:25:31.000Z",
+      "to": "2026-10-11T19:25:31.000Z"
     },
     "repositories": [
       {
@@ -72,31 +72,31 @@
       }
     ],
     "contributors": 78,
-    "outcomes": 5852,
-    "mergedPullRequests": 3467,
-    "substantiveReviews": 2385,
+    "outcomes": 6014,
+    "mergedPullRequests": 3637,
+    "substantiveReviews": 2377,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1772,
-    "modelDeclarations": 2145,
+    "invalidMarkers": 1804,
+    "modelDeclarations": 2178,
     "receiptCoverage": {
-      "valid": 2105,
-      "eligible": 5453
+      "valid": 2138,
+      "eligible": 5614
     },
-    "openPullRequests": 90
+    "openPullRequests": 59
   },
   "models": {
-    "declarations": 2145,
-    "signed": 476,
+    "declarations": 2178,
+    "signed": 471,
     "distinctModels": 52,
     "top": [
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 453,
+        "declarations": 481,
         "signed": 5
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 231,
+        "declarations": 230,
         "signed": 100
       },
       {
@@ -105,14 +105,14 @@
         "signed": 99
       },
       {
-        "key": "anthropic/claude-opus-5",
-        "declarations": 120,
-        "signed": 107
-      },
-      {
         "key": "xai/grok-4.7",
         "declarations": 118,
         "signed": 0
+      },
+      {
+        "key": "anthropic/claude-opus-5",
+        "declarations": 115,
+        "signed": 102
       },
       {
         "key": "orcarouter/z-ai/glm-5.3-flash-free",
