@@ -19,6 +19,10 @@ through the GitHub contents API, so a new pool, disclosure or monthly cycle
 shows up at the next refresh with no code change. July and August stay as
 fixed rows in `index.html` (`FIXED` holds their calendar-month counts).
 
+Model figures are a port of `summarizeModelOutcomes` in the Slop repo's
+`src/lib/model-outcomes.ts`, so the page shows the same rows and totals as
+slop.cash/models. Change both together.
+
 `index.html` paints `data/snapshot.json` instantly, then refetches every source
 in the browser (using the source list stored in the snapshot) and re-renders
 with a "Live" stamp. `agg.js` is shared between

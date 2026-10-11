@@ -19,32 +19,110 @@ export const CYCLE_FILES = ['proposal.json', 'allocation.json', 'execution-plan.
 
 const usdc = (minor) => Number(BigInt(minor)) / 1e6;
 
-const PROVIDER_ALIASES = { 'openai-codex': 'openai', 'z.ai': 'zai', 'z-ai': 'zai', 'moonshot-ai': 'moonshotai', 'spacexai': 'xai', 'x-ai': 'xai' };
-function modelKey(a) {
-  const p0 = String(a.provider || '').trim().toLowerCase();
-  const provider = PROVIDER_ALIASES[p0] || p0;
-  let model = String(a.model || '').trim().toLowerCase();
-  for (const pre of [provider + '/', 'openai/', 'anthropic/', 'xai/', 'google/']) if (model.startsWith(pre)) model = model.slice(pre.length);
-  return provider + '/' + model;
+// Model figures must match slop.cash/models exactly. This is a line-for-line
+// port of summarizeModelOutcomes in src/lib/model-outcomes.ts (SlopDotCash/
+// slopdotcash, main): same provider aliases, same name folding, same
+// "unavailable" exclusion, same same-actor join, same ordering. Change it
+// only alongside that file.
+const PROVIDER_ALIASES = { 'openai-codex': 'openai', 'z.ai': 'zai', 'z-ai': 'zai', 'moonshot-ai': 'moonshotai' };
+function modelKey(provider, model) {
+  const p0 = String(provider).trim().toLowerCase();
+  const p = PROVIDER_ALIASES[p0] ?? p0;
+  let m = String(model).trim().toLowerCase();
+  for (const pre of [p, ...Object.keys(PROVIDER_ALIASES).filter((a) => PROVIDER_ALIASES[a] === p)]) {
+    if (m.startsWith(pre + '/')) { m = m.slice(pre.length + 1); break; }
+  }
+  m = m.replaceAll(/(^|[a-z]-)(\d)-(\d)(?!\d)/gu, '$1$2.$3');
+  return p + '/' + m;
 }
 
 export function aggregateModels(lb) {
-  const A = lb.attributions || [];
-  const by = {};
-  let signed = 0;
-  for (const a of A) {
-    const k = modelKey(a);
-    by[k] = by[k] || { key: k, declarations: 0, signed: 0 };
-    by[k].declarations++;
-    if (a.run) { by[k].signed++; signed++; }
+  const keyOf = new Map(), bySource = new Map(), byArtifact = new Map(), models = new Map(), clients = new Set();
+  const push = (map, k, v) => { if (!map.has(k)) map.set(k, []); map.get(k).push(v); };
+  const declaring = new Set();
+  let unavailable = 0, declarations = 0, signedDeclarations = 0;
+  for (const a of lb.attributions || []) {
+    if (a.run) signedDeclarations++;
+    if (typeof a.model === 'string' && a.model.toLowerCase() === 'unavailable') { unavailable++; continue; }
+    declarations++;
+    const key = modelKey(a.provider, a.model);
+    keyOf.set(a, key);
+    push(bySource, a.sourceId, a);
+    push(byArtifact, a.artifactId, a);
+    if (!models.has(key)) models.set(key, { key, declarations: 0, contributors: new Set(), merged: new Set(), signedMerged: new Set(), reviews: 0, byActor: new Map() });
+    const b = models.get(key);
+    b.declarations++;
+    const actor = a.actor?.id ?? null;
+    if (actor) { b.contributors.add(actor); declaring.add(actor); }
+    const client = a.run?.client ? a.run.client.trim().toLowerCase() : null;
+    if (client) clients.add(client);
   }
-  const list = Object.values(by).sort((x, y) => y.declarations - x.declarations);
-  return { declarations: A.length, signed, distinctModels: list.length, top: list.slice(0, 6) };
+
+  const mergedIds = new Set(), mergedWithModel = new Set(), mergedWithSigned = new Set();
+  let acceptedReviews = 0, reviewsWithModel = 0;
+  for (const e of lb.ledger || []) {
+    const isPr = e.category === 'merged-pull-request';
+    if (isPr) mergedIds.add(e.source.id);
+    else if (e.category === 'substantive-review') acceptedReviews++;
+    else continue;
+    const own = ((isPr ? byArtifact : bySource).get(e.source.id) || []).filter((a) => a.actor?.id === e.actor.id);
+    const keys = [...new Set(own.map((a) => keyOf.get(a)))].filter((k) => typeof k === 'string');
+    if (!keys.length) continue;
+    if (isPr) {
+      mergedWithModel.add(e.source.id);
+      if (own.some((a) => a.run)) mergedWithSigned.add(e.source.id);
+    } else reviewsWithModel++;
+    for (const k of keys) {
+      const b = models.get(k);
+      if (isPr) {
+        b.merged.add(e.source.id);
+        if (own.some((a) => a.run && keyOf.get(a) === k)) b.signedMerged.add(e.source.id);
+      } else b.reviews++;
+      b.byActor.set(e.actor.id, (b.byActor.get(e.actor.id) || 0) + 1);
+    }
+  }
+
+  const rows = [...models.values()].map((b) => {
+    const outcomes = [...b.byActor.values()].reduce((s, x) => s + x, 0);
+    return {
+      key: b.key,
+      declarations: b.declarations,
+      contributors: b.contributors.size,
+      mergedPullRequests: b.merged.size,
+      signedPullRequests: b.signedMerged.size,
+      acceptedReviews: b.reviews,
+      topContributorShare: outcomes > 0 ? Math.max(...b.byActor.values()) / outcomes : null,
+    };
+  }).sort((x, y) => y.mergedPullRequests - x.mergedPullRequests || y.acceptedReviews - x.acceptedReviews || y.declarations - x.declarations || x.key.localeCompare(y.key));
+
+  return {
+    totals: {
+      declarations,
+      declarationsWithoutExactModel: unavailable,
+      signedDeclarations,
+      declaringContributors: declaring.size,
+      distinctModels: rows.length,
+      distinctClients: clients.size,
+      mergedPullRequests: mergedIds.size,
+      mergedPullRequestsWithModel: mergedWithModel.size,
+      mergedPullRequestsWithSignedRun: mergedWithSigned.size,
+      acceptedReviews,
+      acceptedReviewsWithModel: reviewsWithModel,
+    },
+    // slop.cash/models lists models with at least one accepted outcome.
+    top: rows.filter((r) => r.mergedPullRequests > 0 || r.acceptedReviews > 0).slice(0, 8),
+  };
 }
 
 export function aggregateLeaderboard(lb) {
-  const cats = {};
-  for (const e of lb.ledger) cats[e.category] = (cats[e.category] || 0) + 1;
+  // Shared merge credit emits one ledger event per commit author of one merge,
+  // so a merged PR is counted once by source id, as slop.cash/models does.
+  const cats = {}, merged = new Set();
+  for (const e of lb.ledger) {
+    if (e.category === 'merged-pull-request') { merged.add(e.source.id); continue; }
+    cats[e.category] = (cats[e.category] || 0) + 1;
+  }
+  cats['merged-pull-request'] = merged.size;
   const cov = lb.attributionCoverage || {};
   return {
     generatedAt: lb.generatedAt,
@@ -52,12 +130,11 @@ export function aggregateLeaderboard(lb) {
     window: lb.window,
     repositories: lb.repositories.map((r) => ({ id: r.id, displayName: r.displayName, url: r.githubUrl, projectId: r.projectId })),
     contributors: lb.leaders.length,
-    outcomes: lb.ledger.length,
+    outcomes: Object.values(cats).reduce((a, x) => a + x, 0),
     mergedPullRequests: cats['merged-pull-request'] || 0,
     substantiveReviews: cats['substantive-review'] || 0,
     evaluatedContributions: cats['evaluated-contribution'] || 0,
     invalidMarkers: (lb.invalidAttributionMarkers || []).length,
-    modelDeclarations: (lb.attributions || []).length,
     receiptCoverage: cov.eligibleSourceCount ? { valid: cov.validSourceCount, eligible: cov.eligibleSourceCount } : null,
     openPullRequests: lb.source?.counts?.openPullRequests ?? null,
   };

@@ -95,9 +95,9 @@
   <div class="scroll"><table id="outcomes"><tbody></tbody></table></div>
 
   <h2>Which models merge</h2>
-  <p>Every merged pull request and accepted review can carry a declaration of the model that did the work. This counts those declarations next to the outcomes they were made on. Model identity is self-reported and adds no points; a device-signed receipt binds a run to its declaration but does not verify which model produced the work. Full breakdown on <a href="https://slop.cash/models">slop.cash/models</a>.</p>
+  <p>Every merged pull request and accepted review can carry a declaration of the model that did the work. This counts those declarations next to the outcomes they were made on, by the same person who did the work, with the same rule and ranking as slop.cash/models. Model identity is self-reported and adds no points; a device-signed receipt binds a run to its declaration but does not verify which model produced the work. Full breakdown on <a href="https://slop.cash/models">slop.cash/models</a>.</p>
   <div class="scroll"><table id="models">
-    <thead><tr><th>Model</th><th class="num">Declarations</th><th class="num">Share</th><th class="num">Signed receipts</th></tr></thead>
+    <thead><tr><th>Model</th><th class="num">Merged PRs</th><th class="num">Of all merged PRs</th><th class="num">Accepted reviews</th><th class="num">Contributors</th><th class="num">Busiest contributor</th></tr></thead>
     <tbody></tbody>
   </table></div>
   <p class="desc" id="models-line"></p>
@@ -206,7 +206,7 @@
       tile('Accepted outcomes', n(L.outcomes), `${n(L.mergedPullRequests)} merged PRs, ${n(L.substantiveReviews)} accepted reviews, last ${L.window.days} days`) +
       tile('Scored contributors', n(L.contributors), `across ${L.repositories.length} repositories, last ${L.window.days} days`) +
       tile('Bad markers rejected', n(L.invalidMarkers), 'attribution claims the verifier refused') +
-      tile('Model declarations', n(L.modelDeclarations), cov === null ? 'self-reported, add no points' : `${cov}% of eligible outcomes carry one; self-reported, add no points`) +
+      tile('Model declarations', n(s.models.totals.declarations), cov === null ? 'self-reported, add no points' : `${cov}% of eligible outcomes carry one; self-reported, add no points`) +
       tile('Open pull requests', L.openPullRequests === null ? 'n/a' : n(L.openPullRequests), 'queued for maintainer review right now');
 
     $('#money tbody').innerHTML = M.pools.map((p) => `<tr>
@@ -248,8 +248,11 @@
     }).join('');
 
     const Mo = s.models;
-    $('#models tbody').innerHTML = Mo.top.map((m) => `<tr><td><code>${esc(m.key)}</code></td><td class="num">${n(m.declarations)}</td><td class="num">${Math.round(100 * m.declarations / Mo.declarations)}%</td><td class="num">${n(m.signed)}</td></tr>`).join('');
-    $('#models-line').textContent = `${n(Mo.declarations)} declarations across ${n(Mo.distinctModels)} distinct provider/model pairs in the window; ${n(Mo.signed)} carry a device-signed receipt.`;
+    const T = Mo.totals;
+    const pct = (part, whole) => `${whole > 0 ? Math.round(100 * part / whole) : 0}%`;
+    const prShare = (c) => T.mergedPullRequests === 0 ? 'n/a' : c > 0 && 100 * c / T.mergedPullRequests < 0.1 ? '<0.1%' : `${(100 * c / T.mergedPullRequests).toFixed(1)}%`;
+    $('#models tbody').innerHTML = Mo.top.map((m) => `<tr><td><code>${esc(m.key)}</code></td><td class="num">${n(m.mergedPullRequests)}</td><td class="num">${prShare(m.mergedPullRequests)}</td><td class="num">${n(m.acceptedReviews)}</td><td class="num">${n(m.contributors)}</td><td class="num">${m.topContributorShare === null ? 'n/a' : Math.round(100 * m.topContributorShare) + '%'}</td></tr>`).join('');
+    $('#models-line').textContent = `${pct(T.mergedPullRequestsWithModel, T.mergedPullRequests)} of merged pull requests name a model (${n(T.mergedPullRequestsWithModel)} of ${n(T.mergedPullRequests)}), ${n(T.mergedPullRequestsWithSignedRun)} of those with a signed receipt; ${pct(T.acceptedReviewsWithModel, T.acceptedReviews)} of accepted reviews name a model. ${n(T.declarations)} declarations by ${n(T.declaringContributors)} contributors across ${n(T.distinctModels)} models, ${n(T.signedDeclarations)} signed across ${n(T.distinctClients)} harnesses${T.declarationsWithoutExactModel ? `; ${n(T.declarationsWithoutExactModel)} more state the exact model was unavailable and count toward no model` : ''}. Busiest contributor is that person's share of the model's accepted outcomes.`;
 
     const pr = s.proposal;
     $('#proposal-line').innerHTML = `First frozen proposal: <strong>${esc(pr.projectId)} ${esc(pr.cycleId)}</strong>, ${pr.allocations} proposed allocations under a ${usd(pr.capUsdc)} cap, generated ${day(pr.generatedAt)}. State <code>${esc(pr.status)}</code>, approved ${usd(pr.approvedUsdc)}. Proposed is not approved, and approved is not paid. <a href="https://slop.cash/cycles">slop.cash/cycles</a>`;
