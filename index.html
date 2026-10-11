@@ -69,27 +69,26 @@
   <div class="tiles" id="tiles"></div>
 
   <h2>Money that has reached contributors</h2>
-  <p>USDC transfers on Solana mainnet, finalized on chain, for the August 2026 contribution month. Every signature is published in the repository and reconciled row by row against the frozen preparation for each pool.</p>
+  <p>USDC transfers on Solana mainnet, finalized on chain, for <span id="money-months">the August 2026 contribution month</span>. Every signature is published in the repository and reconciled row by row against the frozen preparation for each pool.</p>
   <div class="scroll"><table id="money">
     <thead><tr><th>Pool</th><th class="num">Cap</th><th class="num">Allocated</th><th class="num">Paid</th><th class="num">Transfers</th><th class="num">Unclaimed</th><th>Sent</th><th>Record</th></tr></thead>
     <tbody></tbody>
   </table></div>
   <div class="callout">
-    <p><strong>How these were sent.</strong> The project creator signed and broadcast these transfers directly from the project's own wallet, which is how Slop is designed: Slop never holds funds or keys. They went out before the verified settlement flow (proposal, 14-day public review, approval, fail-closed verifier) ran for August, so slop.cash still shows August as unsettled. The repository records them as <code>sent-outside-verified-flow</code> with a reconciliation that found zero unmatched transfers and no row with a registered wallet above the $2.00 minimum left unpaid. The first cycle to run through the verified flow end to end is the next milestone.</p>
-    <p><span id="unclaimed-line"></span> Unclaimed amounts belong to contributors who had not registered a payout wallet when the month was frozen. No platform fee was collected on either pool.</p>
+    <p id="sent-callout"><strong>How the August transfers were sent.</strong> The project creator signed and broadcast these transfers directly from the project's own wallet, which is how Slop is designed: Slop never holds funds or keys. They went out before the verified settlement flow (proposal, 14-day public review, approval, fail-closed verifier) ran for August, so slop.cash still shows August as unsettled. The repository records them as <code>sent-outside-verified-flow</code> with a reconciliation that found zero unmatched transfers and no row with a registered wallet above the $2.00 minimum left unpaid.<span id="milestone"> The first cycle to run through the verified flow end to end is the next milestone.</span></p>
+    <p><span id="unclaimed-line"></span> Unclaimed amounts belong to contributors who had not registered a payout wallet when the month was frozen.<span id="fee-line"></span></p>
   </div>
 
-  <h2>Three monthly cycles scored since July</h2>
+  <h2 id="cycles-title">Monthly cycles scored since July</h2>
   <p>Each month is frozen from the same scoring ledger into a file in the repository. Counts below come straight from those frozen files, so they do not move as the live window rolls.</p>
   <div class="scroll"><table id="cycles">
     <thead><tr><th>Month</th><th>Pools</th><th class="num">Merged PRs</th><th class="num">Accepted reviews</th><th class="num">Contributors</th><th>State</th><th>Record</th></tr></thead>
     <tbody>
-      <tr><td>July 2026</td><td>eliza</td><td class="num">4,766</td><td class="num">14</td><td class="num">25</td><td>Unfunded trial, proposal never approved</td><td><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/cycles/eliza/2026-07">cycles/eliza/2026-07</a></td></tr>
-      <tr><td>August 2026</td><td>eliza, asi</td><td class="num">5,588</td><td class="num">2,674</td><td class="num">108 + 26</td><td>Sent, 72 transfers</td><td><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/funding/preparations">funding/preparations</a></td></tr>
-      <tr><td>September 2026</td><td>eliza, asi</td><td class="num">1,542</td><td class="num">2,686</td><td class="num">41 + 18</td><td>Frozen 1 Oct, under review</td><td><a href="https://github.com/SlopDotCash/slopdotcash/pull/516">PR #516</a></td></tr>
+      <tr class="fixed"><td>July 2026</td><td>eliza</td><td class="num">4,766</td><td class="num">14</td><td class="num">25</td><td>Unfunded trial, proposal never approved</td><td><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/cycles/eliza/2026-07">cycles/eliza/2026-07</a></td></tr>
+      <tr class="fixed"><td>August 2026</td><td>eliza, asi</td><td class="num">5,588</td><td class="num">2,674</td><td class="num">108 + 26</td><td>Sent, 72 transfers</td><td><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/funding/preparations">funding/preparations</a></td></tr>
     </tbody>
   </table></div>
-  <p class="desc">Counted once per calendar month (July 1 to September 30), the three cycles hold <strong>11,141 merged pull requests</strong> and <strong>4,921 accepted reviews</strong>; the table rows overlap by a few days at each boundary because every cycle scores a 35-day window. Contributors are listed per pool: 108 in eliza and 26 in asi for August, 41 in eliza and 18 in asi for September. Fifteen people appear in both September pools, so the month has 44 unique contributors with a proposal row. August asi reviews are the pool's scored events minus its scored merges. Review scoring was barely live in July, which is why that row is low.</p>
+  <p class="desc" id="cycles-desc"></p>
 
   <h2>Accepted outcomes, last <span id="window-days">35</span> days</h2>
   <p>Only work a maintainer merged or accepted appears here. Scoring rule <code id="rule">slop-score-v2</code>, published on <a href="https://slop.cash/how-it-works">slop.cash/how-it-works</a>.</p>
@@ -122,9 +121,9 @@
   <h2>Where the numbers come from</h2>
   <ul>
     <li><a href="https://slop.cash/data/leaderboard.json">slop.cash/data/leaderboard.json</a>: scored contributors, the ledger of merged pull requests and accepted reviews, rejected attribution markers, and receipt coverage. Regenerated by the site's own scheduled refresh.</li>
-    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/disclosures">disclosures/</a> in the Slop repository: one JSON record per pool for the August 2026 transfers, each row bound to a Solana signature.</li>
-    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/projects">projects/</a>: each pool's manifest, changed only by reviewed pull request.</li>
-    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/develop/cycles">cycles/</a>: frozen proposals and their review windows.</li>
+    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/disclosures">disclosures/</a> in the Slop repository: one JSON record per pool for transfers sent outside the verified flow (August 2026), each row bound to a Solana signature.</li>
+    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/projects">projects/</a>: each pool's manifest, changed only by reviewed pull request.</li>
+    <li><a href="https://github.com/SlopDotCash/slopdotcash/tree/main/cycles">cycles/</a>: frozen proposals, their review windows, and verified settlements. New months, pools and records are picked up on their own; this page rebuilds every six hours from the <code>main</code> branch.</li>
   </ul>
   <p class="desc">Model identity on Slop is self-reported and adds no points. A signed receipt binds a device to its declaration; it does not verify which model produced the work. Contributor counts cover the rolling scoring window, not all time.</p>
 
@@ -138,15 +137,74 @@
   const n = (x, d = 0) => x.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
   const usd = (x) => '$' + n(x, 2);
   const day = (iso) => new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const dm = (iso) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+  const monthName = (ym) => new Date(ym + '-01T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const lastDay = (ym) => new Date(Date.UTC(+ym.slice(0, 4), +ym.slice(5, 7), 0)).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'UTC' });
+  const words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+  const word = (k) => words[k] ?? String(k);
+  const cap1 = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+  const REPO_TREE = 'https://github.com/SlopDotCash/slopdotcash/tree/main/';
+  // Fixed rows in the table: July from its cycle file, August from funding/preparations.
+  // Calendar-month counts, so months add up without the 35-day window overlap.
+  const FIXED = [
+    { month: '2026-07', merged: 4165, reviews: 14, perPool: '25 in eliza' },
+    { month: '2026-08', merged: 5588, reviews: 2674, perPool: '108 in eliza and 26 in asi' },
+  ];
+
+  // States follow the cycle files: proposal, allocation, execution plan,
+  // transactions, settlement (written only once the verifier reconciles).
+  function poolState(c) {
+    const f = new Set(c.files);
+    if (c.settlement) return `Paid ${dm(c.settlement.settledAt)}, verified on chain`;
+    if (f.has('windup.json')) return 'Wound up, rows held';
+    if (f.has('transactions.json')) return 'Transfers recorded, awaiting verification';
+    if (f.has('execution-plan.json')) return 'Approved, scheduled';
+    if (f.has('allocation.json') || c.approvedAt) return 'Approved' + (c.approvedAt ? ' ' + dm(c.approvedAt) : '');
+    if (c.reviewEndsAt && Date.parse(c.reviewEndsAt) > Date.now()) return `Frozen ${dm(c.generatedAt)}, under review until ${dm(c.reviewEndsAt)}`;
+    return `Frozen ${dm(c.generatedAt)}, review window closed ${dm(c.reviewEndsAt)}, not approved`;
+  }
+  function monthState(pools) {
+    const states = pools.map(poolState);
+    let out = new Set(states).size === 1 ? states[0] : pools.map((c, i) => `${c.projectId}: ${states[i]}`).join('; ');
+    if (pools.length && pools.every((c) => c.capUsdc === 0)) out += pools.length > 1 ? '; pools not funded' : '; pool not funded';
+    return out;
+  }
+
+  function renderCycles(months) {
+    const tb = $('#cycles tbody');
+    tb.querySelectorAll('tr:not(.fixed)').forEach((r) => r.remove());
+    const rows = months.filter((m) => m.pools.length && m.counts);
+    tb.insertAdjacentHTML('beforeend', rows.map((m) => {
+      const pools = [...m.pools].sort((a, b) => b.contributors - a.contributors);
+      const links = pools.map((c) => `<a href="${REPO_TREE}cycles/${esc(c.projectId)}/${esc(m.month)}">${esc(c.projectId)}/${esc(m.month)}</a>`).join(', ');
+      return `<tr><td>${monthName(m.month)}</td><td>${pools.map((c) => esc(c.projectId)).join(', ')}</td><td class="num">${n(m.counts.merged)}</td><td class="num">${n(m.counts.reviews)}</td><td class="num">${pools.map((c) => n(c.contributors)).join(' + ')}</td><td>${esc(monthState(pools))}</td><td>${links}</td></tr>`;
+    }).join(''));
+    const total = FIXED.length + rows.length;
+    $('#cycles-title').textContent = `${cap1(word(total))} monthly cycles scored since July`;
+    const merged = FIXED.reduce((a, f) => a + f.merged, 0) + rows.reduce((a, m) => a + m.counts.calendarMerged, 0);
+    const reviews = FIXED.reduce((a, f) => a + f.reviews, 0) + rows.reduce((a, m) => a + m.counts.calendarReviews, 0);
+    const last = rows.length ? rows[rows.length - 1].month : FIXED[FIXED.length - 1].month;
+    const perPool = FIXED.slice(1).map((f) => `${f.perPool} for ${monthName(f.month).split(' ')[0]}`)
+      .concat(rows.map((m) => `${[...m.pools].sort((a, b) => b.contributors - a.contributors).map((c) => `${n(c.contributors)} in ${esc(c.projectId)}`).join(' and ')} for ${monthName(m.month).split(' ')[0]}`));
+    const overlaps = rows.filter((m) => m.pools.length > 1).map((m) => {
+      const both = m.pools.reduce((a, c) => a + c.contributors, 0) - m.uniqueContributors;
+      return ` In ${monthName(m.month).split(' ')[0]}, ${n(both)} ${both === 1 ? 'person appears' : 'people appear'} in more than one pool, so the month has ${n(m.uniqueContributors)} unique contributors with a proposal row.`;
+    }).join('');
+    $('#cycles-desc').innerHTML = `Counted once per calendar month (July 1 to ${lastDay(last)}), the ${word(total)} cycles hold <strong>${n(merged)} merged pull requests</strong> and <strong>${n(reviews)} accepted reviews</strong>; the table rows overlap by a few days at each boundary because every cycle scores a 35-day window. Contributors are listed per pool: ${perPool.join(', ')}.${overlaps} August asi reviews are the pool's scored events minus its scored merges. Review scoring was barely live in July, which is why that row is low.`;
+  }
+
   const when = (iso) => new Date(iso).toLocaleString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   function render(s, live) {
     const L = s.leaderboard, M = s.money;
     const tile = (label, value, note, cls = '') => `<div class="tile ${cls}"><div class="label">${label}</div><div class="value">${value}</div><div class="note">${note}</div></div>`;
+    const settlements = M.settlements || [];
+    const paidMonthList = [...new Set(M.pools.map((p) => p.month).concat(settlements.map((x) => x.month)))].sort().map(monthName);
+    const paidMonths = paidMonthList.length > 2 ? `${paidMonthList[0]} to ${paidMonthList[paidMonthList.length - 1]}` : paidMonthList.join(' and ');
     const cov = L.receiptCoverage ? Math.round(100 * L.receiptCoverage.valid / L.receiptCoverage.eligible) : null;
     $('#tiles').innerHTML =
-      tile('USDC paid to contributors', usd(M.paidUsdc), `${M.transfers} finalized transfers, August 2026, every signature public`, 'money') +
+      tile('USDC paid to contributors', usd(M.paidUsdc), `${M.transfers} finalized transfers, ${paidMonths}, every signature public`, 'money') +
       tile('Accepted outcomes', n(L.outcomes), `${n(L.mergedPullRequests)} merged PRs, ${n(L.substantiveReviews)} accepted reviews, last ${L.window.days} days`) +
       tile('Scored contributors', n(L.contributors), `across ${L.repositories.length} repositories, last ${L.window.days} days`) +
       tile('Bad markers rejected', n(L.invalidMarkers), 'attribution claims the verifier refused') +
@@ -159,9 +217,19 @@
       <td class="num"><strong>${usd(p.paidUsdc)}</strong></td><td class="num">${p.transfers} of ${p.rows} rows</td>
       <td class="num">${usd(p.unclaimedUsdc)} (${p.unclaimedRows})</td>
       <td>${p.firstAt ? day(p.firstAt) : ''}</td>
-      <td><a href="https://github.com/SlopDotCash/slopdotcash/blob/develop/disclosures/${esc(p.projectId)}-${esc(p.month)}-direct-payments.json">JSON</a>${p.exampleSignature ? ` · <a href="https://solscan.io/tx/${esc(p.exampleSignature)}">example tx</a>` : ''}</td>
+      <td><a href="https://github.com/SlopDotCash/slopdotcash/blob/main/disclosures/${esc(p.file || `${p.projectId}-${p.month}-direct-payments.json`)}">JSON</a>${p.exampleSignature ? ` · <a href="https://solscan.io/tx/${esc(p.exampleSignature)}">example tx</a>` : ''}</td>
+    </tr>`).join('') + settlements.map((x) => `<tr>
+      <td><strong>${esc(x.projectId)}</strong> <span class="pill">${esc(x.month)}</span></td>
+      <td class="num">${x.capUsdc === null ? '' : usd(x.capUsdc)}</td><td class="num"></td>
+      <td class="num"><strong>${usd(x.paidUsdc)}</strong></td><td class="num">${x.transfers}</td>
+      <td class="num"></td><td>${day(x.settledAt)}</td>
+      <td><a href="${REPO_TREE}cycles/${esc(x.projectId)}/${esc(x.month)}">settlement</a> <span class="pill ok">verified</span></td>
     </tr>`).join('') + `<tr><td><strong>Total</strong></td><td class="num"></td><td class="num">${usd(M.allocatedUsdc)}</td><td class="num"><strong>${usd(M.paidUsdc)}</strong></td><td class="num">${M.transfers}</td><td class="num">${usd(M.unclaimedUsdc)}</td><td></td><td></td></tr>`;
-    $('#unclaimed-line').textContent = `${usd(M.unclaimedUsdc)} of the ${usd(M.allocatedUsdc)} allocated across both pools is unclaimed.`;
+    $('#unclaimed-line').textContent = `${usd(M.unclaimedUsdc)} of the ${usd(M.allocatedUsdc)} allocated across the August pools is unclaimed.`;
+    $('#fee-line').textContent = M.platformFeeCollected ? '' : ' No platform fee was collected on the August pools.';
+    $('#money-months').textContent = settlements.length ? `${paidMonths}; August was sent directly, later months through the verified settlement flow` : 'the August 2026 contribution month';
+    $('#milestone').hidden = settlements.length > 0;
+    if (s.months) renderCycles(s.months);
 
     $('#window-days').textContent = L.window.days;
     $('#rule').textContent = L.ruleVersion;
@@ -175,7 +243,8 @@
     $('#outcomes tbody').innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td class="num">${typeof v === 'number' ? n(v) : esc(v)}</td></tr>`).join('');
 
     $('#projects tbody').innerHTML = s.projects.map((p) => {
-      const cap = p.kind === 'external-prize-share' ? `<a href="${esc(p.prize || '#')}">external prize</a>` : esc(p.capDisplay || '');
+      const unfunded = p.kind === 'monthly-pool' && p.committedMinor === '0' && p.capDisplay && p.capDisplay !== '$0';
+      const cap = p.kind === 'external-prize-share' ? `<a href="${esc(p.prize || '#')}">external prize</a>` : esc(p.capDisplay || '') + (unfunded ? ' <span class="pill">not funded yet</span>' : '');
       const rail = p.chain ? esc(p.chain) + ' USDC' : (p.kind === 'external-prize-share' ? 'prize share' : '');
       const st = [esc(p.status), p.authority === 'verified' ? '<span class="pill ok">authority verified</span>' : `<span class="pill">authority ${esc(p.authority || 'unverified')}</span>`].join(' ');
       return `<tr><td><strong>${esc(p.name)}</strong></td><td>${p.repository ? `<a href="${esc(p.repository)}">${esc(p.repository.replace('https://github.com/', ''))}</a>` : ''}</td><td class="num">${cap}</td><td>${rail}</td><td>${st}</td></tr>`;
@@ -193,12 +262,14 @@
       : `Snapshot ${when(s.builtAt)} · fetching live sources…`;
   }
 
+  let snap = null;
   try {
-    const snap = await fetch('data/snapshot.json').then((r) => r.json());
+    snap = await fetch('data/snapshot.json').then((r) => r.json());
     render(snap, false);
   } catch (e) { console.error('snapshot', e); }
   try {
-    const live = await loadAll((u) => fetch(u, { cache: 'default' }).then((r) => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); }));
+    if (!snap?.sources) throw new Error('snapshot has no source list');
+    const live = await loadAll((u) => fetch(u, { cache: 'default' }).then((r) => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); }), snap.sources, { cycleSnapshots: snap.cycleSnapshots });
     render(live, true);
   } catch (e) {
     console.error('live', e);

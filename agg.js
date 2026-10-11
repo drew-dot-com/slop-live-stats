@@ -2,13 +2,20 @@
 // Runs in Node (scripts/build.mjs) and in the browser (index.html).
 // Inputs are public files; the output is aggregate-only, no per-person rows.
 
+// Production is `main` since the 9 Oct 2026 cutover; `develop` is frozen.
+export const REPO = 'SlopDotCash/slopdotcash';
+export const BRANCH = 'main';
 export const SOURCES = {
   leaderboard: 'https://slop.cash/data/leaderboard.json',
-  raw: 'https://raw.githubusercontent.com/SlopDotCash/slopdotcash/develop/',
-  projects: ['eliza', 'asi', 'delta-star', 'heir-elements-sdk'],
-  disclosures: ['eliza-2026-08-direct-payments.json', 'asi-2026-08-direct-payments.json'],
+  raw: `https://raw.githubusercontent.com/${REPO}/${BRANCH}/`,
+  api: `https://api.github.com/repos/${REPO}/contents/`,
+  // The first frozen proposal, kept as a fixed reference line under Pools.
   proposal: 'cycles/eliza/2026-07/proposal.json',
 };
+// Months shown as fixed rows in index.html (July from its cycle file, August
+// from funding/preparations). Every later cycle directory becomes a row here.
+export const HISTORICAL_MONTHS = ['2026-07', '2026-08'];
+export const CYCLE_FILES = ['proposal.json', 'allocation.json', 'execution-plan.json', 'transactions.json', 'settlement.json', 'windup.json'];
 
 const usdc = (minor) => Number(BigInt(minor)) / 1e6;
 
@@ -84,6 +91,49 @@ export function aggregateDisclosure(d) {
   };
 }
 
+// Proposal-level facts the page needs for a cycle row. The state label is
+// computed at render time so "under review" turns into "review closed" on its
+// own without waiting for a rebuild.
+export function aggregateCycle(projectId, month, files, docs) {
+  const pr = docs['proposal.json'];
+  const st = docs['settlement.json'];
+  const out = {
+    projectId, month, files,
+    kind: pr.kind,
+    status: pr.status,
+    generatedAt: pr.generatedAt,
+    approvedAt: pr.approvedAt ?? null,
+    reviewEndsAt: pr.review?.endsAt || null,
+    capUsdc: pr.capMinor ? usdc(pr.capMinor) : null,
+    sourceSnapshotSha256: pr.sourceSnapshotSha256,
+    contributors: (pr.allocations || []).length,
+    actors: (pr.allocations || []).map((a) => a.actor?.id || a.actor?.login).filter(Boolean),
+    settlement: null,
+  };
+  if (st && st.status === 'paid') {
+    const paid = (st.recipients || []).filter((r) => BigInt(r.paidMinor || '0') > 0n);
+    out.settlement = {
+      settledAt: st.settledAt,
+      chain: st.chain,
+      paidUsdc: paid.reduce((a, r) => a + usdc(r.paidMinor), 0),
+      transfers: paid.length,
+    };
+  }
+  return out;
+}
+
+// Ledger counts for a frozen source snapshot: whole 35-day window, plus the
+// calendar month alone so months can be summed without double counting.
+export function aggregateCycleSnapshot(snap, month) {
+  const cnt = (cat, inMonth) => snap.ledger.filter((e) => e.category === cat && (!inMonth || String(e.occurredAt).startsWith(month))).length;
+  return {
+    merged: cnt('merged-pull-request'),
+    reviews: cnt('substantive-review'),
+    calendarMerged: cnt('merged-pull-request', true),
+    calendarReviews: cnt('substantive-review', true),
+  };
+}
+
 export function aggregateProject(p) {
   const r = p.reward || {};
   return {
@@ -95,6 +145,7 @@ export function aggregateProject(p) {
     chain: r.chain || null,
     paymentMode: r.paymentMode || null,
     fundingState: r.fundingState || null,
+    committedMinor: r.committedMinor ?? null,
     feeBasisPoints: r.feeBasisPoints ?? null,
     authority: p.authority?.state || null,
     repository: p.links?.repository || null,
@@ -117,29 +168,102 @@ export function aggregateProposal(pr) {
   };
 }
 
-export async function loadAll(fetchJson) {
-  const [lb, ...rest] = await Promise.all([
+// One row per contribution month. Counts come from the frozen source
+// snapshots (deduplicated, since pools of one month share a snapshot); the
+// unique contributor count is computed here so no account ids leave the build.
+export function aggregateMonths(cycles, snaps) {
+  const byMonth = {};
+  for (const c of cycles) (byMonth[c.month] ||= []).push(c);
+  return Object.keys(byMonth).sort().map((month) => {
+    const all = byMonth[month];
+    const pools = all.filter((c) => c.kind === 'reward-allocation');
+    const counts = { merged: 0, reviews: 0, calendarMerged: 0, calendarReviews: 0 };
+    let complete = true;
+    for (const key of new Set(all.map((c) => c.sourceSnapshotSha256))) {
+      if (!snaps[key]) { complete = false; continue; }
+      for (const k of Object.keys(counts)) counts[k] += snaps[key][k];
+    }
+    return {
+      month,
+      counts: complete ? counts : null,
+      uniqueContributors: new Set(pools.flatMap((c) => c.actors)).size,
+      pools: pools.map(({ actors, sourceSnapshotSha256, kind, ...c }) => c),
+    };
+  });
+}
+
+// Lists the repository directories the page reads, so new pools, disclosures
+// and monthly cycles appear without a code change. Node only (the scheduled
+// build); the browser reuses the list stored in the snapshot.
+export async function discover(fetchJson) {
+  const ls = (path) => fetchJson(`${SOURCES.api}${path}?ref=${BRANCH}`);
+  const dirs = (xs) => xs.filter((x) => x.type === 'dir').map((x) => x.name).sort();
+  const projects = dirs(await ls('projects'));
+  const disclosures = (await ls('disclosures')).filter((x) => x.type === 'file' && x.name.endsWith('.json')).map((x) => x.name).sort();
+  const cycles = [];
+  for (const projectId of dirs(await ls('cycles'))) {
+    for (const month of dirs(await ls(`cycles/${projectId}`))) {
+      if (!/^\d{4}-\d{2}$/.test(month) || HISTORICAL_MONTHS.includes(month)) continue;
+      const names = new Set((await ls(`cycles/${projectId}/${month}`)).map((x) => x.name));
+      if (!names.has('proposal.json')) continue;
+      cycles.push({ projectId, month, files: CYCLE_FILES.filter((f) => names.has(f)) });
+    }
+  }
+  return { projects, disclosures, cycles };
+}
+
+// Fetches and aggregates everything the page shows. `sources` comes from
+// discover() in the build, or from the last snapshot in the browser.
+// `cycleSnapshots` maps sourceSnapshotSha256 to counts already computed (the
+// snapshots are frozen and large, so the build reuses earlier counts and the
+// browser never downloads them).
+export async function loadAll(fetchJson, sources, { cycleSnapshots = {}, fetchCycleSnapshots = false } = {}) {
+  const raw = (path) => fetchJson(SOURCES.raw + path);
+  const [lb, disclosureDocs, projectDocs, proposalDoc, cycleDocs] = await Promise.all([
     fetchJson(SOURCES.leaderboard),
-    ...SOURCES.disclosures.map((f) => fetchJson(SOURCES.raw + 'disclosures/' + f)),
-    ...SOURCES.projects.map((p) => fetchJson(SOURCES.raw + 'projects/' + p + '/project.json')),
-    fetchJson(SOURCES.raw + SOURCES.proposal),
+    Promise.all(sources.disclosures.map((f) => raw('disclosures/' + f))),
+    Promise.all(sources.projects.map((p) => raw(`projects/${p}/project.json`))),
+    raw(SOURCES.proposal),
+    Promise.all(sources.cycles.map(async (c) => {
+      const docs = {};
+      for (const f of c.files) if (f === 'proposal.json' || f === 'settlement.json') docs[f] = await raw(`cycles/${c.projectId}/${c.month}/${f}`);
+      return aggregateCycle(c.projectId, c.month, c.files, docs);
+    })),
   ]);
-  const n = SOURCES.disclosures.length;
-  const disclosures = rest.slice(0, n).map(aggregateDisclosure);
-  const projects = rest.slice(n, n + SOURCES.projects.length).map(aggregateProject);
-  const proposal = aggregateProposal(rest[n + SOURCES.projects.length]);
+  const disclosures = disclosureDocs.map((d, i) => ({ ...aggregateDisclosure(d), file: sources.disclosures[i] }));
+  const order = { active: 0, paused: 1 };
+  const projects = projectDocs.map(aggregateProject)
+    .sort((a, b) => (order[a.status] ?? 2) - (order[b.status] ?? 2) || a.name.localeCompare(b.name));
+
+  const snaps = { ...cycleSnapshots };
+  if (fetchCycleSnapshots) {
+    for (const c of cycleDocs) {
+      const key = c.sourceSnapshotSha256;
+      if (!key || snaps[key]) continue;
+      snaps[key] = aggregateCycleSnapshot(await raw(`cycles/${c.projectId}/${c.month}/source-snapshot.json`), c.month);
+    }
+  }
+  const usedSnaps = Object.fromEntries(cycleDocs.map((c) => c.sourceSnapshotSha256).filter((k) => snaps[k]).map((k) => [k, snaps[k]]));
+
+  const settled = cycleDocs.filter((c) => c.settlement);
+  const sum = (xs, f) => xs.reduce((a, x) => a + f(x), 0);
   return {
     builtAt: new Date().toISOString(),
+    sources,
     leaderboard: aggregateLeaderboard(lb),
     models: aggregateModels(lb),
     money: {
-      transfers: disclosures.reduce((a, d) => a + d.transfers, 0),
-      paidUsdc: disclosures.reduce((a, d) => a + d.paidUsdc, 0),
-      allocatedUsdc: disclosures.reduce((a, d) => a + d.allocatedUsdc, 0),
-      unclaimedUsdc: disclosures.reduce((a, d) => a + d.unclaimedUsdc, 0),
+      transfers: sum(disclosures, (d) => d.transfers) + sum(settled, (c) => c.settlement.transfers),
+      paidUsdc: sum(disclosures, (d) => d.paidUsdc) + sum(settled, (c) => c.settlement.paidUsdc),
+      allocatedUsdc: sum(disclosures, (d) => d.allocatedUsdc),
+      unclaimedUsdc: sum(disclosures, (d) => d.unclaimedUsdc),
+      platformFeeCollected: disclosures.some((d) => d.platformFee),
       pools: disclosures,
+      settlements: settled.map((c) => ({ projectId: c.projectId, month: c.month, capUsdc: c.capUsdc, ...c.settlement })),
     },
+    months: aggregateMonths(cycleDocs, usedSnaps),
+    cycleSnapshots: usedSnaps,
     projects,
-    proposal,
+    proposal: aggregateProposal(proposalDoc),
   };
 }

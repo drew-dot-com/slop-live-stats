@@ -1,12 +1,55 @@
 {
-  "builtAt": "2026-10-11T13:31:34.589Z",
+  "builtAt": "2026-10-11T19:06:24.011Z",
+  "sources": {
+    "projects": [
+      "asi",
+      "canonry",
+      "darling-arm64",
+      "delta-star",
+      "eliza",
+      "eliza-plugin-homonym",
+      "heir-desk-sdk",
+      "heir-elements-sdk",
+      "monna-agent-permission-diff",
+      "monna-visual-strategy-canvas",
+      "nurosos",
+      "payzcode-ai"
+    ],
+    "disclosures": [
+      "asi-2026-08-direct-payments.json",
+      "eliza-2026-08-direct-payments.json"
+    ],
+    "cycles": [
+      {
+        "projectId": "asi",
+        "month": "2026-09",
+        "files": [
+          "proposal.json"
+        ]
+      },
+      {
+        "projectId": "delta-star",
+        "month": "2026-09",
+        "files": [
+          "proposal.json"
+        ]
+      },
+      {
+        "projectId": "eliza",
+        "month": "2026-09",
+        "files": [
+          "proposal.json"
+        ]
+      }
+    ]
+  },
   "leaderboard": {
-    "generatedAt": "2026-10-11T06:08:40.769Z",
+    "generatedAt": "2026-10-11T13:15:03.094Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-06T05:58:47.000Z",
-      "to": "2026-10-11T05:58:47.000Z"
+      "from": "2026-09-06T13:03:52.000Z",
+      "to": "2026-10-11T13:03:52.000Z"
     },
     "repositories": [
       {
@@ -28,27 +71,27 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 74,
-    "outcomes": 5731,
-    "mergedPullRequests": 3337,
-    "substantiveReviews": 2394,
+    "contributors": 78,
+    "outcomes": 5852,
+    "mergedPullRequests": 3467,
+    "substantiveReviews": 2385,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1696,
-    "modelDeclarations": 2072,
+    "invalidMarkers": 1772,
+    "modelDeclarations": 2145,
     "receiptCoverage": {
-      "valid": 2035,
-      "eligible": 5348
+      "valid": 2105,
+      "eligible": 5453
     },
-    "openPullRequests": 61
+    "openPullRequests": 90
   },
   "models": {
-    "declarations": 2072,
-    "signed": 487,
+    "declarations": 2145,
+    "signed": 476,
     "distinctModels": 52,
     "top": [
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 382,
+        "declarations": 453,
         "signed": 5
       },
       {
@@ -57,14 +100,14 @@
         "signed": 100
       },
       {
-        "key": "anthropic/claude-opus-5",
-        "declarations": 129,
-        "signed": 116
-      },
-      {
         "key": "zai/glm-5.3-flash",
         "declarations": 125,
         "signed": 99
+      },
+      {
+        "key": "anthropic/claude-opus-5",
+        "declarations": 120,
+        "signed": 107
       },
       {
         "key": "xai/grok-4.7",
@@ -83,29 +126,8 @@
     "paidUsdc": 6004.977346,
     "allocatedUsdc": 15011.127482,
     "unclaimedUsdc": 8983.665670999999,
+    "platformFeeCollected": false,
     "pools": [
-      {
-        "projectId": "eliza",
-        "month": "2026-08",
-        "status": "sent-outside-verified-flow",
-        "network": "solana-mainnet",
-        "asset": "USDC",
-        "capUsdc": 10000,
-        "allocatedUsdc": 9999.999989,
-        "paidUsdc": 4219.710147,
-        "transfers": 53,
-        "rows": 108,
-        "paidRows": 53,
-        "unclaimedRows": 33,
-        "unclaimedUsdc": 5757.805377,
-        "heldRows": 22,
-        "heldUsdc": 22.484468,
-        "unmatched": 0,
-        "platformFee": null,
-        "firstAt": "2026-09-11T17:12:54Z",
-        "lastAt": "2026-09-11T17:27:17Z",
-        "exampleSignature": "XJGEmhbY3sWFtLoHSXXPhnWohFcDcgRDbo7f1fiTerd1HPwDYH3JuYCDSL2j8XbCfzrCL7hnJrKgFBu47bMf2GE"
-      },
       {
         "projectId": "asi",
         "month": "2026-08",
@@ -126,25 +148,86 @@
         "platformFee": null,
         "firstAt": "2026-09-12T00:42:26Z",
         "lastAt": "2026-09-12T00:57:12Z",
-        "exampleSignature": "3AE8idRMcSm9GE11WJTNqQvpvZZgQxJtdQ29SkrP62bXhHriewKL5Sx9sn4g4uHpvbFK3fNXuBxoSyg78Ci6DaFa"
+        "exampleSignature": "3AE8idRMcSm9GE11WJTNqQvpvZZgQxJtdQ29SkrP62bXhHriewKL5Sx9sn4g4uHpvbFK3fNXuBxoSyg78Ci6DaFa",
+        "file": "asi-2026-08-direct-payments.json"
+      },
+      {
+        "projectId": "eliza",
+        "month": "2026-08",
+        "status": "sent-outside-verified-flow",
+        "network": "solana-mainnet",
+        "asset": "USDC",
+        "capUsdc": 10000,
+        "allocatedUsdc": 9999.999989,
+        "paidUsdc": 4219.710147,
+        "transfers": 53,
+        "rows": 108,
+        "paidRows": 53,
+        "unclaimedRows": 33,
+        "unclaimedUsdc": 5757.805377,
+        "heldRows": 22,
+        "heldUsdc": 22.484468,
+        "unmatched": 0,
+        "platformFee": null,
+        "firstAt": "2026-09-11T17:12:54Z",
+        "lastAt": "2026-09-11T17:27:17Z",
+        "exampleSignature": "XJGEmhbY3sWFtLoHSXXPhnWohFcDcgRDbo7f1fiTerd1HPwDYH3JuYCDSL2j8XbCfzrCL7hnJrKgFBu47bMf2GE",
+        "file": "eliza-2026-08-direct-payments.json"
       }
-    ]
+    ],
+    "settlements": []
+  },
+  "months": [
+    {
+      "month": "2026-09",
+      "counts": {
+        "merged": 1542,
+        "reviews": 2686,
+        "calendarMerged": 1388,
+        "calendarReviews": 2233
+      },
+      "uniqueContributors": 44,
+      "pools": [
+        {
+          "projectId": "asi",
+          "month": "2026-09",
+          "files": [
+            "proposal.json"
+          ],
+          "status": "proposed",
+          "generatedAt": "2026-10-01T05:52:22.205Z",
+          "approvedAt": null,
+          "reviewEndsAt": "2026-10-15T05:52:22.205Z",
+          "capUsdc": 0,
+          "contributors": 18,
+          "settlement": null
+        },
+        {
+          "projectId": "eliza",
+          "month": "2026-09",
+          "files": [
+            "proposal.json"
+          ],
+          "status": "proposed",
+          "generatedAt": "2026-10-01T05:52:22.205Z",
+          "approvedAt": null,
+          "reviewEndsAt": "2026-10-15T05:52:22.205Z",
+          "capUsdc": 0,
+          "contributors": 41,
+          "settlement": null
+        }
+      ]
+    }
+  ],
+  "cycleSnapshots": {
+    "2b1bd80aef96961667aa5ac83af631807e07fa41dfe5450a741d3b0e11c0663f": {
+      "merged": 1542,
+      "reviews": 2686,
+      "calendarMerged": 1388,
+      "calendarReviews": 2233
+    }
   },
   "projects": [
-    {
-      "id": "eliza",
-      "name": "Eliza",
-      "status": "active",
-      "kind": "monthly-pool",
-      "capDisplay": "$5,000",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "feeBasisPoints": 100,
-      "authority": "verified",
-      "repository": "https://github.com/elizaOS/eliza",
-      "prize": null
-    },
     {
       "id": "asi",
       "name": "ASI",
@@ -154,6 +237,7 @@
       "chain": "solana",
       "paymentMode": "disabled",
       "fundingState": "pledged",
+      "committedMinor": "0",
       "feeBasisPoints": 100,
       "authority": "verified",
       "repository": "https://github.com/SlopDotCash/asi",
@@ -168,10 +252,86 @@
       "chain": null,
       "paymentMode": "disabled",
       "fundingState": "external-opportunity",
+      "committedMinor": "0",
       "feeBasisPoints": 1000,
       "authority": "verified",
       "repository": "https://github.com/SlopDotCash/proximityprize",
       "prize": "https://proximityprize.org/"
+    },
+    {
+      "id": "eliza",
+      "name": "Eliza",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$5,000",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "verified",
+      "repository": "https://github.com/elizaOS/eliza",
+      "prize": null
+    },
+    {
+      "id": "canonry",
+      "name": "Canonry",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "verified",
+      "repository": "https://github.com/Canonry/canonry",
+      "prize": null
+    },
+    {
+      "id": "darling-arm64",
+      "name": "Darling arm64",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$500",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/xchemtina/darling-arm64",
+      "prize": null
+    },
+    {
+      "id": "eliza-plugin-homonym",
+      "name": "eliza-plugin-homonym",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/mutedjapandi/eliza-plugin-homonym",
+      "prize": null
+    },
+    {
+      "id": "heir-desk-sdk",
+      "name": "Heir Desk SDK",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$100",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/heirlabs/elements-sdk",
+      "prize": null
     },
     {
       "id": "heir-elements-sdk",
@@ -182,9 +342,70 @@
       "chain": "solana",
       "paymentMode": "disabled",
       "fundingState": "pledged",
+      "committedMinor": "0",
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/heirlabs/element-sdk",
+      "prize": null
+    },
+    {
+      "id": "monna-agent-permission-diff",
+      "name": "MONNA Agent Permission Diff",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "verified",
+      "repository": "https://github.com/emanalshazly/monna-agent-permission-diff",
+      "prize": null
+    },
+    {
+      "id": "nurosos",
+      "name": "NurosOS",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/modarresi1913/NurosOS",
+      "prize": null
+    },
+    {
+      "id": "payzcode-ai",
+      "name": "Payzcode AI",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/lysande62/payzcode-enterprise",
+      "prize": null
+    },
+    {
+      "id": "monna-visual-strategy-canvas",
+      "name": "Visual Strategy Canvas",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "verified",
+      "repository": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
       "prize": null
     }
   ],
