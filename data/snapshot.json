@@ -1,12 +1,12 @@
 {
-  "builtAt": "2026-10-10T21:59:19.008Z",
+  "builtAt": "2026-10-11T06:26:49.918Z",
   "leaderboard": {
-    "generatedAt": "2026-10-10T12:49:58.207Z",
+    "generatedAt": "2026-10-10T22:01:42.921Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-05T12:42:10.000Z",
-      "to": "2026-10-10T12:42:10.000Z"
+      "from": "2026-09-05T21:51:14.000Z",
+      "to": "2026-10-10T21:51:14.000Z"
     },
     "repositories": [
       {
@@ -28,52 +28,52 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 79,
-    "outcomes": 5999,
-    "mergedPullRequests": 3329,
-    "substantiveReviews": 2670,
+    "contributors": 75,
+    "outcomes": 5635,
+    "mergedPullRequests": 3247,
+    "substantiveReviews": 2388,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1830,
-    "modelDeclarations": 2160,
+    "invalidMarkers": 1660,
+    "modelDeclarations": 2035,
     "receiptCoverage": {
-      "valid": 2113,
-      "eligible": 5572
+      "valid": 2001,
+      "eligible": 5258
     },
-    "openPullRequests": 105
+    "openPullRequests": 57
   },
   "models": {
-    "declarations": 2160,
-    "signed": 528,
-    "distinctModels": 54,
+    "declarations": 2035,
+    "signed": 488,
+    "distinctModels": 52,
     "top": [
       {
         "key": "anthropic/claude-opus-5-5",
-        "declarations": 310,
+        "declarations": 363,
         "signed": 5
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 237,
+        "declarations": 230,
         "signed": 100
       },
       {
         "key": "anthropic/claude-opus-5",
-        "declarations": 177,
-        "signed": 154
-      },
-      {
-        "key": "anthropic/claude-opus-4-8",
-        "declarations": 135,
-        "signed": 0
+        "declarations": 132,
+        "signed": 119
       },
       {
         "key": "zai/glm-5.3-flash",
-        "declarations": 126,
+        "declarations": 125,
         "signed": 99
       },
       {
         "key": "xai/grok-4.7",
         "declarations": 118,
+        "signed": 0
+      },
+      {
+        "key": "orcarouter/z-ai/glm-5.3-flash-free",
+        "declarations": 104,
         "signed": 0
       }
     ]
