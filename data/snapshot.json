@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-12T06:31:53.567Z",
+  "builtAt": "2026-10-12T16:06:56.270Z",
   "sources": {
     "projects": [
       "asi",
@@ -47,12 +47,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-12T00:37:06.678Z",
+    "generatedAt": "2026-10-12T13:49:25.236Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-07T00:29:48.000Z",
-      "to": "2026-10-12T00:29:48.000Z"
+      "from": "2026-09-07T13:37:31.000Z",
+      "to": "2026-10-12T13:37:31.000Z"
     },
     "repositories": [
       {
@@ -68,47 +68,53 @@
         "projectId": "asi"
       },
       {
+        "id": "SlopDotCash/slopdotcash",
+        "displayName": "SlopDotCash/slopdotcash",
+        "url": "https://github.com/SlopDotCash/slopdotcash",
+        "projectId": "slopdotcash"
+      },
+      {
         "id": "elizaOS/proximityprize",
         "displayName": "SlopDotCash/proximityprize",
         "url": "https://github.com/SlopDotCash/proximityprize",
         "projectId": "delta-star"
       }
     ],
-    "contributors": 79,
-    "outcomes": 5663,
-    "mergedPullRequests": 3287,
-    "substantiveReviews": 2376,
+    "contributors": 89,
+    "outcomes": 5882,
+    "mergedPullRequests": 3496,
+    "substantiveReviews": 2386,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1824,
+    "invalidMarkers": 1841,
     "receiptCoverage": {
-      "valid": 2158,
-      "eligible": 5652
+      "valid": 2184,
+      "eligible": 5871
     },
-    "openPullRequests": 47
+    "openPullRequests": 121
   },
   "models": {
     "totals": {
-      "declarations": 2129,
-      "declarationsWithoutExactModel": 69,
-      "signedDeclarations": 468,
-      "declaringContributors": 34,
+      "declarations": 2152,
+      "declarationsWithoutExactModel": 72,
+      "signedDeclarations": 465,
+      "declaringContributors": 36,
       "distinctModels": 48,
       "distinctClients": 4,
-      "mergedPullRequests": 3287,
-      "mergedPullRequestsWithModel": 726,
+      "mergedPullRequests": 3496,
+      "mergedPullRequestsWithModel": 747,
       "mergedPullRequestsWithSignedRun": 15,
-      "acceptedReviews": 2376,
-      "acceptedReviewsWithModel": 1363
+      "acceptedReviews": 2386,
+      "acceptedReviewsWithModel": 1365
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 512,
-        "contributors": 10,
-        "mergedPullRequests": 347,
+        "declarations": 521,
+        "contributors": 12,
+        "mergedPullRequests": 356,
         "signedPullRequests": 2,
         "acceptedReviews": 159,
-        "topContributorShare": 0.25889328063241107
+        "topContributorShare": 0.2543689320388349
       },
       {
         "key": "xai/grok-4.7",
@@ -130,12 +136,21 @@
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 78,
+        "declarations": 84,
         "contributors": 2,
-        "mergedPullRequests": 57,
+        "mergedPullRequests": 59,
         "signedPullRequests": 0,
-        "acceptedReviews": 20,
-        "topContributorShare": 0.961038961038961
+        "acceptedReviews": 24,
+        "topContributorShare": 0.963855421686747
+      },
+      {
+        "key": "zai/glm-5.3-flash",
+        "declarations": 131,
+        "contributors": 2,
+        "mergedPullRequests": 26,
+        "signedPullRequests": 0,
+        "acceptedReviews": 103,
+        "topContributorShare": 0.7984496124031008
       },
       {
         "key": "anthropic/claude-opus-4.8",
@@ -157,21 +172,12 @@
       },
       {
         "key": "opencode/muse-spark-1.3-contributor-free",
-        "declarations": 53,
+        "declarations": 51,
         "contributors": 3,
         "mergedPullRequests": 21,
         "signedPullRequests": 0,
-        "acceptedReviews": 29,
-        "topContributorShare": 0.5
-      },
-      {
-        "key": "openai/gpt-5.6-sol",
-        "declarations": 79,
-        "contributors": 11,
-        "mergedPullRequests": 20,
-        "signedPullRequests": 3,
-        "acceptedReviews": 51,
-        "topContributorShare": 0.5492957746478874
+        "acceptedReviews": 27,
+        "topContributorShare": 0.4791666666666667
       }
     ]
   },
@@ -328,6 +334,21 @@
       "prize": null
     },
     {
+      "id": "slopdotcash",
+      "name": "Slop",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "verified",
+      "repository": "https://github.com/SlopDotCash/slopdotcash",
+      "prize": null
+    },
+    {
       "id": "canonry",
       "name": "Canonry",
       "status": "paused",
@@ -383,7 +404,7 @@
       "fundingState": "pledged",
       "committedMinor": "0",
       "feeBasisPoints": 100,
-      "authority": "unverified",
+      "authority": "verified",
       "repository": "https://github.com/feedforagents/feed",
       "prize": null
     },
@@ -460,21 +481,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lysande62/payzcode-enterprise",
-      "prize": null
-    },
-    {
-      "id": "slopdotcash",
-      "name": "Slop",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$1,000",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/SlopDotCash/slopdotcash",
       "prize": null
     },
     {
