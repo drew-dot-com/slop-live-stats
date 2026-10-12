@@ -24,7 +24,7 @@ const usdc = (minor) => Number(BigInt(minor)) / 1e6;
 // slopdotcash, main): same provider aliases, same name folding, same
 // "unavailable" exclusion, same same-actor join, same ordering. Change it
 // only alongside that file.
-const PROVIDER_ALIASES = { 'openai-codex': 'openai', 'z.ai': 'zai', 'z-ai': 'zai', 'moonshot-ai': 'moonshotai' };
+const PROVIDER_ALIASES = { 'openai-codex': 'openai', 'z.ai': 'zai', 'z-ai': 'zai', 'moonshot-ai': 'moonshotai', spacexai: 'xai', 'x-ai': 'xai' };
 function modelKey(provider, model) {
   const p0 = String(provider).trim().toLowerCase();
   const p = PROVIDER_ALIASES[p0] ?? p0;
