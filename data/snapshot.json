@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-11T23:02:47.106Z",
+  "builtAt": "2026-10-12T06:31:53.567Z",
   "sources": {
     "projects": [
       "asi",
@@ -8,12 +8,15 @@
       "delta-star",
       "eliza",
       "eliza-plugin-homonym",
+      "feed",
       "heir-desk-sdk",
       "heir-elements-sdk",
       "monna-agent-permission-diff",
       "monna-visual-strategy-canvas",
       "nurosos",
-      "payzcode-ai"
+      "payzcode-ai",
+      "slopdotcash",
+      "thenetwork"
     ],
     "disclosures": [
       "asi-2026-08-direct-payments.json",
@@ -44,12 +47,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-11T22:12:59.810Z",
+    "generatedAt": "2026-10-12T00:37:06.678Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-06T22:04:37.000Z",
-      "to": "2026-10-11T22:04:37.000Z"
+      "from": "2026-09-07T00:29:48.000Z",
+      "to": "2026-10-12T00:29:48.000Z"
     },
     "repositories": [
       {
@@ -71,59 +74,59 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 78,
-    "outcomes": 5646,
-    "mergedPullRequests": 3273,
-    "substantiveReviews": 2373,
+    "contributors": 79,
+    "outcomes": 5663,
+    "mergedPullRequests": 3287,
+    "substantiveReviews": 2376,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1806,
+    "invalidMarkers": 1824,
     "receiptCoverage": {
-      "valid": 2142,
-      "eligible": 5635
+      "valid": 2158,
+      "eligible": 5652
     },
-    "openPullRequests": 65
+    "openPullRequests": 47
   },
   "models": {
     "totals": {
-      "declarations": 2119,
-      "declarationsWithoutExactModel": 63,
-      "signedDeclarations": 471,
+      "declarations": 2129,
+      "declarationsWithoutExactModel": 69,
+      "signedDeclarations": 468,
       "declaringContributors": 34,
-      "distinctModels": 49,
+      "distinctModels": 48,
       "distinctClients": 4,
-      "mergedPullRequests": 3273,
-      "mergedPullRequestsWithModel": 707,
+      "mergedPullRequests": 3287,
+      "mergedPullRequestsWithModel": 726,
       "mergedPullRequestsWithSignedRun": 15,
-      "acceptedReviews": 2373,
-      "acceptedReviewsWithModel": 1372
+      "acceptedReviews": 2376,
+      "acceptedReviewsWithModel": 1363
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 498,
+        "declarations": 512,
         "contributors": 10,
-        "mergedPullRequests": 333,
+        "mergedPullRequests": 347,
         "signedPullRequests": 2,
         "acceptedReviews": 159,
-        "topContributorShare": 0.266260162601626
+        "topContributorShare": 0.25889328063241107
       },
       {
-        "key": "spacexai/grok-4.7",
-        "declarations": 83,
-        "contributors": 1,
-        "mergedPullRequests": 82,
+        "key": "xai/grok-4.7",
+        "declarations": 118,
+        "contributors": 2,
+        "mergedPullRequests": 89,
         "signedPullRequests": 0,
-        "acceptedReviews": 1,
-        "topContributorShare": 1
+        "acceptedReviews": 29,
+        "topContributorShare": 0.7627118644067796
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 64,
+        "declarations": 69,
         "contributors": 2,
-        "mergedPullRequests": 60,
+        "mergedPullRequests": 65,
         "signedPullRequests": 0,
         "acceptedReviews": 4,
-        "topContributorShare": 0.765625
+        "topContributorShare": 0.7101449275362319
       },
       {
         "key": "openai/gpt-5",
@@ -154,12 +157,12 @@
       },
       {
         "key": "opencode/muse-spark-1.3-contributor-free",
-        "declarations": 60,
+        "declarations": 53,
         "contributors": 3,
         "mergedPullRequests": 21,
         "signedPullRequests": 0,
-        "acceptedReviews": 36,
-        "topContributorShare": 0.5614035087719298
+        "acceptedReviews": 29,
+        "topContributorShare": 0.5
       },
       {
         "key": "openai/gpt-5.6-sol",
@@ -314,7 +317,7 @@
       "name": "Eliza",
       "status": "active",
       "kind": "monthly-pool",
-      "capDisplay": "$5,000",
+      "capDisplay": "$1,000",
       "chain": "solana",
       "paymentMode": "disabled",
       "fundingState": "pledged",
@@ -367,6 +370,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/mutedjapandi/eliza-plugin-homonym",
+      "prize": null
+    },
+    {
+      "id": "feed",
+      "name": "Feed",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/feedforagents/feed",
       "prize": null
     },
     {
@@ -442,6 +460,36 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lysande62/payzcode-enterprise",
+      "prize": null
+    },
+    {
+      "id": "slopdotcash",
+      "name": "Slop",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/SlopDotCash/slopdotcash",
+      "prize": null
+    },
+    {
+      "id": "thenetwork",
+      "name": "The Network",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/eliza-research/thenetwork",
       "prize": null
     },
     {
