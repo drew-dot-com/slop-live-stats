@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-13T14:34:31.548Z",
+  "builtAt": "2026-10-13T23:07:24.331Z",
   "sources": {
     "projects": [
       "asi",
@@ -47,12 +47,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-13T01:00:27.109Z",
+    "generatedAt": "2026-10-13T14:35:43.557Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-08T00:49:05.000Z",
-      "to": "2026-10-13T00:49:05.000Z"
+      "from": "2026-09-08T14:22:07.000Z",
+      "to": "2026-10-13T14:22:07.000Z"
     },
     "repositories": [
       {
@@ -81,26 +81,26 @@
       }
     ],
     "contributors": 94,
-    "outcomes": 5982,
-    "mergedPullRequests": 3589,
+    "outcomes": 5984,
+    "mergedPullRequests": 3591,
     "substantiveReviews": 2393,
     "evaluatedContributions": 0,
     "invalidMarkers": 1880,
     "receiptCoverage": {
       "valid": 2224,
-      "eligible": 5971
+      "eligible": 5973
     },
-    "openPullRequests": 131
+    "openPullRequests": 323
   },
   "models": {
     "totals": {
       "declarations": 2179,
       "declarationsWithoutExactModel": 86,
-      "signedDeclarations": 460,
+      "signedDeclarations": 459,
       "declaringContributors": 38,
       "distinctModels": 49,
       "distinctClients": 4,
-      "mergedPullRequests": 3589,
+      "mergedPullRequests": 3591,
       "mergedPullRequestsWithModel": 767,
       "mergedPullRequestsWithSignedRun": 15,
       "acceptedReviews": 2393,
