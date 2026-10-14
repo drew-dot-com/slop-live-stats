@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-14T17:36:11.795Z",
+  "builtAt": "2026-10-14T21:56:37.253Z",
   "sources": {
     "projects": [
       "asi",
@@ -47,12 +47,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-14T14:50:27.668Z",
+    "generatedAt": "2026-10-14T17:32:38.393Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-09T14:38:37.000Z",
-      "to": "2026-10-14T14:38:37.000Z"
+      "from": "2026-09-09T17:20:58.000Z",
+      "to": "2026-10-14T17:20:58.000Z"
     },
     "repositories": [
       {
@@ -80,31 +80,31 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 101,
-    "outcomes": 6284,
-    "mergedPullRequests": 3829,
+    "contributors": 100,
+    "outcomes": 6287,
+    "mergedPullRequests": 3832,
     "substantiveReviews": 2455,
     "evaluatedContributions": 0,
     "invalidMarkers": 2065,
     "receiptCoverage": {
       "valid": 2401,
-      "eligible": 6273
+      "eligible": 6276
     },
-    "openPullRequests": 146
+    "openPullRequests": 163
   },
   "models": {
     "totals": {
-      "declarations": 2341,
-      "declarationsWithoutExactModel": 104,
+      "declarations": 2343,
+      "declarationsWithoutExactModel": 102,
       "signedDeclarations": 463,
       "declaringContributors": 43,
       "distinctModels": 52,
       "distinctClients": 4,
-      "mergedPullRequests": 3829,
+      "mergedPullRequests": 3832,
       "mergedPullRequestsWithModel": 886,
       "mergedPullRequestsWithSignedRun": 15,
       "acceptedReviews": 2455,
-      "acceptedReviewsWithModel": 1411
+      "acceptedReviewsWithModel": 1413
     },
     "top": [
       {
@@ -127,12 +127,12 @@
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 110,
+        "declarations": 111,
         "contributors": 4,
         "mergedPullRequests": 64,
         "signedPullRequests": 0,
-        "acceptedReviews": 44,
-        "topContributorShare": 0.8611111111111112
+        "acceptedReviews": 45,
+        "topContributorShare": 0.8532110091743119
       },
       {
         "key": "anthropic/claude-fable-5.1",
