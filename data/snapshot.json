@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-15T21:46:42.926Z",
+  "builtAt": "2026-10-16T04:59:24.771Z",
   "sources": {
     "projects": [
       "asi",
@@ -7,12 +7,8 @@
       "darling-arm64",
       "delta-star",
       "eliza",
-      "eliza-plugin-homonym",
       "feed",
-      "heir-desk-sdk",
       "heir-elements-sdk",
-      "monna-agent-permission-diff",
-      "monna-visual-strategy-canvas",
       "nurosos",
       "payzcode-ai",
       "slopdotcash",
@@ -47,12 +43,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-15T19:30:35.676Z",
+    "generatedAt": "2026-10-16T01:37:11.178Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-10T19:15:08.000Z",
-      "to": "2026-10-15T19:15:08.000Z"
+      "from": "2026-09-11T01:25:47.000Z",
+      "to": "2026-10-16T01:25:47.000Z"
     },
     "repositories": [
       {
@@ -78,61 +74,76 @@
         "displayName": "SlopDotCash/proximityprize",
         "url": "https://github.com/SlopDotCash/proximityprize",
         "projectId": "delta-star"
+      },
+      {
+        "id": "eliza-research/thenetwork",
+        "displayName": "eliza-research/thenetwork",
+        "url": "https://github.com/eliza-research/thenetwork",
+        "projectId": "thenetwork"
       }
     ],
-    "contributors": 106,
-    "outcomes": 6463,
-    "mergedPullRequests": 4025,
-    "substantiveReviews": 2438,
+    "contributors": 105,
+    "outcomes": 6494,
+    "mergedPullRequests": 4090,
+    "substantiveReviews": 2404,
     "evaluatedContributions": 0,
-    "invalidMarkers": 2153,
+    "invalidMarkers": 2155,
     "receiptCoverage": {
-      "valid": 2492,
-      "eligible": 6449
+      "valid": 2490,
+      "eligible": 6480
     },
-    "openPullRequests": 244
+    "openPullRequests": 189
   },
   "models": {
     "totals": {
-      "declarations": 2411,
-      "declarationsWithoutExactModel": 131,
-      "signedDeclarations": 453,
-      "declaringContributors": 46,
+      "declarations": 2410,
+      "declarationsWithoutExactModel": 130,
+      "signedDeclarations": 448,
+      "declaringContributors": 47,
       "distinctModels": 54,
       "distinctClients": 4,
-      "mergedPullRequests": 4025,
-      "mergedPullRequestsWithModel": 957,
+      "mergedPullRequests": 4090,
+      "mergedPullRequestsWithModel": 979,
       "mergedPullRequestsWithSignedRun": 15,
-      "acceptedReviews": 2438,
-      "acceptedReviewsWithModel": 1404
+      "acceptedReviews": 2404,
+      "acceptedReviewsWithModel": 1381
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 677,
+        "declarations": 691,
         "contributors": 13,
-        "mergedPullRequests": 504,
+        "mergedPullRequests": 518,
         "signedPullRequests": 2,
         "acceptedReviews": 161,
-        "topContributorShare": 0.2781954887218045
+        "topContributorShare": 0.2930780559646539
       },
       {
         "key": "xai/grok-4.7",
-        "declarations": 118,
-        "contributors": 2,
-        "mergedPullRequests": 89,
+        "declarations": 119,
+        "contributors": 3,
+        "mergedPullRequests": 90,
         "signedPullRequests": 0,
         "acceptedReviews": 29,
-        "topContributorShare": 0.7627118644067796
+        "topContributorShare": 0.7563025210084033
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 126,
+        "declarations": 123,
         "contributors": 4,
         "mergedPullRequests": 67,
         "signedPullRequests": 0,
-        "acceptedReviews": 56,
-        "topContributorShare": 0.7723577235772358
+        "acceptedReviews": 53,
+        "topContributorShare": 0.7833333333333333
+      },
+      {
+        "key": "meta/muse-spark",
+        "declarations": 66,
+        "contributors": 3,
+        "mergedPullRequests": 59,
+        "signedPullRequests": 0,
+        "acceptedReviews": 7,
+        "topContributorShare": 0.8939393939393939
       },
       {
         "key": "anthropic/claude-fable-5.1",
@@ -142,15 +153,6 @@
         "signedPullRequests": 0,
         "acceptedReviews": 25,
         "topContributorShare": 0.5641025641025641
-      },
-      {
-        "key": "meta/muse-spark",
-        "declarations": 59,
-        "contributors": 3,
-        "mergedPullRequests": 53,
-        "signedPullRequests": 0,
-        "acceptedReviews": 6,
-        "topContributorShare": 0.8983050847457628
       },
       {
         "key": "zai/glm-5.3-flash",
@@ -163,11 +165,11 @@
       },
       {
         "key": "anthropic/claude-opus-4.8",
-        "declarations": 61,
+        "declarations": 60,
         "contributors": 1,
         "mergedPullRequests": 24,
         "signedPullRequests": 0,
-        "acceptedReviews": 37,
+        "acceptedReviews": 36,
         "topContributorShare": 1
       },
       {
@@ -349,6 +351,21 @@
       "prize": null
     },
     {
+      "id": "thenetwork",
+      "name": "The Network",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/eliza-research/thenetwork",
+      "prize": null
+    },
+    {
       "id": "canonry",
       "name": "Canonry",
       "status": "paused",
@@ -368,21 +385,6 @@
       "name": "Darling arm64",
       "status": "paused",
       "kind": "monthly-pool",
-      "capDisplay": "$500",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/xchemtina/darling-arm64",
-      "prize": null
-    },
-    {
-      "id": "eliza-plugin-homonym",
-      "name": "eliza-plugin-homonym",
-      "status": "paused",
-      "kind": "monthly-pool",
       "capDisplay": "$0",
       "chain": "solana",
       "paymentMode": "disabled",
@@ -390,7 +392,7 @@
       "committedMinor": "0",
       "feeBasisPoints": 100,
       "authority": "unverified",
-      "repository": "https://github.com/mutedjapandi/eliza-plugin-homonym",
+      "repository": "https://github.com/xchemtina/darling-arm64",
       "prize": null
     },
     {
@@ -409,21 +411,6 @@
       "prize": null
     },
     {
-      "id": "heir-desk-sdk",
-      "name": "Heir Desk SDK",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$100",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/heirlabs/elements-sdk",
-      "prize": null
-    },
-    {
       "id": "heir-elements-sdk",
       "name": "Heir Elements SDK",
       "status": "paused",
@@ -436,21 +423,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/heirlabs/element-sdk",
-      "prize": null
-    },
-    {
-      "id": "monna-agent-permission-diff",
-      "name": "MONNA Agent Permission Diff",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "verified",
-      "repository": "https://github.com/emanalshazly/monna-agent-permission-diff",
       "prize": null
     },
     {
@@ -481,36 +453,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lysande62/payzcode-enterprise",
-      "prize": null
-    },
-    {
-      "id": "thenetwork",
-      "name": "The Network",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$1,000",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/eliza-research/thenetwork",
-      "prize": null
-    },
-    {
-      "id": "monna-visual-strategy-canvas",
-      "name": "Visual Strategy Canvas",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "verified",
-      "repository": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
       "prize": null
     }
   ],
