@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-16T11:54:39.244Z",
+  "builtAt": "2026-10-16T16:57:27.413Z",
   "sources": {
     "projects": [
       "asi",
@@ -43,12 +43,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-16T01:37:11.178Z",
+    "generatedAt": "2026-10-16T12:45:19.108Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-11T01:25:47.000Z",
-      "to": "2026-10-16T01:25:47.000Z"
+      "from": "2026-09-11T12:31:45.000Z",
+      "to": "2026-10-16T12:31:45.000Z"
     },
     "repositories": [
       {
@@ -83,40 +83,40 @@
       }
     ],
     "contributors": 105,
-    "outcomes": 6494,
-    "mergedPullRequests": 4090,
-    "substantiveReviews": 2404,
+    "outcomes": 6508,
+    "mergedPullRequests": 4105,
+    "substantiveReviews": 2403,
     "evaluatedContributions": 0,
-    "invalidMarkers": 2155,
+    "invalidMarkers": 2165,
     "receiptCoverage": {
-      "valid": 2490,
-      "eligible": 6480
+      "valid": 2501,
+      "eligible": 6494
     },
-    "openPullRequests": 189
+    "openPullRequests": 266
   },
   "models": {
     "totals": {
-      "declarations": 2410,
-      "declarationsWithoutExactModel": 130,
-      "signedDeclarations": 448,
+      "declarations": 2419,
+      "declarationsWithoutExactModel": 132,
+      "signedDeclarations": 447,
       "declaringContributors": 47,
       "distinctModels": 54,
       "distinctClients": 4,
-      "mergedPullRequests": 4090,
-      "mergedPullRequestsWithModel": 979,
+      "mergedPullRequests": 4105,
+      "mergedPullRequestsWithModel": 987,
       "mergedPullRequestsWithSignedRun": 15,
-      "acceptedReviews": 2404,
-      "acceptedReviewsWithModel": 1381
+      "acceptedReviews": 2403,
+      "acceptedReviewsWithModel": 1382
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 691,
+        "declarations": 699,
         "contributors": 13,
-        "mergedPullRequests": 518,
+        "mergedPullRequests": 526,
         "signedPullRequests": 2,
         "acceptedReviews": 161,
-        "topContributorShare": 0.2930780559646539
+        "topContributorShare": 0.30131004366812225
       },
       {
         "key": "xai/grok-4.7",
