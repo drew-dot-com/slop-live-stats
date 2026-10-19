@@ -2,12 +2,15 @@
 // Runs in Node (scripts/build.mjs) and in the browser (index.html).
 // Inputs are public files; the output is aggregate-only, no per-person rows.
 
-// Production is `main` since the 9 Oct 2026 cutover; `develop` is frozen.
 export const REPO = 'SlopDotCash/slopdotcash';
-export const BRANCH = 'main';
+// #876 (19 Oct 2026) moved projects to a D1 registry and deleted projects/,
+// cycles/ and disclosures/ from the repository. Those records now live only
+// in history, so they are read from the last `main` commit that had them.
+export const ARCHIVE_REF = '109c7640298f9e0652eed9056e78705b776f79a6';
 export const SOURCES = {
   leaderboard: 'https://slop.cash/data/leaderboard.json',
-  raw: `https://raw.githubusercontent.com/${REPO}/${BRANCH}/`,
+  registry: 'https://slop.cash/api/v1/projects',
+  raw: `https://raw.githubusercontent.com/${REPO}/${ARCHIVE_REF}/`,
   api: `https://api.github.com/repos/${REPO}/contents/`,
   // The first frozen proposal, kept as a fixed reference line under Pools.
   proposal: 'cycles/eliza/2026-07/proposal.json',
@@ -269,13 +272,16 @@ export function aggregateMonths(cycles, snaps) {
   });
 }
 
-// Lists the repository directories the page reads, so new pools, disclosures
-// and monthly cycles appear without a code change. Node only (the scheduled
-// build); the browser reuses the list stored in the snapshot.
+// Lists what the page reads. Projects come from the live registry; while it is
+// empty (production after #876, until the projects are re-added) they come
+// from the archive commit. Node only (the scheduled build); the browser reuses
+// the list stored in the snapshot.
 export async function discover(fetchJson) {
-  const ls = (path) => fetchJson(`${SOURCES.api}${path}?ref=${BRANCH}`);
+  const ls = (path) => fetchJson(`${SOURCES.api}${path}?ref=${ARCHIVE_REF}`);
   const dirs = (xs) => xs.filter((x) => x.type === 'dir').map((x) => x.name).sort();
-  const projects = dirs(await ls('projects'));
+  const registry = (await fetchJson(SOURCES.registry)).projects.map((p) => p.id).sort();
+  const projectSource = registry.length ? 'registry' : 'archive';
+  const projects = registry.length ? registry : dirs(await ls('projects'));
   const disclosures = (await ls('disclosures')).filter((x) => x.type === 'file' && x.name.endsWith('.json')).map((x) => x.name).sort();
   const cycles = [];
   for (const projectId of dirs(await ls('cycles'))) {
@@ -286,7 +292,7 @@ export async function discover(fetchJson) {
       cycles.push({ projectId, month, files: CYCLE_FILES.filter((f) => names.has(f)) });
     }
   }
-  return { projects, disclosures, cycles };
+  return { projects, projectSource, disclosures, cycles };
 }
 
 // Fetches and aggregates everything the page shows. `sources` comes from
@@ -299,7 +305,9 @@ export async function loadAll(fetchJson, sources, { cycleSnapshots = {}, fetchCy
   const [lb, disclosureDocs, projectDocs, proposalDoc, cycleDocs] = await Promise.all([
     fetchJson(SOURCES.leaderboard),
     Promise.all(sources.disclosures.map((f) => raw('disclosures/' + f))),
-    Promise.all(sources.projects.map((p) => raw(`projects/${p}/project.json`))),
+    sources.projectSource === 'registry'
+      ? fetchJson(SOURCES.registry).then((r) => r.projects)
+      : Promise.all(sources.projects.map((p) => raw(`projects/${p}/project.json`))),
     raw(SOURCES.proposal),
     Promise.all(sources.cycles.map(async (c) => {
       const docs = {};
@@ -307,6 +315,10 @@ export async function loadAll(fetchJson, sources, { cycleSnapshots = {}, fetchCy
       return aggregateCycle(c.projectId, c.month, c.files, docs);
     })),
   ]);
+  // An empty ledger means slop.cash has no registered repositories (production
+  // after #876, until projects are re-added), not zero activity. Refuse it so
+  // the build and the page keep the last good snapshot.
+  if (!lb.ledger?.length) throw new Error('slop.cash leaderboard is empty');
   const disclosures = disclosureDocs.map((d, i) => ({ ...aggregateDisclosure(d), file: sources.disclosures[i] }));
   const order = { active: 0, paused: 1 };
   const projects = projectDocs.map(aggregateProject)
