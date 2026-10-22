@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-20T17:31:47.877Z",
+  "builtAt": "2026-10-22T20:07:33.578Z",
   "sources": {
     "projects": [
       "asi",
@@ -44,12 +44,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-20T06:25:22.364Z",
+    "generatedAt": "2026-10-22T12:02:58.846Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-15T06:14:11.000Z",
-      "to": "2026-10-20T06:14:11.000Z"
+      "from": "2026-09-17T11:47:24.000Z",
+      "to": "2026-10-22T11:47:24.000Z"
     },
     "repositories": [
       {
@@ -83,50 +83,50 @@
         "projectId": "thenetwork"
       }
     ],
-    "contributors": 106,
-    "outcomes": 5327,
-    "mergedPullRequests": 3493,
-    "substantiveReviews": 1834,
+    "contributors": 109,
+    "outcomes": 5248,
+    "mergedPullRequests": 3505,
+    "substantiveReviews": 1743,
     "evaluatedContributions": 0,
-    "invalidMarkers": 950,
+    "invalidMarkers": 944,
     "receiptCoverage": {
-      "valid": 1907,
-      "eligible": 5310
+      "valid": 1876,
+      "eligible": 5219
     },
-    "openPullRequests": 391
+    "openPullRequests": 436
   },
   "models": {
     "totals": {
-      "declarations": 1787,
-      "declarationsWithoutExactModel": 145,
+      "declarations": 1761,
+      "declarationsWithoutExactModel": 146,
       "signedDeclarations": 0,
-      "declaringContributors": 46,
+      "declaringContributors": 45,
       "distinctModels": 50,
       "distinctClients": 0,
-      "mergedPullRequests": 3493,
-      "mergedPullRequestsWithModel": 659,
+      "mergedPullRequests": 3505,
+      "mergedPullRequestsWithModel": 663,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 1834,
-      "acceptedReviewsWithModel": 1104
+      "acceptedReviews": 1743,
+      "acceptedReviewsWithModel": 1068
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 468,
-        "contributors": 12,
-        "mergedPullRequests": 342,
+        "declarations": 479,
+        "contributors": 11,
+        "mergedPullRequests": 347,
         "signedPullRequests": 0,
         "acceptedReviews": 120,
-        "topContributorShare": 0.2792207792207792
+        "topContributorShare": 0.2762312633832976
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 126,
+        "declarations": 129,
         "contributors": 4,
         "mergedPullRequests": 111,
         "signedPullRequests": 0,
-        "acceptedReviews": 15,
-        "topContributorShare": 0.6904761904761905
+        "acceptedReviews": 18,
+        "topContributorShare": 0.6744186046511628
       },
       {
         "key": "zai/glm-5.3-flash",
