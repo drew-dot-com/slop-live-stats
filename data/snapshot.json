@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-23T18:45:18.626Z",
+  "builtAt": "2026-10-24T05:01:17.855Z",
   "sources": {
     "projects": [
       "asi",
@@ -44,12 +44,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-23T05:03:01.635Z",
+    "generatedAt": "2026-10-23T21:40:41.813Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-18T04:45:08.000Z",
-      "to": "2026-10-23T04:45:08.000Z"
+      "from": "2026-09-18T21:22:24.000Z",
+      "to": "2026-10-23T21:22:24.000Z"
     },
     "repositories": [
       {
@@ -84,40 +84,40 @@
       }
     ],
     "contributors": 112,
-    "outcomes": 6799,
-    "mergedPullRequests": 4607,
-    "substantiveReviews": 2192,
+    "outcomes": 6837,
+    "mergedPullRequests": 4653,
+    "substantiveReviews": 2184,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1368,
+    "invalidMarkers": 1367,
     "receiptCoverage": {
-      "valid": 2731,
-      "eligible": 6770
+      "valid": 2728,
+      "eligible": 6808
     },
-    "openPullRequests": 482
+    "openPullRequests": 516
   },
   "models": {
     "totals": {
-      "declarations": 2562,
+      "declarations": 2559,
       "declarationsWithoutExactModel": 208,
       "signedDeclarations": 0,
       "declaringContributors": 51,
       "distinctModels": 54,
       "distinctClients": 0,
-      "mergedPullRequests": 4607,
-      "mergedPullRequestsWithModel": 1218,
+      "mergedPullRequests": 4653,
+      "mergedPullRequestsWithModel": 1220,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2192,
-      "acceptedReviewsWithModel": 1306
+      "acceptedReviews": 2184,
+      "acceptedReviewsWithModel": 1301
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 804,
+        "declarations": 805,
         "contributors": 13,
-        "mergedPullRequests": 620,
+        "mergedPullRequests": 621,
         "signedPullRequests": 0,
         "acceptedReviews": 172,
-        "topContributorShare": 0.3434343434343434
+        "topContributorShare": 0.34300126103404793
       },
       {
         "key": "openai/gpt-5",
@@ -157,12 +157,12 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 256,
+        "declarations": 257,
         "contributors": 6,
-        "mergedPullRequests": 30,
+        "mergedPullRequests": 31,
         "signedPullRequests": 0,
         "acceptedReviews": 226,
-        "topContributorShare": 0.3828125
+        "topContributorShare": 0.38132295719844356
       },
       {
         "key": "zai/glm-5.3-flash",
