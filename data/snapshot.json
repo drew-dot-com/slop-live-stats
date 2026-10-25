@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-24T21:11:18.034Z",
+  "builtAt": "2026-10-25T05:17:39.666Z",
   "sources": {
     "projects": [
       "asi",
@@ -44,12 +44,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-24T04:10:38.276Z",
+    "generatedAt": "2026-10-25T00:20:47.234Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-19T03:58:02.000Z",
-      "to": "2026-10-24T03:58:02.000Z"
+      "from": "2026-09-20T00:05:14.000Z",
+      "to": "2026-10-25T00:05:14.000Z"
     },
     "repositories": [
       {
@@ -83,31 +83,31 @@
         "projectId": "thenetwork"
       }
     ],
-    "contributors": 111,
-    "outcomes": 6874,
-    "mergedPullRequests": 4700,
-    "substantiveReviews": 2174,
+    "contributors": 112,
+    "outcomes": 6927,
+    "mergedPullRequests": 4807,
+    "substantiveReviews": 2120,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1363,
+    "invalidMarkers": 1341,
     "receiptCoverage": {
-      "valid": 2733,
-      "eligible": 6845
+      "valid": 2718,
+      "eligible": 6898
     },
-    "openPullRequests": 543
+    "openPullRequests": 640
   },
   "models": {
     "totals": {
-      "declarations": 2564,
+      "declarations": 2549,
       "declarationsWithoutExactModel": 208,
       "signedDeclarations": 0,
       "declaringContributors": 51,
       "distinctModels": 54,
       "distinctClients": 0,
-      "mergedPullRequests": 4700,
-      "mergedPullRequestsWithModel": 1229,
+      "mergedPullRequests": 4807,
+      "mergedPullRequestsWithModel": 1238,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2174,
-      "acceptedReviewsWithModel": 1297
+      "acceptedReviews": 2120,
+      "acceptedReviewsWithModel": 1273
     },
     "top": [
       {
@@ -130,21 +130,21 @@
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 136,
+        "declarations": 137,
         "contributors": 5,
         "mergedPullRequests": 112,
         "signedPullRequests": 0,
-        "acceptedReviews": 24,
-        "topContributorShare": 0.6470588235294118
+        "acceptedReviews": 25,
+        "topContributorShare": 0.6423357664233577
       },
       {
         "key": "xai/grok-4.7",
-        "declarations": 119,
+        "declarations": 123,
         "contributors": 3,
-        "mergedPullRequests": 90,
+        "mergedPullRequests": 94,
         "signedPullRequests": 0,
         "acceptedReviews": 29,
-        "topContributorShare": 0.7563025210084033
+        "topContributorShare": 0.7642276422764228
       },
       {
         "key": "anthropic/claude-fable-5.1",
@@ -157,21 +157,21 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 260,
+        "declarations": 247,
         "contributors": 6,
         "mergedPullRequests": 39,
         "signedPullRequests": 0,
-        "acceptedReviews": 221,
-        "topContributorShare": 0.3576923076923077
+        "acceptedReviews": 208,
+        "topContributorShare": 0.3441295546558704
       },
       {
         "key": "zai/glm-5.3-flash",
-        "declarations": 137,
+        "declarations": 138,
         "contributors": 3,
-        "mergedPullRequests": 30,
+        "mergedPullRequests": 32,
         "signedPullRequests": 0,
-        "acceptedReviews": 105,
-        "topContributorShare": 0.7555555555555555
+        "acceptedReviews": 104,
+        "topContributorShare": 0.7426470588235294
       },
       {
         "key": "anthropic/claude-opus-4.8",
