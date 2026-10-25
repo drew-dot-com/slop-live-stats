@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-25T16:48:35.106Z",
+  "builtAt": "2026-10-25T21:14:05.317Z",
   "sources": {
     "projects": [
       "asi",
@@ -44,12 +44,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-25T07:02:51.059Z",
+    "generatedAt": "2026-10-25T16:12:04.120Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-20T06:48:36.000Z",
-      "to": "2026-10-25T06:48:36.000Z"
+      "from": "2026-09-20T15:55:42.000Z",
+      "to": "2026-10-25T15:55:42.000Z"
     },
     "repositories": [
       {
@@ -83,41 +83,41 @@
         "projectId": "thenetwork"
       }
     ],
-    "contributors": 114,
-    "outcomes": 6935,
-    "mergedPullRequests": 4844,
-    "substantiveReviews": 2091,
+    "contributors": 113,
+    "outcomes": 6928,
+    "mergedPullRequests": 4863,
+    "substantiveReviews": 2065,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1326,
+    "invalidMarkers": 1310,
     "receiptCoverage": {
-      "valid": 2705,
-      "eligible": 6906
+      "valid": 2690,
+      "eligible": 6899
     },
-    "openPullRequests": 662
+    "openPullRequests": 758
   },
   "models": {
     "totals": {
-      "declarations": 2535,
+      "declarations": 2520,
       "declarationsWithoutExactModel": 209,
       "signedDeclarations": 0,
       "declaringContributors": 52,
       "distinctModels": 55,
       "distinctClients": 0,
-      "mergedPullRequests": 4844,
-      "mergedPullRequestsWithModel": 1239,
+      "mergedPullRequests": 4863,
+      "mergedPullRequestsWithModel": 1241,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2091,
-      "acceptedReviewsWithModel": 1258
+      "acceptedReviews": 2065,
+      "acceptedReviewsWithModel": 1241
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 807,
+        "declarations": 808,
         "contributors": 13,
-        "mergedPullRequests": 623,
+        "mergedPullRequests": 624,
         "signedPullRequests": 0,
         "acceptedReviews": 172,
-        "topContributorShare": 0.3421383647798742
+        "topContributorShare": 0.3417085427135678
       },
       {
         "key": "openai/gpt-5",
@@ -130,12 +130,12 @@
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 138,
+        "declarations": 139,
         "contributors": 5,
-        "mergedPullRequests": 112,
+        "mergedPullRequests": 113,
         "signedPullRequests": 0,
         "acceptedReviews": 26,
-        "topContributorShare": 0.6376811594202898
+        "topContributorShare": 0.6330935251798561
       },
       {
         "key": "xai/grok-4.7",
@@ -157,12 +157,12 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 243,
+        "declarations": 227,
         "contributors": 6,
         "mergedPullRequests": 39,
         "signedPullRequests": 0,
-        "acceptedReviews": 204,
-        "topContributorShare": 0.3497942386831276
+        "acceptedReviews": 188,
+        "topContributorShare": 0.3744493392070485
       },
       {
         "key": "zai/glm-5.3-flash",
@@ -342,11 +342,11 @@
       "status": "active",
       "kind": "monthly-pool",
       "capDisplay": "$1,000",
-      "chain": "solana",
+      "chain": "base",
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
-      "feeBasisPoints": 100,
+      "feeBasisPoints": 200,
       "authority": "verified",
       "repository": "https://github.com/SlopDotCash/slopdotcash",
       "prize": null
@@ -356,12 +356,12 @@
       "name": "The Network",
       "status": "active",
       "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "solana",
+      "capDisplay": "$1,000",
+      "chain": "ethereum",
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
-      "feeBasisPoints": 100,
+      "feeBasisPoints": 200,
       "authority": "unverified",
       "repository": "https://github.com/eliza-research/thenetwork",
       "prize": null
