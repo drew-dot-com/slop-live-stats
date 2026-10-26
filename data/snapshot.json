@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-26T13:33:11.707Z",
+  "builtAt": "2026-10-26T22:52:36.482Z",
   "sources": {
     "projects": [
       "asi",
@@ -8,12 +8,15 @@
       "delta-star",
       "eliza",
       "feed",
+      "fly-ai",
       "heir-elements-sdk",
+      "monna-agent-permission-diff",
       "nurosos",
       "payzcode-ai",
       "pumpfun-source",
       "slopdotcash",
-      "thenetwork"
+      "thenetwork",
+      "visual-strategy-canvas"
     ],
     "projectSource": "registry",
     "disclosures": [
@@ -45,12 +48,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-26T07:59:32.697Z",
+    "generatedAt": "2026-10-26T17:25:27.402Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-21T07:44:40.000Z",
-      "to": "2026-10-26T07:44:40.000Z"
+      "from": "2026-09-21T17:05:00.000Z",
+      "to": "2026-10-26T17:05:00.000Z"
     },
     "repositories": [
       {
@@ -84,41 +87,41 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 114,
-    "outcomes": 6986,
-    "mergedPullRequests": 4932,
-    "substantiveReviews": 2054,
+    "contributors": 115,
+    "outcomes": 7024,
+    "mergedPullRequests": 4967,
+    "substantiveReviews": 2057,
     "evaluatedContributions": 0,
     "invalidMarkers": 1307,
     "receiptCoverage": {
-      "valid": 2690,
-      "eligible": 6957
+      "valid": 2697,
+      "eligible": 6995
     },
-    "openPullRequests": 925
+    "openPullRequests": 1024
   },
   "models": {
     "totals": {
-      "declarations": 2520,
+      "declarations": 2527,
       "declarationsWithoutExactModel": 209,
       "signedDeclarations": 0,
       "declaringContributors": 53,
       "distinctModels": 57,
       "distinctClients": 0,
-      "mergedPullRequests": 4932,
-      "mergedPullRequestsWithModel": 1248,
+      "mergedPullRequests": 4967,
+      "mergedPullRequestsWithModel": 1252,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2054,
-      "acceptedReviewsWithModel": 1234
+      "acceptedReviews": 2057,
+      "acceptedReviewsWithModel": 1237
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 808,
+        "declarations": 812,
         "contributors": 13,
-        "mergedPullRequests": 624,
+        "mergedPullRequests": 628,
         "signedPullRequests": 0,
         "acceptedReviews": 172,
-        "topContributorShare": 0.3417085427135678
+        "topContributorShare": 0.34125
       },
       {
         "key": "openai/gpt-5",
@@ -131,12 +134,12 @@
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 139,
+        "declarations": 143,
         "contributors": 5,
         "mergedPullRequests": 113,
         "signedPullRequests": 0,
-        "acceptedReviews": 26,
-        "topContributorShare": 0.6330935251798561
+        "acceptedReviews": 30,
+        "topContributorShare": 0.6153846153846154
       },
       {
         "key": "xai/grok-4.7",
@@ -413,6 +416,21 @@
       "prize": null
     },
     {
+      "id": "fly-ai",
+      "name": "fly.ai",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/alextitonis/fly.ai",
+      "prize": null
+    },
+    {
       "id": "heir-elements-sdk",
       "name": "Heir Elements SDK",
       "status": "paused",
@@ -425,6 +443,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/heirlabs/element-sdk",
+      "prize": null
+    },
+    {
+      "id": "monna-agent-permission-diff",
+      "name": "MONNA Agent Permission Diff",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/emanalshazly/monna-agent-permission-diff",
       "prize": null
     },
     {
@@ -470,6 +503,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lalalune/pumpfun-source",
+      "prize": null
+    },
+    {
+      "id": "visual-strategy-canvas",
+      "name": "Visual Strategy Canvas",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
       "prize": null
     }
   ],
