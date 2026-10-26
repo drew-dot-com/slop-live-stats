@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-26T05:17:00.379Z",
+  "builtAt": "2026-10-26T13:33:11.707Z",
   "sources": {
     "projects": [
       "asi",
@@ -11,6 +11,7 @@
       "heir-elements-sdk",
       "nurosos",
       "payzcode-ai",
+      "pumpfun-source",
       "slopdotcash",
       "thenetwork"
     ],
@@ -44,12 +45,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-26T04:15:13.803Z",
+    "generatedAt": "2026-10-26T07:59:32.697Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-21T03:59:00.000Z",
-      "to": "2026-10-26T03:59:00.000Z"
+      "from": "2026-09-21T07:44:40.000Z",
+      "to": "2026-10-26T07:44:40.000Z"
     },
     "repositories": [
       {
@@ -84,30 +85,30 @@
       }
     ],
     "contributors": 114,
-    "outcomes": 6958,
-    "mergedPullRequests": 4905,
-    "substantiveReviews": 2053,
+    "outcomes": 6986,
+    "mergedPullRequests": 4932,
+    "substantiveReviews": 2054,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1306,
+    "invalidMarkers": 1307,
     "receiptCoverage": {
-      "valid": 2689,
-      "eligible": 6929
+      "valid": 2690,
+      "eligible": 6957
     },
-    "openPullRequests": 892
+    "openPullRequests": 925
   },
   "models": {
     "totals": {
-      "declarations": 2519,
+      "declarations": 2520,
       "declarationsWithoutExactModel": 209,
       "signedDeclarations": 0,
       "declaringContributors": 53,
       "distinctModels": 57,
       "distinctClients": 0,
-      "mergedPullRequests": 4905,
-      "mergedPullRequestsWithModel": 1246,
+      "mergedPullRequests": 4932,
+      "mergedPullRequestsWithModel": 1248,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2053,
-      "acceptedReviewsWithModel": 1235
+      "acceptedReviews": 2054,
+      "acceptedReviewsWithModel": 1234
     },
     "top": [
       {
@@ -157,12 +158,12 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 227,
+        "declarations": 226,
         "contributors": 6,
         "mergedPullRequests": 39,
         "signedPullRequests": 0,
-        "acceptedReviews": 188,
-        "topContributorShare": 0.3744493392070485
+        "acceptedReviews": 187,
+        "topContributorShare": 0.37610619469026546
       },
       {
         "key": "zai/glm-5.3-flash",
@@ -454,6 +455,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lysande62/payzcode-enterprise",
+      "prize": null
+    },
+    {
+      "id": "pumpfun-source",
+      "name": "pumpfun-source",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/lalalune/pumpfun-source",
       "prize": null
     }
   ],
