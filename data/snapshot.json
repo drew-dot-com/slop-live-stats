@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-25T21:14:05.317Z",
+  "builtAt": "2026-10-26T05:17:00.379Z",
   "sources": {
     "projects": [
       "asi",
@@ -44,12 +44,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-25T16:12:04.120Z",
+    "generatedAt": "2026-10-26T04:15:13.803Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-20T15:55:42.000Z",
-      "to": "2026-10-25T15:55:42.000Z"
+      "from": "2026-09-21T03:59:00.000Z",
+      "to": "2026-10-26T03:59:00.000Z"
     },
     "repositories": [
       {
@@ -71,43 +71,43 @@
         "projectId": "slopdotcash"
       },
       {
-        "id": "SlopDotCash/proximityprize",
-        "displayName": "SlopDotCash/proximityprize",
-        "url": "https://github.com/SlopDotCash/proximityprize",
-        "projectId": "delta-star"
-      },
-      {
         "id": "eliza-research/thenetwork",
         "displayName": "eliza-research/thenetwork",
         "url": "https://github.com/eliza-research/thenetwork",
         "projectId": "thenetwork"
+      },
+      {
+        "id": "SlopDotCash/proximityprize",
+        "displayName": "SlopDotCash/proximityprize",
+        "url": "https://github.com/SlopDotCash/proximityprize",
+        "projectId": "delta-star"
       }
     ],
-    "contributors": 113,
-    "outcomes": 6928,
-    "mergedPullRequests": 4863,
-    "substantiveReviews": 2065,
+    "contributors": 114,
+    "outcomes": 6958,
+    "mergedPullRequests": 4905,
+    "substantiveReviews": 2053,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1310,
+    "invalidMarkers": 1306,
     "receiptCoverage": {
-      "valid": 2690,
-      "eligible": 6899
+      "valid": 2689,
+      "eligible": 6929
     },
-    "openPullRequests": 758
+    "openPullRequests": 892
   },
   "models": {
     "totals": {
-      "declarations": 2520,
+      "declarations": 2519,
       "declarationsWithoutExactModel": 209,
       "signedDeclarations": 0,
-      "declaringContributors": 52,
-      "distinctModels": 55,
+      "declaringContributors": 53,
+      "distinctModels": 57,
       "distinctClients": 0,
-      "mergedPullRequests": 4863,
-      "mergedPullRequestsWithModel": 1241,
+      "mergedPullRequests": 4905,
+      "mergedPullRequestsWithModel": 1246,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2065,
-      "acceptedReviewsWithModel": 1241
+      "acceptedReviews": 2053,
+      "acceptedReviewsWithModel": 1235
     },
     "top": [
       {
@@ -166,12 +166,12 @@
       },
       {
         "key": "zai/glm-5.3-flash",
-        "declarations": 127,
+        "declarations": 124,
         "contributors": 3,
-        "mergedPullRequests": 32,
+        "mergedPullRequests": 33,
         "signedPullRequests": 0,
-        "acceptedReviews": 93,
-        "topContributorShare": 0.72
+        "acceptedReviews": 89,
+        "topContributorShare": 0.7049180327868853
       },
       {
         "key": "anthropic/claude-opus-4.8",
@@ -297,11 +297,11 @@
       "status": "active",
       "kind": "monthly-pool",
       "capDisplay": "$1,000",
-      "chain": "solana",
+      "chain": "robinhood",
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
-      "feeBasisPoints": 100,
+      "feeBasisPoints": 200,
       "authority": "verified",
       "repository": "https://github.com/SlopDotCash/asi",
       "prize": null
@@ -331,7 +331,7 @@
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
-      "feeBasisPoints": 100,
+      "feeBasisPoints": 200,
       "authority": "verified",
       "repository": "https://github.com/elizaOS/eliza",
       "prize": null
