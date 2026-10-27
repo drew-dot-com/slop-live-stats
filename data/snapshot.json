@@ -1,10 +1,11 @@
 {
-  "builtAt": "2026-10-27T05:35:52.782Z",
+  "builtAt": "2026-10-27T12:40:23.025Z",
   "sources": {
     "projects": [
       "asi",
       "canonry",
       "darling-arm64",
+      "delta-git",
       "delta-star",
       "eliza",
       "feed",
@@ -16,6 +17,7 @@
       "pumpfun-source",
       "slopdotcash",
       "thenetwork",
+      "umia-protocol",
       "visual-strategy-canvas"
     ],
     "projectSource": "registry",
@@ -48,12 +50,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-27T03:28:41.438Z",
+    "generatedAt": "2026-10-27T05:25:55.898Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-22T03:12:05.000Z",
-      "to": "2026-10-27T03:12:05.000Z"
+      "from": "2026-09-22T05:08:33.000Z",
+      "to": "2026-10-27T05:08:33.000Z"
     },
     "repositories": [
       {
@@ -87,41 +89,41 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 117,
-    "outcomes": 6989,
-    "mergedPullRequests": 4967,
-    "substantiveReviews": 2022,
+    "contributors": 118,
+    "outcomes": 7019,
+    "mergedPullRequests": 4994,
+    "substantiveReviews": 2025,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1294,
+    "invalidMarkers": 1295,
     "receiptCoverage": {
-      "valid": 2681,
-      "eligible": 6960
+      "valid": 2686,
+      "eligible": 6990
     },
-    "openPullRequests": 1101
+    "openPullRequests": 1102
   },
   "models": {
     "totals": {
-      "declarations": 2511,
+      "declarations": 2516,
       "declarationsWithoutExactModel": 209,
       "signedDeclarations": 0,
       "declaringContributors": 55,
       "distinctModels": 59,
       "distinctClients": 0,
-      "mergedPullRequests": 4967,
-      "mergedPullRequestsWithModel": 1258,
+      "mergedPullRequests": 4994,
+      "mergedPullRequestsWithModel": 1261,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2022,
-      "acceptedReviewsWithModel": 1215
+      "acceptedReviews": 2025,
+      "acceptedReviewsWithModel": 1217
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 816,
+        "declarations": 819,
         "contributors": 14,
-        "mergedPullRequests": 632,
+        "mergedPullRequests": 635,
         "signedPullRequests": 0,
         "acceptedReviews": 172,
-        "topContributorShare": 0.3407960199004975
+        "topContributorShare": 0.3420074349442379
       },
       {
         "key": "openai/gpt-5",
@@ -134,12 +136,12 @@
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 143,
+        "declarations": 144,
         "contributors": 5,
         "mergedPullRequests": 113,
         "signedPullRequests": 0,
-        "acceptedReviews": 30,
-        "topContributorShare": 0.6153846153846154
+        "acceptedReviews": 31,
+        "topContributorShare": 0.6111111111111112
       },
       {
         "key": "xai/grok-4.7",
@@ -296,21 +298,6 @@
   },
   "projects": [
     {
-      "id": "asi",
-      "name": "ASI",
-      "status": "active",
-      "kind": "monthly-pool",
-      "capDisplay": "$1,000",
-      "chain": "robinhood",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 200,
-      "authority": "verified",
-      "repository": "https://github.com/SlopDotCash/asi",
-      "prize": null
-    },
-    {
       "id": "delta-star",
       "name": "Delta Star",
       "status": "active",
@@ -361,13 +348,28 @@
       "status": "active",
       "kind": "monthly-pool",
       "capDisplay": "$1,000",
-      "chain": "ethereum",
+      "chain": "robinhood",
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
       "feeBasisPoints": 200,
       "authority": "unverified",
       "repository": "https://github.com/eliza-research/thenetwork",
+      "prize": null
+    },
+    {
+      "id": "asi",
+      "name": "ASI",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "robinhood",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "verified",
+      "repository": "https://github.com/SlopDotCash/asi",
       "prize": null
     },
     {
@@ -398,6 +400,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/xchemtina/darling-arm64",
+      "prize": null
+    },
+    {
+      "id": "delta-git",
+      "name": "delta-git",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/TerexitariusStomp/delta-git",
       "prize": null
     },
     {
@@ -503,6 +520,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lalalune/pumpfun-source",
+      "prize": null
+    },
+    {
+      "id": "umia-protocol",
+      "name": "Umia Protocol",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/SlopDotCash/umia-protocol",
       "prize": null
     },
     {
