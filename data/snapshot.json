@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-27T12:40:23.025Z",
+  "builtAt": "2026-10-27T18:20:03.453Z",
   "sources": {
     "projects": [
       "asi",
@@ -50,20 +50,14 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-27T05:25:55.898Z",
+    "generatedAt": "2026-10-27T16:44:25.570Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-22T05:08:33.000Z",
-      "to": "2026-10-27T05:08:33.000Z"
+      "from": "2026-09-22T16:26:34.000Z",
+      "to": "2026-10-27T16:26:34.000Z"
     },
     "repositories": [
-      {
-        "id": "SlopDotCash/asi",
-        "displayName": "SlopDotCash/asi",
-        "url": "https://github.com/SlopDotCash/asi",
-        "projectId": "asi"
-      },
       {
         "id": "elizaOS/eliza",
         "displayName": "elizaOS/eliza",
@@ -89,59 +83,59 @@
         "projectId": "delta-star"
       }
     ],
-    "contributors": 118,
-    "outcomes": 7019,
-    "mergedPullRequests": 4994,
-    "substantiveReviews": 2025,
+    "contributors": 120,
+    "outcomes": 7046,
+    "mergedPullRequests": 5145,
+    "substantiveReviews": 1901,
     "evaluatedContributions": 0,
-    "invalidMarkers": 1295,
+    "invalidMarkers": 1282,
     "receiptCoverage": {
-      "valid": 2686,
-      "eligible": 6990
+      "valid": 2553,
+      "eligible": 7017
     },
-    "openPullRequests": 1102
+    "openPullRequests": 702
   },
   "models": {
     "totals": {
-      "declarations": 2516,
+      "declarations": 2382,
       "declarationsWithoutExactModel": 209,
       "signedDeclarations": 0,
-      "declaringContributors": 55,
-      "distinctModels": 59,
+      "declaringContributors": 57,
+      "distinctModels": 60,
       "distinctClients": 0,
-      "mergedPullRequests": 4994,
-      "mergedPullRequestsWithModel": 1261,
+      "mergedPullRequests": 5145,
+      "mergedPullRequestsWithModel": 1209,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 2025,
-      "acceptedReviewsWithModel": 1217
+      "acceptedReviews": 1901,
+      "acceptedReviewsWithModel": 1136
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 819,
+        "declarations": 784,
         "contributors": 14,
-        "mergedPullRequests": 635,
+        "mergedPullRequests": 625,
         "signedPullRequests": 0,
-        "acceptedReviews": 172,
-        "topContributorShare": 0.3420074349442379
-      },
-      {
-        "key": "openai/gpt-5",
-        "declarations": 179,
-        "contributors": 4,
-        "mergedPullRequests": 115,
-        "signedPullRequests": 0,
-        "acceptedReviews": 64,
-        "topContributorShare": 0.8044692737430168
+        "acceptedReviews": 147,
+        "topContributorShare": 0.3432642487046632
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 144,
+        "declarations": 145,
         "contributors": 5,
         "mergedPullRequests": 113,
         "signedPullRequests": 0,
-        "acceptedReviews": 31,
-        "topContributorShare": 0.6111111111111112
+        "acceptedReviews": 32,
+        "topContributorShare": 0.6068965517241379
+      },
+      {
+        "key": "openai/gpt-5",
+        "declarations": 169,
+        "contributors": 4,
+        "mergedPullRequests": 107,
+        "signedPullRequests": 0,
+        "acceptedReviews": 62,
+        "topContributorShare": 0.7928994082840237
       },
       {
         "key": "xai/grok-4.7",
@@ -154,38 +148,38 @@
       },
       {
         "key": "anthropic/claude-fable-5.1",
-        "declarations": 90,
+        "declarations": 83,
         "contributors": 3,
-        "mergedPullRequests": 62,
+        "mergedPullRequests": 56,
         "signedPullRequests": 0,
-        "acceptedReviews": 23,
-        "topContributorShare": 0.6352941176470588
+        "acceptedReviews": 22,
+        "topContributorShare": 0.6153846153846154
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 226,
+        "declarations": 224,
         "contributors": 6,
         "mergedPullRequests": 39,
         "signedPullRequests": 0,
-        "acceptedReviews": 187,
-        "topContributorShare": 0.37610619469026546
+        "acceptedReviews": 185,
+        "topContributorShare": 0.3794642857142857
       },
       {
         "key": "zai/glm-5.3-flash",
-        "declarations": 109,
+        "declarations": 101,
         "contributors": 3,
-        "mergedPullRequests": 33,
+        "mergedPullRequests": 27,
         "signedPullRequests": 0,
-        "acceptedReviews": 74,
-        "topContributorShare": 0.6635514018691588
+        "acceptedReviews": 73,
+        "topContributorShare": 0.7
       },
       {
         "key": "anthropic/claude-opus-4.8",
-        "declarations": 60,
+        "declarations": 57,
         "contributors": 1,
         "mergedPullRequests": 24,
         "signedPullRequests": 0,
-        "acceptedReviews": 36,
+        "acceptedReviews": 33,
         "topContributorShare": 1
       }
     ]
@@ -328,6 +322,21 @@
       "prize": null
     },
     {
+      "id": "pumpfun-source",
+      "name": "pumpfun-source",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "10,000,000 PMUP",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/lalalune/pumpfun-source",
+      "prize": null
+    },
+    {
       "id": "slopdotcash",
       "name": "Slop",
       "status": "active",
@@ -355,6 +364,21 @@
       "feeBasisPoints": 200,
       "authority": "unverified",
       "repository": "https://github.com/eliza-research/thenetwork",
+      "prize": null
+    },
+    {
+      "id": "umia-protocol",
+      "name": "Umia Protocol",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/SlopDotCash/umia-protocol",
       "prize": null
     },
     {
@@ -505,36 +529,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lysande62/payzcode-enterprise",
-      "prize": null
-    },
-    {
-      "id": "pumpfun-source",
-      "name": "pumpfun-source",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/lalalune/pumpfun-source",
-      "prize": null
-    },
-    {
-      "id": "umia-protocol",
-      "name": "Umia Protocol",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/SlopDotCash/umia-protocol",
       "prize": null
     },
     {
