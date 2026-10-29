@@ -1,8 +1,9 @@
 {
-  "builtAt": "2026-10-29T06:27:35.403Z",
+  "builtAt": "2026-10-29T13:42:50.032Z",
   "sources": {
     "projects": [
       "asi",
+      "bruhos",
       "canonry",
       "darling-arm64",
       "delta-git",
@@ -50,12 +51,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-29T02:02:20.639Z",
+    "generatedAt": "2026-10-29T12:47:50.393Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-24T01:39:11.000Z",
-      "to": "2026-10-29T01:39:11.000Z"
+      "from": "2026-09-24T12:24:49.000Z",
+      "to": "2026-10-29T12:24:49.000Z"
     },
     "repositories": [
       {
@@ -95,77 +96,86 @@
         "projectId": "umia-protocol"
       }
     ],
-    "contributors": 152,
-    "outcomes": 7850,
-    "mergedPullRequests": 6150,
-    "substantiveReviews": 1697,
+    "contributors": 156,
+    "outcomes": 8369,
+    "mergedPullRequests": 6692,
+    "substantiveReviews": 1674,
     "evaluatedContributions": 3,
-    "invalidMarkers": 1345,
+    "invalidMarkers": 1337,
     "receiptCoverage": {
-      "valid": 2826,
-      "eligible": 7817
+      "valid": 2969,
+      "eligible": 8335
     },
-    "openPullRequests": 83
+    "openPullRequests": 107
   },
   "models": {
     "totals": {
-      "declarations": 2636,
-      "declarationsWithoutExactModel": 229,
+      "declarations": 2776,
+      "declarationsWithoutExactModel": 233,
       "signedDeclarations": 0,
-      "declaringContributors": 70,
-      "distinctModels": 64,
+      "declaringContributors": 74,
+      "distinctModels": 70,
       "distinctClients": 0,
-      "mergedPullRequests": 6150,
-      "mergedPullRequestsWithModel": 1555,
+      "mergedPullRequests": 6692,
+      "mergedPullRequestsWithModel": 1691,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 1697,
-      "acceptedReviewsWithModel": 1043
+      "acceptedReviews": 1674,
+      "acceptedReviewsWithModel": 1046
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 964,
+        "declarations": 995,
         "contributors": 18,
-        "mergedPullRequests": 799,
+        "mergedPullRequests": 824,
         "signedPullRequests": 0,
-        "acceptedReviews": 152,
-        "topContributorShare": 0.4037854889589905
+        "acceptedReviews": 158,
+        "topContributorShare": 0.39613034623217924
+      },
+      {
+        "key": "openai/gpt-6.1-sol",
+        "declarations": 138,
+        "contributors": 8,
+        "mergedPullRequests": 138,
+        "signedPullRequests": 0,
+        "acceptedReviews": 0,
+        "topContributorShare": 0.5434782608695652
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 163,
-        "contributors": 5,
-        "mergedPullRequests": 126,
+        "declarations": 168,
+        "contributors": 7,
+        "mergedPullRequests": 131,
         "signedPullRequests": 0,
         "acceptedReviews": 37,
-        "topContributorShare": 0.6196319018404908
+        "topContributorShare": 0.6011904761904762
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 293,
+        "declarations": 295,
         "contributors": 6,
-        "mergedPullRequests": 123,
+        "mergedPullRequests": 125,
         "signedPullRequests": 0,
         "acceptedReviews": 170,
-        "topContributorShare": 0.42662116040955633
+        "topContributorShare": 0.4271186440677966
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 169,
-        "contributors": 4,
+        "declarations": 170,
+        "contributors": 5,
         "mergedPullRequests": 107,
         "signedPullRequests": 0,
-        "acceptedReviews": 62,
-        "topContributorShare": 0.7928994082840237
+        "acceptedReviews": 63,
+        "topContributorShare": 0.788235294117647
       },
       {
         "key": "xai/grok-4.7",
-        "declarations": 123,
-        "contributors": 3,
-        "mergedPullRequests": 94,
+        "declarations": 131,
+        "contributors": 4,
+        "mergedPullRequests": 102,
         "signedPullRequests": 0,
         "acceptedReviews": 29,
-        "topContributorShare": 0.7642276422764228
+        "topContributorShare": 0.7175572519083969
       },
       {
         "key": "anthropic/claude-fable-5.1",
@@ -175,15 +185,6 @@
         "signedPullRequests": 0,
         "acceptedReviews": 16,
         "topContributorShare": 0.75
-      },
-      {
-        "key": "openai/gpt-6.1-sol",
-        "declarations": 55,
-        "contributors": 8,
-        "mergedPullRequests": 55,
-        "signedPullRequests": 0,
-        "acceptedReviews": 0,
-        "topContributorShare": 0.45454545454545453
       },
       {
         "key": "zai/glm-5.3-flash",
@@ -406,6 +407,21 @@
       "feeBasisPoints": 200,
       "authority": "verified",
       "repository": "https://github.com/SlopDotCash/asi",
+      "prize": null
+    },
+    {
+      "id": "bruhos",
+      "name": "bruhOS",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/bruhosdotai/bruhOS",
       "prize": null
     },
     {
