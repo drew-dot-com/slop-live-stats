@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-29T13:42:50.032Z",
+  "builtAt": "2026-10-29T22:58:21.481Z",
   "sources": {
     "projects": [
       "asi",
@@ -12,6 +12,7 @@
       "feed",
       "fly-ai",
       "heir-elements-sdk",
+      "hyperliquid-source",
       "monna-agent-permission-diff",
       "nurosos",
       "payzcode-ai",
@@ -51,14 +52,20 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-29T12:47:50.393Z",
+    "generatedAt": "2026-10-29T15:47:58.187Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-24T12:24:49.000Z",
-      "to": "2026-10-29T12:24:49.000Z"
+      "from": "2026-09-24T15:24:24.000Z",
+      "to": "2026-10-29T15:24:24.000Z"
     },
     "repositories": [
+      {
+        "id": "lalalune/hyperliquid-source",
+        "displayName": "lalalune/hyperliquid-source",
+        "url": "https://github.com/lalalune/hyperliquid-source",
+        "projectId": "hyperliquid-source"
+      },
       {
         "id": "lalalune/pumpfun-source",
         "displayName": "lalalune/pumpfun-source",
@@ -96,41 +103,41 @@
         "projectId": "umia-protocol"
       }
     ],
-    "contributors": 156,
-    "outcomes": 8369,
-    "mergedPullRequests": 6692,
-    "substantiveReviews": 1674,
+    "contributors": 157,
+    "outcomes": 8451,
+    "mergedPullRequests": 6769,
+    "substantiveReviews": 1679,
     "evaluatedContributions": 3,
-    "invalidMarkers": 1337,
+    "invalidMarkers": 1341,
     "receiptCoverage": {
-      "valid": 2969,
-      "eligible": 8335
+      "valid": 2980,
+      "eligible": 8417
     },
-    "openPullRequests": 107
+    "openPullRequests": 300
   },
   "models": {
     "totals": {
-      "declarations": 2776,
+      "declarations": 2788,
       "declarationsWithoutExactModel": 233,
       "signedDeclarations": 0,
       "declaringContributors": 74,
       "distinctModels": 70,
       "distinctClients": 0,
-      "mergedPullRequests": 6692,
-      "mergedPullRequestsWithModel": 1691,
+      "mergedPullRequests": 6769,
+      "mergedPullRequestsWithModel": 1703,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 1674,
-      "acceptedReviewsWithModel": 1046
+      "acceptedReviews": 1679,
+      "acceptedReviewsWithModel": 1045
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 995,
-        "contributors": 18,
-        "mergedPullRequests": 824,
+        "declarations": 1005,
+        "contributors": 19,
+        "mergedPullRequests": 834,
         "signedPullRequests": 0,
         "acceptedReviews": 158,
-        "topContributorShare": 0.39613034623217924
+        "topContributorShare": 0.3941532258064516
       },
       {
         "key": "openai/gpt-6.1-sol",
@@ -152,21 +159,21 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 295,
+        "declarations": 296,
         "contributors": 6,
-        "mergedPullRequests": 125,
+        "mergedPullRequests": 126,
         "signedPullRequests": 0,
         "acceptedReviews": 170,
-        "topContributorShare": 0.4271186440677966
+        "topContributorShare": 0.42567567567567566
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 170,
-        "contributors": 5,
+        "declarations": 169,
+        "contributors": 4,
         "mergedPullRequests": 107,
         "signedPullRequests": 0,
-        "acceptedReviews": 63,
-        "topContributorShare": 0.788235294117647
+        "acceptedReviews": 62,
+        "topContributorShare": 0.7928994082840237
       },
       {
         "key": "xai/grok-4.7",
@@ -332,6 +339,21 @@
       "feeBasisPoints": 200,
       "authority": "verified",
       "repository": "https://github.com/elizaOS/eliza",
+      "prize": null
+    },
+    {
+      "id": "hyperliquid-source",
+      "name": "Hyperliquid Source",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "10,000,000 EPYH",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/lalalune/hyperliquid-source",
       "prize": null
     },
     {
