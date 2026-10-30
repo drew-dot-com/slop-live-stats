@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-30T06:26:26.623Z",
+  "builtAt": "2026-10-30T13:33:42.276Z",
   "sources": {
     "projects": [
       "asi",
@@ -52,12 +52,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-30T03:22:49.744Z",
+    "generatedAt": "2026-10-30T06:22:00.822Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-25T03:03:01.000Z",
-      "to": "2026-10-30T03:03:01.000Z"
+      "from": "2026-09-25T05:59:35.000Z",
+      "to": "2026-10-30T05:59:35.000Z"
     },
     "repositories": [
       {
@@ -103,50 +103,50 @@
         "projectId": "umia-protocol"
       }
     ],
-    "contributors": 182,
-    "outcomes": 8503,
-    "mergedPullRequests": 6905,
-    "substantiveReviews": 1595,
+    "contributors": 191,
+    "outcomes": 8774,
+    "mergedPullRequests": 7167,
+    "substantiveReviews": 1604,
     "evaluatedContributions": 3,
-    "invalidMarkers": 1337,
+    "invalidMarkers": 1351,
     "receiptCoverage": {
-      "valid": 3036,
-      "eligible": 8469
+      "valid": 3129,
+      "eligible": 8743
     },
-    "openPullRequests": 305
+    "openPullRequests": 283
   },
   "models": {
     "totals": {
-      "declarations": 2834,
-      "declarationsWithoutExactModel": 243,
+      "declarations": 2902,
+      "declarationsWithoutExactModel": 268,
       "signedDeclarations": 0,
-      "declaringContributors": 91,
-      "distinctModels": 80,
+      "declaringContributors": 97,
+      "distinctModels": 83,
       "distinctClients": 0,
-      "mergedPullRequests": 6905,
-      "mergedPullRequestsWithModel": 1768,
+      "mergedPullRequests": 7167,
+      "mergedPullRequestsWithModel": 1828,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 1595,
-      "acceptedReviewsWithModel": 1026
+      "acceptedReviews": 1604,
+      "acceptedReviewsWithModel": 1034
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 1009,
-        "contributors": 21,
-        "mergedPullRequests": 838,
+        "declarations": 1014,
+        "contributors": 22,
+        "mergedPullRequests": 842,
         "signedPullRequests": 0,
-        "acceptedReviews": 158,
-        "topContributorShare": 0.39357429718875503
+        "acceptedReviews": 159,
+        "topContributorShare": 0.3916083916083916
       },
       {
         "key": "openai/gpt-6.1-sol",
-        "declarations": 151,
-        "contributors": 9,
-        "mergedPullRequests": 151,
+        "declarations": 180,
+        "contributors": 11,
+        "mergedPullRequests": 180,
         "signedPullRequests": 0,
         "acceptedReviews": 0,
-        "topContributorShare": 0.4966887417218543
+        "topContributorShare": 0.45
       },
       {
         "key": "meta/muse-spark",
@@ -164,16 +164,16 @@
         "mergedPullRequests": 126,
         "signedPullRequests": 0,
         "acceptedReviews": 167,
-        "topContributorShare": 0.4300341296928328
+        "topContributorShare": 0.43686006825938567
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 169,
+        "declarations": 173,
         "contributors": 4,
         "mergedPullRequests": 107,
         "signedPullRequests": 0,
-        "acceptedReviews": 62,
-        "topContributorShare": 0.7928994082840237
+        "acceptedReviews": 66,
+        "topContributorShare": 0.7861271676300579
       },
       {
         "key": "xai/grok-4.7",
@@ -186,12 +186,12 @@
       },
       {
         "key": "anthropic/claude-fable-5.1",
-        "declarations": 97,
-        "contributors": 2,
-        "mergedPullRequests": 76,
+        "declarations": 98,
+        "contributors": 3,
+        "mergedPullRequests": 77,
         "signedPullRequests": 0,
         "acceptedReviews": 16,
-        "topContributorShare": 0.75
+        "topContributorShare": 0.7419354838709677
       },
       {
         "key": "zai/glm-5.3-flash",
@@ -312,6 +312,21 @@
   },
   "projects": [
     {
+      "id": "asi",
+      "name": "ASI",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$250",
+      "chain": "robinhood",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "verified",
+      "repository": "https://github.com/SlopDotCash/asi",
+      "prize": null
+    },
+    {
       "id": "delta-star",
       "name": "Delta Star",
       "status": "active",
@@ -354,6 +369,21 @@
       "feeBasisPoints": 200,
       "authority": "unverified",
       "repository": "https://github.com/lalalune/hyperliquid-source",
+      "prize": null
+    },
+    {
+      "id": "monna-agent-permission-diff",
+      "name": "MONNA Agent Permission Diff",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/emanalshazly/monna-agent-permission-diff",
       "prize": null
     },
     {
@@ -417,18 +447,18 @@
       "prize": null
     },
     {
-      "id": "asi",
-      "name": "ASI",
-      "status": "paused",
+      "id": "visual-strategy-canvas",
+      "name": "Visual Strategy Canvas",
+      "status": "active",
       "kind": "monthly-pool",
-      "capDisplay": "$1,000",
-      "chain": "robinhood",
+      "capDisplay": "$0",
+      "chain": "base",
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
-      "feeBasisPoints": 200,
-      "authority": "verified",
-      "repository": "https://github.com/SlopDotCash/asi",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
       "prize": null
     },
     {
@@ -537,21 +567,6 @@
       "prize": null
     },
     {
-      "id": "monna-agent-permission-diff",
-      "name": "MONNA Agent Permission Diff",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/emanalshazly/monna-agent-permission-diff",
-      "prize": null
-    },
-    {
       "id": "nurosos",
       "name": "NurosOS",
       "status": "paused",
@@ -579,21 +594,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/lysande62/payzcode-enterprise",
-      "prize": null
-    },
-    {
-      "id": "visual-strategy-canvas",
-      "name": "Visual Strategy Canvas",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
       "prize": null
     }
   ],
