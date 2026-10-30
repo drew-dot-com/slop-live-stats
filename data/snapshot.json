@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-29T22:58:21.481Z",
+  "builtAt": "2026-10-30T06:26:26.623Z",
   "sources": {
     "projects": [
       "asi",
@@ -52,12 +52,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-29T15:47:58.187Z",
+    "generatedAt": "2026-10-30T03:22:49.744Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-24T15:24:24.000Z",
-      "to": "2026-10-29T15:24:24.000Z"
+      "from": "2026-09-25T03:03:01.000Z",
+      "to": "2026-10-30T03:03:01.000Z"
     },
     "repositories": [
       {
@@ -103,68 +103,68 @@
         "projectId": "umia-protocol"
       }
     ],
-    "contributors": 157,
-    "outcomes": 8451,
-    "mergedPullRequests": 6769,
-    "substantiveReviews": 1679,
+    "contributors": 182,
+    "outcomes": 8503,
+    "mergedPullRequests": 6905,
+    "substantiveReviews": 1595,
     "evaluatedContributions": 3,
-    "invalidMarkers": 1341,
+    "invalidMarkers": 1337,
     "receiptCoverage": {
-      "valid": 2980,
-      "eligible": 8417
+      "valid": 3036,
+      "eligible": 8469
     },
-    "openPullRequests": 300
+    "openPullRequests": 305
   },
   "models": {
     "totals": {
-      "declarations": 2788,
-      "declarationsWithoutExactModel": 233,
+      "declarations": 2834,
+      "declarationsWithoutExactModel": 243,
       "signedDeclarations": 0,
-      "declaringContributors": 74,
-      "distinctModels": 70,
+      "declaringContributors": 91,
+      "distinctModels": 80,
       "distinctClients": 0,
-      "mergedPullRequests": 6769,
-      "mergedPullRequestsWithModel": 1703,
+      "mergedPullRequests": 6905,
+      "mergedPullRequestsWithModel": 1768,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 1679,
-      "acceptedReviewsWithModel": 1045
+      "acceptedReviews": 1595,
+      "acceptedReviewsWithModel": 1026
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 1005,
-        "contributors": 19,
-        "mergedPullRequests": 834,
+        "declarations": 1009,
+        "contributors": 21,
+        "mergedPullRequests": 838,
         "signedPullRequests": 0,
         "acceptedReviews": 158,
-        "topContributorShare": 0.3941532258064516
+        "topContributorShare": 0.39357429718875503
       },
       {
         "key": "openai/gpt-6.1-sol",
-        "declarations": 138,
-        "contributors": 8,
-        "mergedPullRequests": 138,
+        "declarations": 151,
+        "contributors": 9,
+        "mergedPullRequests": 151,
         "signedPullRequests": 0,
         "acceptedReviews": 0,
-        "topContributorShare": 0.5434782608695652
+        "topContributorShare": 0.4966887417218543
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 168,
+        "declarations": 169,
         "contributors": 7,
         "mergedPullRequests": 131,
         "signedPullRequests": 0,
-        "acceptedReviews": 37,
-        "topContributorShare": 0.6011904761904762
+        "acceptedReviews": 38,
+        "topContributorShare": 0.5976331360946746
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 296,
+        "declarations": 293,
         "contributors": 6,
         "mergedPullRequests": 126,
         "signedPullRequests": 0,
-        "acceptedReviews": 170,
-        "topContributorShare": 0.42567567567567566
+        "acceptedReviews": 167,
+        "topContributorShare": 0.4300341296928328
       },
       {
         "key": "openai/gpt-5",
@@ -195,12 +195,12 @@
       },
       {
         "key": "zai/glm-5.3-flash",
-        "declarations": 69,
+        "declarations": 64,
         "contributors": 3,
         "mergedPullRequests": 27,
         "signedPullRequests": 0,
-        "acceptedReviews": 41,
-        "topContributorShare": 0.5588235294117647
+        "acceptedReviews": 36,
+        "topContributorShare": 0.5238095238095238
       }
     ]
   },
