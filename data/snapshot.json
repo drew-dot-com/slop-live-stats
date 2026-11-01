@@ -1,8 +1,9 @@
 {
-  "builtAt": "2026-11-01T18:06:19.378Z",
+  "builtAt": "2026-11-01T22:25:27.892Z",
   "sources": {
     "projects": [
       "asi",
+      "beam",
       "bountix",
       "bruhos",
       "canonry",
@@ -508,6 +509,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
+      "prize": null
+    },
+    {
+      "id": "beam",
+      "name": "Beam",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/shawkkkkk/beam",
       "prize": null
     },
     {
