@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-31T06:16:31.100Z",
+  "builtAt": "2026-11-01T12:54:48.895Z",
   "sources": {
     "projects": [
       "asi",
@@ -52,12 +52,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-10-30T06:22:00.822Z",
+    "generatedAt": "2026-10-31T04:02:01.346Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-25T05:59:35.000Z",
-      "to": "2026-10-30T05:59:35.000Z"
+      "from": "2026-09-26T03:35:04.000Z",
+      "to": "2026-10-31T03:35:04.000Z"
     },
     "repositories": [
       {
@@ -91,116 +91,134 @@
         "projectId": "thenetwork"
       },
       {
+        "id": "SlopDotCash/asi",
+        "displayName": "SlopDotCash/asi",
+        "url": "https://github.com/SlopDotCash/asi",
+        "projectId": "asi"
+      },
+      {
         "id": "SlopDotCash/proximityprize",
         "displayName": "SlopDotCash/proximityprize",
         "url": "https://github.com/SlopDotCash/proximityprize",
         "projectId": "delta-star"
       },
       {
+        "id": "emanalshazly/monna-agent-permission-diff",
+        "displayName": "emanalshazly/monna-agent-permission-diff",
+        "url": "https://github.com/emanalshazly/monna-agent-permission-diff",
+        "projectId": "monna-agent-permission-diff"
+      },
+      {
         "id": "SlopDotCash/umia-protocol",
         "displayName": "SlopDotCash/umia-protocol",
         "url": "https://github.com/SlopDotCash/umia-protocol",
         "projectId": "umia-protocol"
+      },
+      {
+        "id": "emanalshazly/monna-visual-strategy-canvas",
+        "displayName": "emanalshazly/monna-visual-strategy-canvas",
+        "url": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
+        "projectId": "visual-strategy-canvas"
       }
     ],
-    "contributors": 191,
-    "outcomes": 8774,
-    "mergedPullRequests": 7167,
-    "substantiveReviews": 1604,
+    "contributors": 202,
+    "outcomes": 10110,
+    "mergedPullRequests": 8386,
+    "substantiveReviews": 1721,
     "evaluatedContributions": 3,
-    "invalidMarkers": 1351,
+    "invalidMarkers": 1500,
     "receiptCoverage": {
-      "valid": 3129,
-      "eligible": 8743
+      "valid": 3902,
+      "eligible": 10079
     },
-    "openPullRequests": 283
+    "openPullRequests": 1141
   },
   "models": {
     "totals": {
-      "declarations": 2902,
-      "declarationsWithoutExactModel": 268,
+      "declarations": 3551,
+      "declarationsWithoutExactModel": 396,
       "signedDeclarations": 0,
-      "declaringContributors": 97,
-      "distinctModels": 83,
+      "declaringContributors": 107,
+      "distinctModels": 91,
       "distinctClients": 0,
-      "mergedPullRequests": 7167,
-      "mergedPullRequestsWithModel": 1828,
+      "mergedPullRequests": 8386,
+      "mergedPullRequestsWithModel": 2414,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 1604,
-      "acceptedReviewsWithModel": 1034
+      "acceptedReviews": 1721,
+      "acceptedReviewsWithModel": 1093
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 1014,
-        "contributors": 22,
-        "mergedPullRequests": 842,
+        "declarations": 1109,
+        "contributors": 23,
+        "mergedPullRequests": 904,
         "signedPullRequests": 0,
-        "acceptedReviews": 159,
-        "topContributorShare": 0.3916083916083916
-      },
-      {
-        "key": "openai/gpt-6.1-sol",
-        "declarations": 180,
-        "contributors": 11,
-        "mergedPullRequests": 180,
-        "signedPullRequests": 0,
-        "acceptedReviews": 0,
-        "topContributorShare": 0.45
-      },
-      {
-        "key": "meta/muse-spark",
-        "declarations": 169,
-        "contributors": 7,
-        "mergedPullRequests": 131,
-        "signedPullRequests": 0,
-        "acceptedReviews": 38,
-        "topContributorShare": 0.5976331360946746
-      },
-      {
-        "key": "deepseek/deepseek-v4-flash",
-        "declarations": 293,
-        "contributors": 6,
-        "mergedPullRequests": 126,
-        "signedPullRequests": 0,
-        "acceptedReviews": 167,
-        "topContributorShare": 0.43686006825938567
+        "acceptedReviews": 192,
+        "topContributorShare": 0.375
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 173,
-        "contributors": 4,
-        "mergedPullRequests": 107,
+        "declarations": 371,
+        "contributors": 5,
+        "mergedPullRequests": 299,
         "signedPullRequests": 0,
-        "acceptedReviews": 66,
-        "topContributorShare": 0.7861271676300579
+        "acceptedReviews": 72,
+        "topContributorShare": 0.7951482479784366
+      },
+      {
+        "key": "openai/gpt-6.1-sol",
+        "declarations": 229,
+        "contributors": 18,
+        "mergedPullRequests": 225,
+        "signedPullRequests": 0,
+        "acceptedReviews": 4,
+        "topContributorShare": 0.4017467248908297
+      },
+      {
+        "key": "meta/muse-spark",
+        "declarations": 171,
+        "contributors": 7,
+        "mergedPullRequests": 132,
+        "signedPullRequests": 0,
+        "acceptedReviews": 39,
+        "topContributorShare": 0.5906432748538012
       },
       {
         "key": "xai/grok-4.7",
-        "declarations": 131,
+        "declarations": 161,
         "contributors": 4,
-        "mergedPullRequests": 102,
+        "mergedPullRequests": 132,
         "signedPullRequests": 0,
         "acceptedReviews": 29,
-        "topContributorShare": 0.7175572519083969
+        "topContributorShare": 0.7701863354037267
+      },
+      {
+        "key": "deepseek/deepseek-v4-flash",
+        "declarations": 296,
+        "contributors": 7,
+        "mergedPullRequests": 127,
+        "signedPullRequests": 0,
+        "acceptedReviews": 169,
+        "topContributorShare": 0.43243243243243246
       },
       {
         "key": "anthropic/claude-fable-5.1",
-        "declarations": 98,
+        "declarations": 105,
         "contributors": 3,
-        "mergedPullRequests": 77,
+        "mergedPullRequests": 83,
         "signedPullRequests": 0,
-        "acceptedReviews": 16,
-        "topContributorShare": 0.7419354838709677
+        "acceptedReviews": 17,
+        "topContributorShare": 0.75
       },
       {
-        "key": "zai/glm-5.3-flash",
-        "declarations": 64,
-        "contributors": 3,
-        "mergedPullRequests": 27,
+        "key": "openai/gpt-6.1-terra",
+        "declarations": 68,
+        "contributors": 2,
+        "mergedPullRequests": 68,
         "signedPullRequests": 0,
-        "acceptedReviews": 36,
-        "topContributorShare": 0.5238095238095238
+        "acceptedReviews": 0,
+        "topContributorShare": 0.9705882352941176
       }
     ]
   },
@@ -327,6 +345,21 @@
       "prize": null
     },
     {
+      "id": "bruhos",
+      "name": "bruhOS",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/bruhosdotai/bruhOS",
+      "prize": null
+    },
+    {
       "id": "delta-star",
       "name": "Delta Star",
       "status": "active",
@@ -354,6 +387,21 @@
       "feeBasisPoints": 200,
       "authority": "verified",
       "repository": "https://github.com/elizaOS/eliza",
+      "prize": null
+    },
+    {
+      "id": "feed",
+      "name": "Feed",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$500",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "verified",
+      "repository": "https://github.com/feedforagents/feed",
       "prize": null
     },
     {
@@ -421,7 +469,7 @@
       "name": "The Network",
       "status": "active",
       "kind": "monthly-pool",
-      "capDisplay": "$1,000",
+      "capDisplay": "$500",
       "chain": "robinhood",
       "paymentMode": "disabled",
       "fundingState": "pledged",
@@ -459,21 +507,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/emanalshazly/monna-visual-strategy-canvas",
-      "prize": null
-    },
-    {
-      "id": "bruhos",
-      "name": "bruhOS",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$1,000",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 200,
-      "authority": "unverified",
-      "repository": "https://github.com/bruhosdotai/bruhOS",
       "prize": null
     },
     {
@@ -519,21 +552,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/TerexitariusStomp/delta-git",
-      "prize": null
-    },
-    {
-      "id": "feed",
-      "name": "Feed",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$1,000",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "verified",
-      "repository": "https://github.com/feedforagents/feed",
       "prize": null
     },
     {

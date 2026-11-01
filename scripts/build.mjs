@@ -6,7 +6,8 @@ const out = new URL('../data/snapshot.json', import.meta.url);
 let prev = {};
 try { prev = JSON.parse(readFileSync(out, 'utf8')); } catch {}
 const sources = await discover(fetchJson);
-const snap = await loadAll(fetchJson, sources, { cycleSnapshots: prev.cycleSnapshots || {}, fetchCycleSnapshots: true });
+const fetchBytes = (u) => fetch(u, { headers: { 'user-agent': headers['user-agent'] } }).then(async (r) => { if (!r.ok) throw new Error(r.status + ' ' + u); return new Uint8Array(await r.arrayBuffer()); });
+const snap = await loadAll(fetchJson, sources, { cycleSnapshots: prev.cycleSnapshots || {}, fetchCycleSnapshots: true, fetchBytes });
 if (snap.months.some((m) => !m.counts)) throw new Error('cycle snapshot counts missing');
 writeFileSync(out, JSON.stringify(snap, null, 2) + '\n');
 console.log('snapshot', snap.builtAt, snap.leaderboard.outcomes, 'outcomes', snap.money.paidUsdc, 'USDC paid', sources.projects.length, 'projects', snap.months.map((m) => m.month).join(','), 'cycle months');

@@ -295,15 +295,66 @@ export async function discover(fetchJson) {
   return { projects, projectSource, disclosures, cycles };
 }
 
+// slop.cash shards a leaderboard over 25 MB into 8 MB parts (SlopDotCash/
+// slopdotcash 78be5c44, 30 Oct 2026): leaderboard.json is then a small
+// manifest naming each part by its SHA-256, and the logical JSON bytes are
+// unchanged. This mirrors readLeaderboardBytes in src/lib/leaderboard-
+// transport.mjs: the whole manifest is checked before any part is read, every
+// part is checked by size and digest, and the assembled bytes must match the
+// manifest digest. A legacy single-file leaderboard passes straight through.
+const LEADERBOARD_PARTS_FORMAT = 'slop-leaderboard-parts-v1';
+const MAX_LEADERBOARD_BYTES = 32 * 1024 * 1024;
+const MAX_LEADERBOARD_PART_BYTES = 8 * 1024 * 1024;
+const MAX_LEADERBOARD_FILE_BYTES = 25 * 1024 * 1024;
+const HEX64 = /^[a-f0-9]{64}$/;
+const exactKeys = (v, keys) => v && typeof v === 'object' && !Array.isArray(v) && JSON.stringify(Object.keys(v).sort()) === JSON.stringify([...keys].sort());
+async function sha256Hex(bytes) {
+  const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');
+}
+export const defaultFetchBytes = (u) => fetch(u).then(async (r) => { if (!r.ok) throw new Error(r.status + ' ' + u); return new Uint8Array(await r.arrayBuffer()); });
+export async function loadLeaderboard(fetchJson, fetchBytes = defaultFetchBytes) {
+  const root = await fetchJson(SOURCES.leaderboard);
+  if (root?.format !== LEADERBOARD_PARTS_FORMAT) return root;
+  if (
+    !exactKeys(root, ['format', 'bytes', 'sha256', 'parts']) ||
+    !Number.isSafeInteger(root.bytes) ||
+    root.bytes <= MAX_LEADERBOARD_FILE_BYTES ||
+    root.bytes > MAX_LEADERBOARD_BYTES ||
+    !HEX64.test(root.sha256) ||
+    !Array.isArray(root.parts) ||
+    root.parts.length !== Math.ceil(root.bytes / MAX_LEADERBOARD_PART_BYTES)
+  ) throw new Error('Invalid leaderboard parts manifest');
+  let total = 0;
+  for (const part of root.parts) {
+    if (!exactKeys(part, ['path', 'bytes', 'sha256']) || !HEX64.test(part.sha256) || part.path !== `/data/leaderboard/${part.sha256}.part` || part.bytes !== Math.min(MAX_LEADERBOARD_PART_BYTES, root.bytes - total)) {
+      throw new Error('Invalid leaderboard part');
+    }
+    total += part.bytes;
+  }
+  if (total !== root.bytes) throw new Error('Incomplete leaderboard parts');
+  const origin = new URL(SOURCES.leaderboard).origin;
+  const bytes = new Uint8Array(total);
+  let offset = 0;
+  for (const part of root.parts) {
+    const data = await fetchBytes(origin + part.path);
+    if (!(data instanceof Uint8Array) || data.length !== part.bytes || (await sha256Hex(data)) !== part.sha256) throw new Error('Leaderboard part size or digest mismatch');
+    bytes.set(data, offset);
+    offset += data.length;
+  }
+  if ((await sha256Hex(bytes)) !== root.sha256) throw new Error('Leaderboard snapshot digest mismatch');
+  return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+}
+
 // Fetches and aggregates everything the page shows. `sources` comes from
 // discover() in the build, or from the last snapshot in the browser.
 // `cycleSnapshots` maps sourceSnapshotSha256 to counts already computed (the
 // snapshots are frozen and large, so the build reuses earlier counts and the
 // browser never downloads them).
-export async function loadAll(fetchJson, sources, { cycleSnapshots = {}, fetchCycleSnapshots = false } = {}) {
+export async function loadAll(fetchJson, sources, { cycleSnapshots = {}, fetchCycleSnapshots = false, fetchBytes = defaultFetchBytes } = {}) {
   const raw = (path) => fetchJson(SOURCES.raw + path);
   const [lb, disclosureDocs, projectDocs, proposalDoc, cycleDocs] = await Promise.all([
-    fetchJson(SOURCES.leaderboard),
+    loadLeaderboard(fetchJson, fetchBytes),
     Promise.all(sources.disclosures.map((f) => raw('disclosures/' + f))),
     sources.projectSource === 'registry'
       ? fetchJson(SOURCES.registry).then((r) => r.projects)
