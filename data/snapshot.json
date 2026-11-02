@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-02T06:48:55.250Z",
+  "builtAt": "2026-11-02T21:55:52.352Z",
   "sources": {
     "projects": [
       "asi",
@@ -18,6 +18,7 @@
       "hyperliquid-source",
       "monna-agent-permission-diff",
       "nurosos",
+      "ohio-project-south",
       "payzcode-ai",
       "pumpfun-source",
       "slopdotcash",
@@ -363,6 +364,21 @@
       "prize": null
     },
     {
+      "id": "canonry",
+      "name": "Canonry",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "solana",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "verified",
+      "repository": "https://github.com/Canonry/canonry",
+      "prize": null
+    },
+    {
       "id": "delta-star",
       "name": "Delta Star",
       "status": "active",
@@ -528,21 +544,6 @@
       "prize": null
     },
     {
-      "id": "canonry",
-      "name": "Canonry",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "solana",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "verified",
-      "repository": "https://github.com/Canonry/canonry",
-      "prize": null
-    },
-    {
       "id": "darling-arm64",
       "name": "Darling arm64",
       "status": "paused",
@@ -630,6 +631,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/modarresi1913/NurosOS",
+      "prize": null
+    },
+    {
+      "id": "ohio-project-south",
+      "name": "ohio project south",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/limoncanvas/rockmap",
       "prize": null
     },
     {
