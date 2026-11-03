@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-03T07:14:31.985Z",
+  "builtAt": "2026-11-03T19:48:51.548Z",
   "sources": {
     "projects": [
       "asi",
@@ -13,6 +13,7 @@
       "eliza",
       "feed",
       "fly-ai",
+      "fortune-launchpad",
       "gocode",
       "heir-elements-sdk",
       "hyperliquid-source",
@@ -22,6 +23,7 @@
       "payzcode-ai",
       "pumpfun-source",
       "slopdotcash",
+      "slopdotcash1",
       "thenetwork",
       "umia-protocol",
       "visual-strategy-canvas"
@@ -589,6 +591,21 @@
       "prize": null
     },
     {
+      "id": "fortune-launchpad",
+      "name": "Fortune Launchpad",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/shawkkkkk/fortune",
+      "prize": null
+    },
+    {
       "id": "gocode",
       "name": "gocode",
       "status": "paused",
@@ -676,6 +693,21 @@
       "feeBasisPoints": 200,
       "authority": "unverified",
       "repository": "https://github.com/lalalune/pumpfun-source",
+      "prize": null
+    },
+    {
+      "id": "slopdotcash1",
+      "name": "slopdotcash1",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/Millercarter/slopdotcash1",
       "prize": null
     }
   ],
