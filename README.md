@@ -20,8 +20,9 @@ shows up at the next refresh with no code change. July and August stay as
 fixed rows in `index.html` (`FIXED` holds their calendar-month counts).
 
 Model figures are a port of `summarizeModelOutcomes` in the Slop repo's
-`src/lib/model-outcomes.ts`, so the page shows the same rows and totals as
-slop.cash/models. Change both together.
+`src/lib/model-outcomes.ts`, so the page shows the same rows and totals that
+function produces (slop.cash removed its public /models page on 27 Oct 2026;
+the function and the attribution data remain). Change both together.
 
 `index.html` paints `data/snapshot.json` instantly, then refetches every source
 in the browser (using the source list stored in the snapshot) and re-renders
