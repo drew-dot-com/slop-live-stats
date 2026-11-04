@@ -22,7 +22,7 @@ export const CYCLE_FILES = ['proposal.json', 'allocation.json', 'execution-plan.
 
 const usdc = (minor) => Number(BigInt(minor)) / 1e6;
 
-// Model figures must match slop.cash/models exactly. This is a line-for-line
+// Model figures must match summarizeModelOutcomes exactly. This is a line-for-line
 // port of summarizeModelOutcomes in src/lib/model-outcomes.ts (SlopDotCash/
 // slopdotcash, main): same provider aliases, same name folding, same
 // "unavailable" exclusion, same same-actor join, same ordering. Change it
@@ -112,14 +112,14 @@ export function aggregateModels(lb) {
       acceptedReviews,
       acceptedReviewsWithModel: reviewsWithModel,
     },
-    // slop.cash/models lists models with at least one accepted outcome.
+    // List models with at least one accepted outcome, as upstream does.
     top: rows.filter((r) => r.mergedPullRequests > 0 || r.acceptedReviews > 0).slice(0, 8),
   };
 }
 
 export function aggregateLeaderboard(lb) {
   // Shared merge credit emits one ledger event per commit author of one merge,
-  // so a merged PR is counted once by source id, as slop.cash/models does.
+  // so a merged PR is counted once by source id, as upstream does.
   const cats = {}, merged = new Set();
   for (const e of lb.ledger) {
     if (e.category === 'merged-pull-request') { merged.add(e.source.id); continue; }
