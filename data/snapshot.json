@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-04T06:58:14.470Z",
+  "builtAt": "2026-11-04T20:02:04.548Z",
   "sources": {
     "projects": [
       "asi",
@@ -20,6 +20,7 @@
       "monna-agent-permission-diff",
       "nurosos",
       "ohio-project-south",
+      "orbio-contracts",
       "payzcode-ai",
       "pumpfun-source",
       "slopdotcash",
@@ -663,6 +664,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/limoncanvas/rockmap",
+      "prize": null
+    },
+    {
+      "id": "orbio-contracts",
+      "name": "orbio-contracts",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/orbioso/orbio-contracts",
       "prize": null
     },
     {
