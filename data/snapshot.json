@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-05T07:23:47.167Z",
+  "builtAt": "2026-11-05T20:16:18.814Z",
   "sources": {
     "projects": [
       "asi",
@@ -501,6 +501,21 @@
       "prize": null
     },
     {
+      "id": "oldest",
+      "name": "oldest",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/bpceee/oldest",
+      "prize": null
+    },
+    {
       "id": "orbio-contracts",
       "name": "orbio-contracts",
       "status": "active",
@@ -708,21 +723,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/modarresi1913/NurosOS",
-      "prize": null
-    },
-    {
-      "id": "oldest",
-      "name": "oldest",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/bpceee/oldest",
       "prize": null
     },
     {
