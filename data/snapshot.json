@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-05T20:16:18.814Z",
+  "builtAt": "2026-11-06T07:24:16.616Z",
   "sources": {
     "projects": [
       "asi",
@@ -61,12 +61,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-11-04T21:06:20.153Z",
+    "generatedAt": "2026-11-05T23:59:30.447Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-09-30T20:01:07.000Z",
-      "to": "2026-11-04T20:01:07.000Z"
+      "from": "2026-10-01T22:54:09.000Z",
+      "to": "2026-11-05T22:54:09.000Z"
     },
     "repositories": [
       {
@@ -112,6 +112,12 @@
         "projectId": "asi"
       },
       {
+        "id": "salsabila2507/bountix-base",
+        "displayName": "salsabila2507/bountix-base",
+        "url": "https://github.com/salsabila2507/bountix-base",
+        "projectId": "bountix"
+      },
+      {
         "id": "Canonry/canonry",
         "displayName": "Canonry/canonry",
         "url": "https://github.com/Canonry/canonry",
@@ -130,6 +136,24 @@
         "projectId": "monna-agent-permission-diff"
       },
       {
+        "id": "limoncanvas/rockmap",
+        "displayName": "limoncanvas/rockmap",
+        "url": "https://github.com/limoncanvas/rockmap",
+        "projectId": "ohio-project-south"
+      },
+      {
+        "id": "bpceee/oldest",
+        "displayName": "bpceee/oldest",
+        "url": "https://github.com/bpceee/oldest",
+        "projectId": "oldest"
+      },
+      {
+        "id": "orbioso/orbio-contracts",
+        "displayName": "orbioso/orbio-contracts",
+        "url": "https://github.com/orbioso/orbio-contracts",
+        "projectId": "orbio-contracts"
+      },
+      {
         "id": "SlopDotCash/umia-protocol",
         "displayName": "SlopDotCash/umia-protocol",
         "url": "https://github.com/SlopDotCash/umia-protocol",
@@ -142,41 +166,41 @@
         "projectId": "visual-strategy-canvas"
       }
     ],
-    "contributors": 191,
-    "outcomes": 9484,
-    "mergedPullRequests": 8443,
-    "substantiveReviews": 1038,
+    "contributors": 189,
+    "outcomes": 9347,
+    "mergedPullRequests": 8418,
+    "substantiveReviews": 926,
     "evaluatedContributions": 3,
-    "invalidMarkers": 1190,
+    "invalidMarkers": 1132,
     "receiptCoverage": {
-      "valid": 4083,
-      "eligible": 9436
+      "valid": 3983,
+      "eligible": 9302
     },
-    "openPullRequests": 1429
+    "openPullRequests": 2075
   },
   "models": {
     "totals": {
-      "declarations": 3771,
+      "declarations": 3667,
       "declarationsWithoutExactModel": 372,
       "signedDeclarations": 0,
       "declaringContributors": 108,
       "distinctModels": 99,
       "distinctClients": 0,
-      "mergedPullRequests": 8443,
-      "mergedPullRequestsWithModel": 3070,
+      "mergedPullRequests": 8418,
+      "mergedPullRequestsWithModel": 3061,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 1038,
-      "acceptedReviewsWithModel": 642
+      "acceptedReviews": 926,
+      "acceptedReviewsWithModel": 551
     },
     "top": [
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 1061,
+        "declarations": 1028,
         "contributors": 27,
-        "mergedPullRequests": 903,
+        "mergedPullRequests": 896,
         "signedPullRequests": 0,
-        "acceptedReviews": 148,
-        "topContributorShare": 0.3939105613701237
+        "acceptedReviews": 124,
+        "topContributorShare": 0.40588235294117647
       },
       {
         "key": "meta/muse-spark",
@@ -216,30 +240,30 @@
       },
       {
         "key": "xai/grok-4.7",
-        "declarations": 164,
+        "declarations": 156,
         "contributors": 6,
         "mergedPullRequests": 139,
         "signedPullRequests": 0,
-        "acceptedReviews": 25,
-        "topContributorShare": 0.7621951219512195
+        "acceptedReviews": 17,
+        "topContributorShare": 0.8012820512820513
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 192,
+        "declarations": 158,
         "contributors": 6,
         "mergedPullRequests": 119,
         "signedPullRequests": 0,
-        "acceptedReviews": 73,
-        "topContributorShare": 0.5104166666666666
+        "acceptedReviews": 39,
+        "topContributorShare": 0.5443037974683544
       },
       {
         "key": "anthropic/claude-fable-5.1",
-        "declarations": 85,
+        "declarations": 81,
         "contributors": 3,
-        "mergedPullRequests": 79,
+        "mergedPullRequests": 77,
         "signedPullRequests": 0,
         "acceptedReviews": 1,
-        "topContributorShare": 0.9125
+        "topContributorShare": 0.9358974358974359
       }
     ]
   },
