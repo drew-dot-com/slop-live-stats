@@ -303,7 +303,7 @@ export async function discover(fetchJson) {
 // part is checked by size and digest, and the assembled bytes must match the
 // manifest digest. A legacy single-file leaderboard passes straight through.
 const LEADERBOARD_PARTS_FORMAT = 'slop-leaderboard-parts-v1';
-const MAX_LEADERBOARD_BYTES = 32 * 1024 * 1024;
+const MAX_LEADERBOARD_BYTES = 64 * 1024 * 1024; // matches slop.cash #2374
 const MAX_LEADERBOARD_PART_BYTES = 8 * 1024 * 1024;
 const MAX_LEADERBOARD_FILE_BYTES = 25 * 1024 * 1024;
 const HEX64 = /^[a-f0-9]{64}$/;
