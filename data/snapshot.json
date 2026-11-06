@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-06T07:24:16.616Z",
+  "builtAt": "2026-11-06T19:41:05.046Z",
   "sources": {
     "projects": [
       "asi",
@@ -29,6 +29,7 @@
       "slopdotcash1",
       "thenetwork",
       "umia-protocol",
+      "unbrowse",
       "visual-strategy-canvas"
     ],
     "projectSource": "registry",
@@ -792,6 +793,21 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/Millercarter/slopdotcash1",
+      "prize": null
+    },
+    {
+      "id": "unbrowse",
+      "name": "unbrowse",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/unbrowse-ai/unbrowse",
       "prize": null
     }
   ],
