@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-06T19:41:05.046Z",
+  "builtAt": "2026-11-07T06:35:46.126Z",
   "sources": {
     "projects": [
       "asi",
@@ -62,12 +62,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-11-05T23:59:30.447Z",
+    "generatedAt": "2026-11-07T01:12:23.417Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-10-01T22:54:09.000Z",
-      "to": "2026-11-05T22:54:09.000Z"
+      "from": "2026-10-03T00:13:41.000Z",
+      "to": "2026-11-07T00:13:41.000Z"
     },
     "repositories": [
       {
@@ -167,95 +167,95 @@
         "projectId": "visual-strategy-canvas"
       }
     ],
-    "contributors": 189,
-    "outcomes": 9347,
-    "mergedPullRequests": 8418,
-    "substantiveReviews": 926,
+    "contributors": 190,
+    "outcomes": 10584,
+    "mergedPullRequests": 9669,
+    "substantiveReviews": 912,
     "evaluatedContributions": 3,
-    "invalidMarkers": 1132,
+    "invalidMarkers": 1475,
     "receiptCoverage": {
-      "valid": 3983,
-      "eligible": 9302
+      "valid": 4884,
+      "eligible": 10544
     },
-    "openPullRequests": 2075
+    "openPullRequests": 1543
   },
   "models": {
     "totals": {
-      "declarations": 3667,
-      "declarationsWithoutExactModel": 372,
+      "declarations": 4562,
+      "declarationsWithoutExactModel": 408,
       "signedDeclarations": 0,
-      "declaringContributors": 108,
-      "distinctModels": 99,
+      "declaringContributors": 109,
+      "distinctModels": 105,
       "distinctClients": 0,
-      "mergedPullRequests": 8418,
-      "mergedPullRequestsWithModel": 3061,
+      "mergedPullRequests": 9669,
+      "mergedPullRequestsWithModel": 3939,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 926,
-      "acceptedReviewsWithModel": 551
+      "acceptedReviews": 912,
+      "acceptedReviewsWithModel": 538
     },
     "top": [
       {
-        "key": "anthropic/claude-opus-5.5",
-        "declarations": 1028,
-        "contributors": 27,
-        "mergedPullRequests": 896,
+        "key": "openai/gpt-6.1-sol",
+        "declarations": 976,
+        "contributors": 22,
+        "mergedPullRequests": 970,
         "signedPullRequests": 0,
-        "acceptedReviews": 124,
-        "topContributorShare": 0.40588235294117647
+        "acceptedReviews": 6,
+        "topContributorShare": 0.48975409836065575
+      },
+      {
+        "key": "anthropic/claude-opus-5.5",
+        "declarations": 1029,
+        "contributors": 27,
+        "mergedPullRequests": 899,
+        "signedPullRequests": 0,
+        "acceptedReviews": 122,
+        "topContributorShare": 0.40646425073457393
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 805,
+        "declarations": 908,
         "contributors": 6,
-        "mergedPullRequests": 766,
+        "mergedPullRequests": 869,
         "signedPullRequests": 0,
         "acceptedReviews": 39,
-        "topContributorShare": 0.7739130434782608
+        "topContributorShare": 0.7995594713656388
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 339,
-        "contributors": 6,
-        "mergedPullRequests": 274,
+        "declarations": 342,
+        "contributors": 7,
+        "mergedPullRequests": 277,
         "signedPullRequests": 0,
         "acceptedReviews": 65,
-        "topContributorShare": 0.8613569321533924
-      },
-      {
-        "key": "openai/gpt-6.1-sol",
-        "declarations": 240,
-        "contributors": 21,
-        "mergedPullRequests": 234,
-        "signedPullRequests": 0,
-        "acceptedReviews": 6,
-        "topContributorShare": 0.32916666666666666
+        "topContributorShare": 0.8538011695906432
       },
       {
         "key": "openai/gpt-6-astra",
-        "declarations": 196,
-        "contributors": 6,
-        "mergedPullRequests": 195,
+        "declarations": 237,
+        "contributors": 7,
+        "mergedPullRequests": 236,
         "signedPullRequests": 0,
         "acceptedReviews": 1,
-        "topContributorShare": 0.5663265306122449
+        "topContributorShare": 0.46835443037974683
       },
       {
         "key": "xai/grok-4.7",
-        "declarations": 156,
+        "declarations": 152,
         "contributors": 6,
         "mergedPullRequests": 139,
         "signedPullRequests": 0,
-        "acceptedReviews": 17,
-        "topContributorShare": 0.8012820512820513
+        "acceptedReviews": 13,
+        "topContributorShare": 0.8223684210526315
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 158,
+        "declarations": 155,
         "contributors": 6,
         "mergedPullRequests": 119,
         "signedPullRequests": 0,
-        "acceptedReviews": 39,
-        "topContributorShare": 0.5443037974683544
+        "acceptedReviews": 36,
+        "topContributorShare": 0.5419354838709678
       },
       {
         "key": "anthropic/claude-fable-5.1",
