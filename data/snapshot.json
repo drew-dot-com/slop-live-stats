@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-10T07:44:08.800Z",
+  "builtAt": "2026-11-10T19:59:56.274Z",
   "sources": {
     "projects": [
       "asi",
@@ -497,6 +497,21 @@
       "prize": null
     },
     {
+      "id": "inscrib3-wallet",
+      "name": "Inscrib3 Wallet",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/inscrib3/arkade-wallet",
+      "prize": null
+    },
+    {
       "id": "monna-agent-permission-diff",
       "name": "MONNA Agent Permission Diff",
       "status": "active",
@@ -734,21 +749,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/heirlabs/element-sdk",
-      "prize": null
-    },
-    {
-      "id": "inscrib3-wallet",
-      "name": "Inscrib3 Wallet",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/inscrib3/arkade-wallet",
       "prize": null
     },
     {
