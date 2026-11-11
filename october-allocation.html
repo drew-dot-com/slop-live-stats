@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop Cash October allocation terms</title>
+<meta name="description" content="Terms of the proposed Slop Cash contributor allocation for October 2026 work: who would receive it, how it is split, how it is delivered and the risks.">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #fcfcfb; --line: #e6e5e0;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #8a8985;
+    --accent: #2a78d6;
+    --warn-bg: #fff7e6; --warn-line: #f0d9a8;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141413; --line: #2c2c2a;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8a8985;
+      --accent: #3987e5;
+      --warn-bg: #2a2416; --warn-line: #4d3f1f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 36px 0 8px; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 20px; margin: 0 0 12px; }
+  li { margin-bottom: 4px; }
+  .stamp { color: var(--ink-3); font-size: 0.9rem; }
+  .status { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 10px; padding: 14px 16px; margin: 20px 0 8px; }
+  .status p:last-child { margin-bottom: 0; }
+  code, .addr { font-family: var(--mono); font-size: 0.85em; overflow-wrap: anywhere; }
+  a { color: var(--accent); }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>October contributor allocation</h1>
+  <p class="stamp">Terms as of 11 November 2026</p>
+
+  <div class="status">
+    <p><strong>Status: proposed, not approved.</strong> SLOP holders decide whether to fund this allocation in a one-day decision market on <a href="https://app.umia.finance/p/slop-cash">Umia</a>. The market is not open yet; its dates will be added here once it is scheduled. If the proposal does not pass, nothing is transferred and nothing is sent.</p>
+    <p>If it passes, 1,000,000 SLOP moves from the Slop Cash treasury to the Slop Cash S.P. operating wallet. Nothing is sent to any contributor until the full list is published.</p>
+  </div>
+
+  <h2>What this is</h2>
+  <p>Slop Cash set its Contributors distribution (2,000,000 SLOP) from a snapshot on 30 September 2026. That list is published and does not change. People who began contributing in October are not on it.</p>
+  <p>This proposal asks holders whether to recognise October work with a second, smaller allocation of 1,000,000 SLOP (1% of supply) from the treasury's ecosystem and contributor programs reserve, which can be released only by a decision market.</p>
+  <p>The first distribution is not reduced, re-split or delayed. Tokens from it that are not claimed by 8 February 2027 return to the treasury as already published.</p>
+
+  <h2>Who would receive it</h2>
+  <ul>
+    <li>GitHub accounts with at least one accepted pull request or accepted review on a Slop-listed repository between 1 October 2026 00:00 UTC and 31 October 2026 23:59 UTC, as recorded in Slop's public contribution record.</li>
+    <li>About 190 accounts on the record published 11 November 2026.</li>
+    <li>The founders' accounts are excluded.</li>
+    <li>Accounts the S.P. identifies as farming volume are removed before the list is published.</li>
+    <li>Being on the first list does not exclude an account. October work counts for this allocation; earlier work does not.</li>
+  </ul>
+
+  <h2>How it is split</h2>
+  <ul>
+    <li>Every eligible account receives a base amount. The rest is weighted by accepted October work in the record, so more work receives more.</li>
+    <li>No account receives more than 10% of the allocation (100,000 SLOP).</li>
+    <li>The S.P. publishes the full list, every account and amount, before any transfer. The list states the date of the record it was built from.</li>
+  </ul>
+
+  <h2>How the tokens are delivered</h2>
+  <ul>
+    <li>Each recipient registers a Robinhood Chain wallet on <a href="https://slop.cash/earnings">slop.cash Payouts</a>. The deadline is the same as the first distribution: 8 February 2027, 17:00 UTC.</li>
+    <li>The S.P. sends in batches from <span class="addr">0xbCA4736F59d03F07cFac9415A5936fECb06b2eA7</span> to registered wallets and publishes each transaction.</li>
+    <li>Tokens are unlocked on receipt.</li>
+    <li>Any part of the 1,000,000 SLOP not sent once the final batch is recorded goes back to the treasury at <span class="addr">0x96028De971a9D37404F5030F6284b40640E2D1a2</span>.</li>
+    <li>There is nothing to apply for. Nobody from Slop Cash will message you about this allocation.</li>
+  </ul>
+
+  <h2>What passing does and does not do</h2>
+  <ul>
+    <li>Passing moves 1,000,000 SLOP from the treasury to the S.P. operating wallet. Nothing else.</li>
+    <li>It does not change the first Contributors distribution.</li>
+    <li>It creates no continuing program. Work after 31 October is not covered, and any later allocation would need its own proposal.</li>
+  </ul>
+
+  <h2>Risks</h2>
+  <ul>
+    <li>The receiving address is an ordinary wallet controlled by the S.P.'s Operator, not a contract. Holders rely on the S.P. to send according to the published list and to return the remainder.</li>
+    <li>October activity was concentrated. Before the cap, the ten most active accounts account for more than half of recorded October work, and much of it was produced by AI coding agents at high volume. The 10% cap and the removal of farming accounts limit this; they do not remove it.</li>
+    <li>Slop's review of how October work is sized is not finished, and one project's record ends early on 31 October. The list is built from the record as published on a stated date and is not rebuilt afterwards.</li>
+    <li>Up to 1,000,000 SLOP becomes freely transferable as batches go out.</li>
+  </ul>
+
+  <h2>Changes</h2>
+  <p>If the terms change before the market opens, this page is updated first and the date at the top changes. Once the market is open the terms do not change.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="mailto:hello@slop.cash">hello@slop.cash</a>.</p>
+
+  <footer>
+    <a href="https://slop.cash">slop.cash</a> · <a href="/">Slop Cash live record</a> · <a href="/referrals">Referral terms</a> · <a href="https://app.umia.finance/p/slop-cash">SLOP on Umia</a>
+  </footer>
+</main>
+</body>
+</html>
