@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop Cash referral terms</title>
+<meta name="description" content="Terms of the Slop Cash project referral program: who qualifies, when tokens accrue, the rate, the limits and the contract.">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #fcfcfb; --line: #e6e5e0;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #8a8985;
+    --accent: #2a78d6;
+    --warn-bg: #fff7e6; --warn-line: #f0d9a8;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141413; --line: #2c2c2a;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8a8985;
+      --accent: #3987e5;
+      --warn-bg: #2a2416; --warn-line: #4d3f1f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 36px 0 8px; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 20px; margin: 0 0 12px; }
+  li { margin-bottom: 4px; }
+  .stamp { color: var(--ink-3); font-size: 0.9rem; }
+  .status { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 10px; padding: 14px 16px; margin: 20px 0 8px; }
+  .status p:last-child { margin-bottom: 0; }
+  code, .addr { font-family: var(--mono); font-size: 0.85em; overflow-wrap: anywhere; }
+  a { color: var(--accent); }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Project referral program</h1>
+  <p class="stamp">Terms as of 11 November 2026</p>
+
+  <div class="status">
+    <p><strong>Status: not active.</strong> SLOP holders are deciding whether to fund this program in a decision market on <a href="https://app.umia.finance/p/slop-cash">Umia</a>, open from 11 November 2026 13:00 UTC for three days. If the proposal does not pass, the program stays inactive and nothing is paid.</p>
+    <p>If it passes, 2,000,000 SLOP moves from the Slop Cash treasury to the referral contract. That alone switches nothing on: Slop Cash activates monthly posting separately, and no project has contributor payments switched on yet, so nothing accrues until one does.</p>
+  </div>
+
+  <h2>What the program is for</h2>
+  <p>Slop Cash pays open-source contributors from pools that projects fund. The program sets aside 2,000,000 SLOP (2% of supply) from the treasury's ecosystem allocation for the people who bring funded projects to Slop Cash. A referrer receives tokens only when a project they referred actually pays its contributors. A listing, a pledge or a funded vault that never pays produces nothing.</p>
+
+  <h2>How a referral is recorded</h2>
+  <ul>
+    <li>When a maintainer lists a project on <a href="https://slop.cash/projects/new">slop.cash</a>, they may name the account that referred it. A link of the form <code>slop.cash/projects/new?ref=&lt;GitHub login&gt;</code> fills this in for them.</li>
+    <li>The referrer must be a signed-in slop.cash member.</li>
+    <li>The record is fixed once the project is submitted and cannot be changed later.</li>
+    <li>A project cannot refer itself, and its steward, Slop administrators and moderators cannot be named.</li>
+  </ul>
+
+  <h2>When tokens accrue</h2>
+  <ul>
+    <li>Only on a finalized contributor payout from the referred project, recorded as paid and confirmed on chain.</li>
+    <li>Only payouts in the 12 months after that project's first paid payout count.</li>
+    <li>The first month that can count is November 2026.</li>
+  </ul>
+
+  <h2>How much</h2>
+  <ul>
+    <li>3 SLOP for every 1 USDC of gross contributor payout, counted on stablecoin payouts only. This is a fixed token rate, not a dollar value.</li>
+    <li>At most 250,000 SLOP per referred project, over its lifetime.</li>
+    <li>At most 2,000,000 SLOP for the whole program. At this rate the full pool corresponds to about 666,667 USDC paid to contributors by referred projects.</li>
+    <li>A rate change applies only to later payouts. Filed months are never changed.</li>
+  </ul>
+
+  <h2>What does not count</h2>
+  <ul>
+    <li>Payouts in a project's own token or any other non-stablecoin asset.</li>
+    <li>Projects under a public hold.</li>
+    <li>Accounts under a participation ban.</li>
+    <li>The founders' accounts (<code>lalalune</code>, <code>drew-dot-com</code>), administrators and moderators. They can never receive referral tokens.</li>
+  </ul>
+
+  <h2>How tokens are distributed</h2>
+  <ul>
+    <li>After each closed UTC month, Slop Cash publishes a public file with every referrer's running total. Anyone can recompute it from the public payment record.</li>
+    <li>A fingerprint of that file (a Merkle root) is posted to the referral contract.</li>
+    <li>Referrers claim their own tokens from the contract with the Robinhood Chain wallet registered on their slop.cash account. Slop Cash sends no tokens to anyone.</li>
+    <li>A referrer without a registered wallet keeps their total, and it carries into later files.</li>
+    <li>Claimed tokens cannot be taken back.</li>
+  </ul>
+
+  <h2>The contract</h2>
+  <ul>
+    <li>Address on Robinhood Chain: <a class="addr" href="https://robin.etherscan.io/address/0x6A24E993E59cbA950C6F91A964BEF2A5F91227CC">0x6A24E993E59cbA950C6F91A964BEF2A5F91227CC</a>. Source: <a href="https://github.com/SlopDotCash/slopdotcash/blob/main/contracts/evm/src/ReferralDistributor.sol">ReferralDistributor.sol</a>. It is not upgradeable and can hold and pay out only SLOP.</li>
+    <li>It has had an AI-assisted internal review. It has not had an independent audit.</li>
+    <li>Owner: <span class="addr">0xbCA4736F59d03F07cFac9415A5936fECb06b2eA7</span>, the Slop Cash S.P. operating wallet. The owner can pause the contract, replace the address allowed to post monthly files, cancel the most recent file before anyone has claimed from it, and, only after 365 days with no active file, withdraw the remaining balance. If that withdrawal is ever used, the balance goes back to the treasury at <span class="addr">0x96028De971a9D37404F5030F6284b40640E2D1a2</span>.</li>
+    <li>Posting address: none usable today. It is set to the unusable address <span class="addr">0x000000000000000000000000000000000000dEaD</span> until the program is activated.</li>
+  </ul>
+
+  <h2>Risks</h2>
+  <ul>
+    <li>Whoever controls the posting address could post a false file and claim up to the contract's balance before the owner reacts. There is no built-in waiting period. The defences are an independent watcher on the contract, the owner's pause, and keeping the posting key separate from the owner key.</li>
+    <li>The owner can replace the poster, so the owner key is the root of trust for these tokens.</li>
+    <li>If referred projects pay out less than the pool covers, the remainder stays in the contract until the owner's 365-day withdrawal becomes available.</li>
+  </ul>
+
+  <h2>Changes</h2>
+  <p>If the terms change, this page is updated first and the date at the top changes. Changes apply only to later payouts.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="mailto:hello@slop.cash">hello@slop.cash</a>.</p>
+
+  <footer>
+    <a href="https://slop.cash">slop.cash</a> · <a href="/">Slop Cash live record</a> · <a href="https://app.umia.finance/p/slop-cash">SLOP on Umia</a>
+  </footer>
+</main>
+</body>
+</html>
