@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop Cash buyback</title>
+<meta name="description" content="How the Slop Cash SLOP buyback works: where the money comes from, how much is bought and burned, the limits, the addresses and the current status.">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #fcfcfb; --line: #e6e5e0;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #8a8985;
+    --accent: #2a78d6;
+    --warn-bg: #fff7e6; --warn-line: #f0d9a8;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141413; --line: #2c2c2a;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8a8985;
+      --accent: #3987e5;
+      --warn-bg: #2a2416; --warn-line: #4d3f1f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 36px 0 8px; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 20px; margin: 0 0 12px; }
+  li { margin-bottom: 4px; }
+  .stamp { color: var(--ink-3); font-size: 0.9rem; }
+  .status { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 10px; padding: 14px 16px; margin: 20px 0 8px; }
+  .status p:last-child { margin-bottom: 0; }
+  code, .addr { font-family: var(--mono); font-size: 0.85em; overflow-wrap: anywhere; }
+  a { color: var(--accent); }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SLOP buyback</h1>
+  <p class="stamp">As of 12 November 2026</p>
+
+  <div class="status">
+    <p><strong>Status: live since 12 November 2026. Nothing bought or burned yet.</strong> The buyback starts with the first fee Slop Cash collects. The first purchase and burn will be listed on this page with their transactions once they are confirmed on chain.</p>
+  </div>
+
+  <h2>What it is</h2>
+  <p>Half of every fee Slop Cash collects goes to buying SLOP on Robinhood Chain, and half of the SLOP bought is burned. It runs automatically. The money comes from Slop's fees, not from the treasury.</p>
+
+  <h2>Where the money comes from</h2>
+  <ul>
+    <li>Contributor rewards and returned unused funds: Slop takes a 2% fee, and half of it (1% of the gross amount) goes to the buyback.</li>
+    <li>Private security bounties: Slop's share is 25%, and half of it (12.5% of the gross award) goes to the buyback.</li>
+    <li>Only fees received from 12 November 2026 00:00 UTC count.</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <ul>
+    <li>Fees arrive in Slop's fee wallet on each network: Base, Ethereum, Solana and Robinhood Chain.</li>
+    <li>From Base, Ethereum and Solana, half of the USDC fee income is moved to Robinhood Chain as USDG through deBridge.</li>
+    <li>On Robinhood Chain, that USDG and half of the fees received there buy SLOP through KyberSwap.</li>
+    <li>Half of the SLOP bought is sent to the burn address below. The other half stays in the Robinhood Chain fee wallet.</li>
+    <li>Every amount is worked out from a running total of what has come in and what has already been bought or burned, so a retry can never buy or burn the same share twice.</li>
+  </ul>
+
+  <h2>Limits</h2>
+  <p>Small fees add up until they reach these sizes, so purchases come in batches, not with every fee.</p>
+  <ul>
+    <li>A transfer to Robinhood Chain starts at 500 USDC. A purchase starts at 25 USDG. A burn starts at 5 USDG worth of SLOP.</li>
+    <li>At most 1,000 USDG of purchases per run and 5,000 per day.</li>
+    <li>A purchase is refused if the price would move more than 3% or the result could come in more than 1% below the quote.</li>
+  </ul>
+
+  <h2>Addresses</h2>
+  <ul>
+    <li>SLOP token on Robinhood Chain: <a class="addr" href="https://robin.etherscan.io/token/0xfeb4E36FA4a2A494FF25ae4a63491e4c584A67AE">0xfeb4E36FA4a2A494FF25ae4a63491e4c584A67AE</a></li>
+    <li>Burn address: <a class="addr" href="https://robin.etherscan.io/token/0xfeb4E36FA4a2A494FF25ae4a63491e4c584A67AE?a=0x000000000000000000000000000000000000dEaD">0x000000000000000000000000000000000000dEaD</a>. Its SLOP balance is the public record of every burn.</li>
+    <li>Fee wallet on Robinhood Chain, Base and Ethereum: <a class="addr" href="https://robin.etherscan.io/address/0x8f77C37D8650776bFe73c9b12B15209eE15D9b86">0x8f77C37D8650776bFe73c9b12B15209eE15D9b86</a></li>
+    <li>Fee wallet on Solana: <span class="addr">9EyxVhhnCJH4QL5bDsRyukrkHFyitFMuf45UDdLxm4BY</span></li>
+  </ul>
+
+  <h2>What to know</h2>
+  <ul>
+    <li>Nothing about the buyback is guaranteed. It buys only when fees come in, and there is no fixed amount or schedule.</li>
+    <li>The SLOP token has no burn function for holders, so a burn is a transfer to an address nobody controls. The token's reported total supply stays at 100,000,000; the burn address balance shows what is out of circulation.</li>
+    <li>Slop Cash holds the fee wallet keys. Software places each order within the limits above.</li>
+    <li>The token's owner can pause the token. A pause stops purchases and burns until it ends.</li>
+    <li>The half of the bought SLOP that is not burned stays in Slop's fee wallet. If that changes, this page says so first.</li>
+  </ul>
+
+  <h2>Details</h2>
+  <p>The full design, the contract review and the test evidence are in <a href="https://github.com/SlopDotCash/slopdotcash/blob/main/docs/slop-buyback.md">docs/slop-buyback.md</a>. Questions: <a href="mailto:hello@slop.cash">hello@slop.cash</a>.</p>
+
+  <footer>
+    <a href="https://slop.cash">slop.cash</a> · <a href="/">Slop Cash live record</a> · <a href="/referrals">Referral program</a> · <a href="https://app.umia.finance/p/slop-cash">SLOP on Umia</a>
+  </footer>
+</main>
+</body>
+</html>
