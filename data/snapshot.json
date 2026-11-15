@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-14T22:44:09.760Z",
+  "builtAt": "2026-11-15T07:11:28.847Z",
   "sources": {
     "projects": [
       "asi",
@@ -509,7 +509,7 @@
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
-      "feeBasisPoints": 100,
+      "feeBasisPoints": 200,
       "authority": "verified",
       "repository": "https://github.com/feedforagents/feed",
       "prize": null
