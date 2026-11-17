@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop Cash receipts</title>
+<meta name="description" content="A public receipt for each month a project on Slop Cash sent money from its vault to outside contributors: who received what, the transactions, and the fee.">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #fcfcfb; --line: #e6e5e0;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #8a8985;
+    --accent: #2a78d6;
+    --warn-bg: #fff7e6; --warn-line: #f0d9a8;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141413; --line: #2c2c2a;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8a8985;
+      --accent: #3987e5;
+      --warn-bg: #2a2416; --warn-line: #4d3f1f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 36px 0 8px; }
+  p { margin: 0 0 12px; }
+  ul { padding-left: 20px; margin: 0 0 12px; }
+  li { margin-bottom: 4px; }
+  .stamp { color: var(--ink-3); font-size: 0.9rem; }
+  section.receipt { border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 24px 0; scroll-margin-top: 16px; }
+  section.receipt:target { border-color: var(--accent); }
+  section.receipt h2 { margin: 0 0 4px; }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 12px 0; }
+  dt { color: var(--ink-2); }
+  dd { margin: 0; font-variant-numeric: tabular-nums; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--ink-2); font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note { color: var(--ink-2); font-size: 0.92rem; }
+  code, .addr { font-family: var(--mono); font-size: 0.85em; overflow-wrap: anywhere; }
+  a { color: var(--accent); }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.9rem; }
+  @media (max-width: 560px) { dl { grid-template-columns: 1fr; gap: 0; } dd { margin-bottom: 8px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Receipts</h1>
+  <div id="body">
+    <p id="empty">The first receipt appears here when a project pays an outside contributor.</p>
+  </div>
+
+  <footer>
+    <a href="https://slop.cash">slop.cash</a> · <a href="/">Slop Cash live record</a> · <a href="/referrals">Referral program</a> · <a href="/buyback">Buyback</a>
+  </footer>
+</main>
+<script type="module">
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const safeUrl = (u) => (/^https:\/\/[^\s"'<>]+$/.test(String(u)) ? String(u) : '#');
+  const monthName = (ym) => new Date(ym + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const day = (iso) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const people = (k) => (k === 1 ? '1 outside contributor' : `${k} outside contributors`);
+  const hours = (h) => (h < 1 ? 'under an hour' : h < 48 ? `${Math.round(h)} ${Math.round(h) === 1 ? 'hour' : 'hours'}` : `${Math.round(h / 24)} days`);
+  const short = (t) => (t.length > 20 ? `${t.slice(0, 10)}…${t.slice(-8)}` : t);
+
+  function mergeLine(m) {
+    if (!m || !Array.isArray(m.repositories) || !m.repositories.length) return 'No merge figures were on record when this receipt was published.';
+    const parts = m.repositories.map((r) => {
+      const count = r.mergedOutside >= 300 ? '300 or more' : String(r.mergedOutside);
+      const median = r.medianHours === null || r.medianHours === undefined ? '' : `, median time from opening to merge ${hours(r.medianHours)}`;
+      return `${esc(r.repository)}: ${count} pull ${r.mergedOutside === 1 ? 'request' : 'requests'} from outside contributors merged${median}`;
+    });
+    return `In the ${m.windowDays} days to ${day(m.asOf)}, the day this receipt was published: ${parts.join('; ')}. The site keeps a rolling ${m.windowDays}-day figure, not one per calendar month.`;
+  }
+
+  function receipt(r) {
+    const rows = r.recipients.map((p) => `<tr>
+      <td>${p.login ? `<a href="https://github.com/${esc(p.login)}">${esc(p.login)}</a>` : 'An account the site did not name'}</td>
+      <td class="num">${esc(p.received)} ${esc(r.asset)}</td>
+      <td>${p.transactions.map((t) => `<a class="addr" href="${safeUrl(t.url)}">${esc(short(t.id))}</a>`).join('<br>')}</td>
+    </tr>`).join('');
+    const fee = r.feeExact
+      ? `${esc(r.fee)} ${esc(r.asset)}. Slop takes 2% of each award before the contributor is sent the rest.`
+      : `About ${esc(r.fee)} ${esc(r.asset)}, worked out from the amounts received (Slop takes 2% of each award before the contributor is sent the rest). The public record gives fees per project, not per month.`;
+    const notes = [];
+    if (r.own) notes.push(`Not counted above: ${r.own.payments === 1 ? '1 payment' : `${r.own.payments} payments`} in the same month, ${esc(r.own.total)} ${esc(r.asset)} in all, sent to the project's own owner or a Slop team account.`);
+    if (r.privateRecords) notes.push('Some recipients keep their Slop record private. They are not listed, so the real number of contributors and the real total are higher than the figures here.');
+    if (r.reserved) notes.push(`${esc(r.reserved)} ${esc(r.asset)} more is held in the project's vault for contributors who have no wallet on file for this network. It is sent when they register one, and is not part of this receipt until then.`);
+    return `<section class="receipt" id="${esc(r.anchor)}">
+      <h2>${esc(r.project)}, ${esc(monthName(r.month))}</h2>
+      <p class="stamp">Sent ${r.firstSentAt.slice(0, 10) === r.lastSentAt.slice(0, 10) ? day(r.firstSentAt) : `${day(r.firstSentAt)} to ${day(r.lastSentAt)}`} · <a href="#${esc(r.anchor)}">link to this receipt</a></p>
+      <dl>
+        <dt>Project</dt><dd><a href="https://slop.cash/projects/${esc(r.projectId)}">${esc(r.project)}</a></dd>
+        <dt>For work merged in</dt><dd>${esc(monthName(r.month))}</dd>
+        <dt>Asset and network</dt><dd>${esc(r.asset)} on ${esc(r.networkName)}${r.stable ? '' : " (the project's own token)"}</dd>
+        <dt>Total sent</dt><dd>${esc(r.total)} ${esc(r.asset)} to ${people(r.contributors)}</dd>
+        <dt>Fee Slop took</dt><dd>${fee}</dd>
+      </dl>
+      <div class="scroll"><table>
+        <thead><tr><th>Contributor</th><th class="num">Received</th><th>Transaction</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+      <p class="note">Amounts are what each contributor received, after the fee. Each transaction was confirmed final on ${esc(r.networkName)} before this receipt was published.</p>
+      <p class="note">Merging at this project: ${mergeLine(r.merges)}</p>
+      ${notes.map((x) => `<p class="note">${x}</p>`).join('')}
+    </section>`;
+  }
+
+  function render(items, builtAt) {
+    const newestFirst = items.slice().sort((a, b) => (a.firstSentAt < b.firstSentAt ? 1 : -1));
+    document.getElementById('body').innerHTML = `
+      <p class="stamp">Rebuilt ${esc(day(builtAt))} from slop.cash's public payment record.</p>
+      <p>Each receipt below is one month in which a project on Slop Cash sent money from its own vault to people outside the project for work the project merged. It names who received what and links every transaction.</p>
+      ${newestFirst.map(receipt).join('')}
+      <h2>When a month gets a receipt</h2>
+      <ul>
+        <li>The payment is on <a href="https://slop.cash/api/v1/payments/vault-payments">slop.cash's public record of finalized vault payments</a>, for a named month of work, on a main network.</li>
+        <li>At least one recipient is neither the project's own owner nor a Slop team account.</li>
+        <li>The site names every recipient of the month, and each counted transaction was checked on chain and found final when this page was rebuilt.</li>
+      </ul>
+      <h2>What these receipts do not show</h2>
+      <ul>
+        <li>Private allocations. How a month's pool is split among contributors before it is sent is private; a receipt shows only what was sent.</li>
+        <li>Recipients who keep their Slop record private. Where a project has some, its receipt says so.</li>
+        <li>Awards not yet claimed. Money held in a vault for a contributor with no wallet on file appears only once it is sent.</li>
+        <li>Payments to a project's own owner or to Slop team accounts. They are named in a note and left out of the totals.</li>
+        <li>Security bounties, withdrawals by a project owner, and the August 2026 transfers that were sent directly from a wallet. Those are on the <a href="/">live record</a>.</li>
+        <li>Anything about later months. A receipt records a payment that happened and says nothing about the next one.</li>
+      </ul>
+      <p class="note">Source for this page: <a href="https://github.com/drew-dot-com/slop-live-stats">github.com/drew-dot-com/slop-live-stats</a>. The page rebuilds a few times a day, so a new payment can take some hours to appear.</p>`;
+    // The hash was resolved before the receipts existed: go to it now.
+    try {
+      if (location.hash.length > 1) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+    } catch { /* a hash that is not a receipt changes nothing */ }
+  }
+
+  let snap = null;
+  try {
+    snap = await fetch('data/snapshot.json', { cache: 'no-cache' }).then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
+  } catch {
+    document.getElementById('empty').textContent = 'The receipts could not be loaded. Please try again shortly.';
+  }
+  const items = Array.isArray(snap?.receipts?.items) ? snap.receipts.items : [];
+  if (items.length) render(items, snap.receipts.builtAt || snap.builtAt);
+</script>
+</body>
+</html>
