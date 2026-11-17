@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { discover, loadAll } from '../agg.js';
+import { loadReceipts } from '../receipts.js';
 const headers = { 'user-agent': 'slop-live-stats', ...(process.env.GITHUB_TOKEN ? { authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}) };
 const fetchJson = (u) => fetch(u, { headers: u.startsWith('https://slop.cash/') ? { 'user-agent': headers['user-agent'] } : headers }).then((r) => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); });
 const out = new URL('../data/snapshot.json', import.meta.url);
@@ -9,5 +10,14 @@ const sources = await discover(fetchJson);
 const fetchBytes = (u) => fetch(u, { headers: { 'user-agent': headers['user-agent'] } }).then(async (r) => { if (!r.ok) throw new Error(r.status + ' ' + u); return new Uint8Array(await r.arrayBuffer()); });
 const snap = await loadAll(fetchJson, sources, { cycleSnapshots: prev.cycleSnapshots || {}, fetchCycleSnapshots: true, fetchBytes });
 if (snap.months.some((m) => !m.counts)) throw new Error('cycle snapshot counts missing');
+// Receipts (receipts.html): one per project month that paid an outside contributor. A
+// failed read keeps the last good receipts and never stops the rest of the snapshot.
+const rpcCall = (url, method, params) => fetch(url, { method: 'POST', headers: { 'content-type': 'application/json', 'user-agent': headers['user-agent'] }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }), signal: AbortSignal.timeout(30000) }).then((r) => { if (!r.ok) throw new Error(r.status + ' ' + url); return r.json(); }).then((j) => j.result);
+try {
+  snap.receipts = await loadReceipts(fetchJson, rpcCall, { previous: prev.receipts });
+} catch (e) {
+  console.error('receipts not rebuilt:', e.message);
+  snap.receipts = prev.receipts || { builtAt: null, items: [], confirmed: [] };
+}
 writeFileSync(out, JSON.stringify(snap, null, 2) + '\n');
-console.log('snapshot', snap.builtAt, snap.leaderboard.outcomes, 'outcomes', snap.money.paidUsdc, 'USDC paid', sources.projects.length, 'projects', snap.months.map((m) => m.month).join(','), 'cycle months');
+console.log('snapshot', snap.builtAt, snap.leaderboard.outcomes, 'outcomes', snap.money.paidUsdc, 'USDC paid', sources.projects.length, 'projects', snap.months.map((m) => m.month).join(','), 'cycle months', snap.receipts.items.length, 'receipts');

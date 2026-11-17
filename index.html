@@ -78,6 +78,7 @@
     <p id="sent-callout"><strong>How the August transfers were sent.</strong> The project creator signed and broadcast these transfers directly from the project's own wallet. Slop held no funds and no keys for these transfers. They went out before any month had run through Slop's own payment flow, so the repository records them as <code>sent-outside-verified-flow</code>, with a reconciliation that found zero unmatched transfers and no row with a registered wallet above the $2.00 minimum left unpaid.<span id="milestone"> Payouts now run from project vaults instead: contracts that each project's owner funds. In that flow Slop holds a fee key, an identity attester key and contract upgrade keys. The <a href="https://slop.cash/sponsors">Fund a project page</a> says what each one can do.</span></p>
     <p><span id="unclaimed-line"></span> Unclaimed amounts belong to contributors who had not registered a payout wallet when the month was frozen.<span id="fee-line"></span></p>
   </div>
+  <p>Each month in which a project sends money from its vault to outside contributors gets its own public receipt, with every recipient and transaction: <a href="/receipts">record.slop.cash/receipts</a>.</p>
 
   <h2 id="cycles-title">Monthly cycles scored since July</h2>
   <p>Each month is frozen from the same scoring ledger into a file in the repository. Counts below come straight from those frozen files, so they do not move as the live window rolls.</p>
@@ -128,7 +129,7 @@
   <p class="desc">Model identity on Slop is self-reported and adds no points. A signed receipt binds a device to its declaration; it does not verify which model produced the work. Contributor counts cover the rolling scoring window, not all time.</p>
 
   <footer>
-    Built by Drew Pierson for <a href="https://slop.cash">Slop Cash</a>. Source for this page: <a href="https://github.com/drew-dot-com/slop-live-stats">github.com/drew-dot-com/slop-live-stats</a>.
+    Built by Drew Pierson for <a href="https://slop.cash">Slop Cash</a>. <a href="/receipts">Receipts</a> · <a href="/referrals">Referral program</a> · <a href="/buyback">Buyback</a>. Source for this page: <a href="https://github.com/drew-dot-com/slop-live-stats">github.com/drew-dot-com/slop-live-stats</a>.
   </footer>
 </main>
 <script type="module">
