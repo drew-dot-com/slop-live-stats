@@ -253,7 +253,7 @@ test('an unconfirmed transaction publishes nothing; an unreadable record throws'
 test('the receipts page and the rule file keep to the wording rules', () => {
   for (const f of ['../receipts.html', '../receipts.js', '../index.html']) {
     const text = readFileSync(new URL(f, import.meta.url), 'utf8');
-    assert.ok(!/[—–]/.test(text), `${f} has a long dash`);
+    assert.ok(!/[\u2014\u2013]/.test(text), `${f} has a long dash`);
     assert.ok(!/\b(earn(ed|s|ing)?|owed|guarantee[ds]?)\b/i.test(text), `${f} uses a barred word`);
   }
   const page = readFileSync(new URL('../receipts.html', import.meta.url), 'utf8');
