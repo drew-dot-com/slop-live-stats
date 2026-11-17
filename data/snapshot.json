@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-17T08:28:48.852Z",
+  "builtAt": "2026-11-17T21:19:50.923Z",
   "sources": {
     "projects": [
       "asi",
@@ -19,6 +19,7 @@
       "heir-elements-sdk",
       "hyperliquid-source",
       "inscrib3-wallet",
+      "kickback",
       "monna-agent-permission-diff",
       "nurosos",
       "ohio-project-south",
@@ -519,12 +520,12 @@
       "name": "fly.ai",
       "status": "active",
       "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
+      "capDisplay": "530,000 FLYAI",
+      "chain": "robinhood",
       "paymentMode": "disabled",
       "fundingState": "pledged",
       "committedMinor": "0",
-      "feeBasisPoints": 100,
+      "feeBasisPoints": 200,
       "authority": "unverified",
       "repository": "https://github.com/alextitonis/fly.ai",
       "prize": null
@@ -815,6 +816,21 @@
       "prize": null
     },
     {
+      "id": "kickback",
+      "name": "Kickback",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/syanovee/kickback",
+      "prize": null
+    },
+    {
       "id": "nurosos",
       "name": "NurosOS",
       "status": "paused",
@@ -886,5 +902,10 @@
     "generatedAt": "2026-08-21T02:59:01.753Z",
     "reviewEndsAt": "2026-09-04T02:59:01.753Z",
     "approvedAt": null
+  },
+  "receipts": {
+    "builtAt": "2026-11-17T21:19:50.953Z",
+    "items": [],
+    "confirmed": []
   }
 }
