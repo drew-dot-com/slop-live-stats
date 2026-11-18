@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-18T07:56:00.085Z",
+  "builtAt": "2026-11-18T20:53:29.189Z",
   "sources": {
     "projects": [
       "asi",
@@ -30,6 +30,7 @@
       "slop-cash-reverse-engineering",
       "slopdotcash",
       "slopdotcash1",
+      "spawn-backrooms",
       "teeny-s-brain",
       "thenetwork",
       "toon-plugins",
@@ -877,6 +878,21 @@
       "prize": null
     },
     {
+      "id": "spawn-backrooms",
+      "name": "SPAWN Backrooms",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/Spawn-Backrooms/spawn",
+      "prize": null
+    },
+    {
       "id": "unbrowse",
       "name": "unbrowse",
       "status": "paused",
@@ -920,7 +936,7 @@
     "approvedAt": null
   },
   "receipts": {
-    "builtAt": "2026-11-18T07:56:00.116Z",
+    "builtAt": "2026-11-18T20:53:29.223Z",
     "items": [
       {
         "anchor": "feed-2026-10",
@@ -969,9 +985,59 @@
             }
           ]
         }
+      },
+      {
+        "anchor": "asi-2026-10",
+        "url": "https://record.slop.cash/receipts#asi-2026-10",
+        "projectId": "asi",
+        "project": "ASI",
+        "month": "2026-10",
+        "network": "robinhood-mainnet",
+        "networkName": "Robinhood Chain",
+        "asset": "USDG",
+        "assetAddress": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "stable": true,
+        "contributors": 1,
+        "total": "9.34",
+        "fee": "0.19",
+        "feeExact": true,
+        "recipients": [
+          {
+            "login": "ss251",
+            "received": "9.34",
+            "transactions": [
+              {
+                "id": "0x9fbb057005bb5d6e7753025a96475bf6e8efc9d2b8e18aa48ca12a182e8d3eb5",
+                "url": "https://robinhoodchain.blockscout.com/tx/0x9fbb057005bb5d6e7753025a96475bf6e8efc9d2b8e18aa48ca12a182e8d3eb5"
+              }
+            ]
+          }
+        ],
+        "own": {
+          "payments": 1,
+          "total": "2.42"
+        },
+        "privateRecords": false,
+        "reserved": "233.24",
+        "firstSentAt": "2026-11-18T16:30:27.503Z",
+        "lastSentAt": "2026-11-18T16:30:27.503Z",
+        "publishedAt": "2026-11-18T20:53:29.223Z",
+        "merges": {
+          "windowDays": 30,
+          "asOf": "2026-11-18T20:53:29.223Z",
+          "repositories": [
+            {
+              "repository": "SlopDotCash/asi",
+              "mergedOutside": 300,
+              "medianHours": 191.3
+            }
+          ]
+        }
       }
     ],
     "confirmed": [
+      "robinhood-mainnet:0x58c7762747cdf0369fb2655eeb8a562fe310e401c1dfae55298a4646969c6b81",
+      "robinhood-mainnet:0x9fbb057005bb5d6e7753025a96475bf6e8efc9d2b8e18aa48ca12a182e8d3eb5",
       "solana-mainnet:5XRgBiXJqmhcf3w1TuRq4vg5jSvFzMsFfc54M4pWxyiAQVv1WSyCid7kdWFpTK1kgYddNLAFn4CLinNZRxRdyWdC",
       "solana-mainnet:WSeFs2SjX1HzzZo6G7WLnEqcANskQ76BeJkHJx3tHbZEEqTjaC7pa4UChroTJzAUVeEzyzWAp332m3kQWGFM4C6"
     ]
