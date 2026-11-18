@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-17T21:19:50.923Z",
+  "builtAt": "2026-11-18T07:56:00.085Z",
   "sources": {
     "projects": [
       "asi",
@@ -35,7 +35,8 @@
       "toon-plugins",
       "umia-protocol",
       "unbrowse",
-      "visual-strategy-canvas"
+      "visual-strategy-canvas",
+      "widespread"
     ],
     "projectSource": "registry",
     "disclosures": [
@@ -666,21 +667,6 @@
       "prize": null
     },
     {
-      "id": "slopdotcash1",
-      "name": "slopdotcash1",
-      "status": "active",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/Millercarter/slopdotcash1",
-      "prize": null
-    },
-    {
       "id": "teeny-s-brain",
       "name": "Teeny's brain",
       "status": "active",
@@ -738,21 +724,6 @@
       "feeBasisPoints": 100,
       "authority": "unverified",
       "repository": "https://github.com/SlopDotCash/umia-protocol",
-      "prize": null
-    },
-    {
-      "id": "unbrowse",
-      "name": "unbrowse",
-      "status": "active",
-      "kind": "monthly-pool",
-      "capDisplay": "$1,000",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 200,
-      "authority": "unverified",
-      "repository": "https://github.com/unbrowse-ai/unbrowse",
       "prize": null
     },
     {
@@ -889,6 +860,51 @@
       "authority": "unverified",
       "repository": "https://github.com/Chihyunpark1/slop-source",
       "prize": null
+    },
+    {
+      "id": "slopdotcash1",
+      "name": "slopdotcash1",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 100,
+      "authority": "unverified",
+      "repository": "https://github.com/Millercarter/slopdotcash1",
+      "prize": null
+    },
+    {
+      "id": "unbrowse",
+      "name": "unbrowse",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$1,000",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/unbrowse-ai/unbrowse",
+      "prize": null
+    },
+    {
+      "id": "widespread",
+      "name": "Widespread",
+      "status": "paused",
+      "kind": "monthly-pool",
+      "capDisplay": "$0",
+      "chain": "base",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/TerexitariusStomp/widespread",
+      "prize": null
     }
   ],
   "proposal": {
@@ -904,8 +920,60 @@
     "approvedAt": null
   },
   "receipts": {
-    "builtAt": "2026-11-17T21:19:50.953Z",
-    "items": [],
-    "confirmed": []
+    "builtAt": "2026-11-18T07:56:00.116Z",
+    "items": [
+      {
+        "anchor": "feed-2026-10",
+        "url": "https://record.slop.cash/receipts#feed-2026-10",
+        "projectId": "feed",
+        "project": "Feed",
+        "month": "2026-10",
+        "network": "solana-mainnet",
+        "networkName": "Solana",
+        "asset": "USDC",
+        "assetAddress": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "stable": true,
+        "contributors": 1,
+        "total": "107.56",
+        "fee": "2.20",
+        "feeExact": true,
+        "recipients": [
+          {
+            "login": "SYMBaiEX",
+            "received": "107.56",
+            "transactions": [
+              {
+                "id": "WSeFs2SjX1HzzZo6G7WLnEqcANskQ76BeJkHJx3tHbZEEqTjaC7pa4UChroTJzAUVeEzyzWAp332m3kQWGFM4C6",
+                "url": "https://explorer.solana.com/tx/WSeFs2SjX1HzzZo6G7WLnEqcANskQ76BeJkHJx3tHbZEEqTjaC7pa4UChroTJzAUVeEzyzWAp332m3kQWGFM4C6"
+              }
+            ]
+          }
+        ],
+        "own": {
+          "payments": 1,
+          "total": "382.44"
+        },
+        "privateRecords": false,
+        "reserved": null,
+        "firstSentAt": "2026-11-18T04:10:16.706Z",
+        "lastSentAt": "2026-11-18T04:10:16.706Z",
+        "publishedAt": "2026-11-18T07:56:00.116Z",
+        "merges": {
+          "windowDays": 30,
+          "asOf": "2026-11-18T07:56:00.116Z",
+          "repositories": [
+            {
+              "repository": "feedforagents/feed",
+              "mergedOutside": 175,
+              "medianHours": 70.4
+            }
+          ]
+        }
+      }
+    ],
+    "confirmed": [
+      "solana-mainnet:5XRgBiXJqmhcf3w1TuRq4vg5jSvFzMsFfc54M4pWxyiAQVv1WSyCid7kdWFpTK1kgYddNLAFn4CLinNZRxRdyWdC",
+      "solana-mainnet:WSeFs2SjX1HzzZo6G7WLnEqcANskQ76BeJkHJx3tHbZEEqTjaC7pa4UChroTJzAUVeEzyzWAp332m3kQWGFM4C6"
+    ]
   }
 }
