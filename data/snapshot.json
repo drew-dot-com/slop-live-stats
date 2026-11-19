@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-19T07:55:43.617Z",
+  "builtAt": "2026-11-19T20:57:56.078Z",
   "sources": {
     "projects": [
       "asi",
@@ -668,6 +668,21 @@
       "prize": null
     },
     {
+      "id": "spawn-backrooms",
+      "name": "SPAWN Backrooms",
+      "status": "active",
+      "kind": "monthly-pool",
+      "capDisplay": "$2,500",
+      "chain": "robinhood",
+      "paymentMode": "disabled",
+      "fundingState": "pledged",
+      "committedMinor": "0",
+      "feeBasisPoints": 200,
+      "authority": "unverified",
+      "repository": "https://github.com/Spawn-Backrooms/spawn",
+      "prize": null
+    },
+    {
       "id": "teeny-s-brain",
       "name": "Teeny's brain",
       "status": "active",
@@ -878,21 +893,6 @@
       "prize": null
     },
     {
-      "id": "spawn-backrooms",
-      "name": "SPAWN Backrooms",
-      "status": "paused",
-      "kind": "monthly-pool",
-      "capDisplay": "$0",
-      "chain": "base",
-      "paymentMode": "disabled",
-      "fundingState": "pledged",
-      "committedMinor": "0",
-      "feeBasisPoints": 100,
-      "authority": "unverified",
-      "repository": "https://github.com/Spawn-Backrooms/spawn",
-      "prize": null
-    },
-    {
       "id": "unbrowse",
       "name": "unbrowse",
       "status": "paused",
@@ -936,7 +936,7 @@
     "approvedAt": null
   },
   "receipts": {
-    "builtAt": "2026-11-19T07:55:43.661Z",
+    "builtAt": "2026-11-19T20:57:56.121Z",
     "items": [
       {
         "anchor": "feed-2026-10",
