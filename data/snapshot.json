@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-19T20:57:56.078Z",
+  "builtAt": "2026-11-20T07:45:07.157Z",
   "sources": {
     "projects": [
       "asi",
@@ -936,7 +936,7 @@
     "approvedAt": null
   },
   "receipts": {
-    "builtAt": "2026-11-19T20:57:56.121Z",
+    "builtAt": "2026-11-20T07:45:07.198Z",
     "items": [
       {
         "anchor": "feed-2026-10",
