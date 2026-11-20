@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-20T07:45:07.157Z",
+  "builtAt": "2026-11-20T20:42:53.097Z",
   "sources": {
     "projects": [
       "asi",
@@ -936,7 +936,7 @@
     "approvedAt": null
   },
   "receipts": {
-    "builtAt": "2026-11-20T07:45:07.198Z",
+    "builtAt": "2026-11-20T20:42:53.145Z",
     "items": [
       {
         "anchor": "feed-2026-10",
@@ -997,9 +997,9 @@
         "asset": "USDG",
         "assetAddress": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
         "stable": true,
-        "contributors": 1,
-        "total": "9.34",
-        "fee": "0.19",
+        "contributors": 3,
+        "total": "20.94",
+        "fee": "0.43",
         "feeExact": true,
         "recipients": [
           {
@@ -1011,6 +1011,26 @@
                 "url": "https://robinhoodchain.blockscout.com/tx/0x9fbb057005bb5d6e7753025a96475bf6e8efc9d2b8e18aa48ca12a182e8d3eb5"
               }
             ]
+          },
+          {
+            "login": "greatcodeeer",
+            "received": "8.21",
+            "transactions": [
+              {
+                "id": "0x48fe6099b7f20750aa1b1b68791f5098b36ddc6cda54f0f13d8b3d4a1d334e6c",
+                "url": "https://robinhoodchain.blockscout.com/tx/0x48fe6099b7f20750aa1b1b68791f5098b36ddc6cda54f0f13d8b3d4a1d334e6c"
+              }
+            ]
+          },
+          {
+            "login": "mashingaan",
+            "received": "3.38",
+            "transactions": [
+              {
+                "id": "0x03ccd61b1e726746d6d77e0db71224f10d55ca2cffeda8b847328ba338fc47d5",
+                "url": "https://robinhoodchain.blockscout.com/tx/0x03ccd61b1e726746d6d77e0db71224f10d55ca2cffeda8b847328ba338fc47d5"
+              }
+            ]
           }
         ],
         "own": {
@@ -1018,9 +1038,9 @@
           "total": "2.42"
         },
         "privateRecords": false,
-        "reserved": "233.24",
+        "reserved": "221.64",
         "firstSentAt": "2026-11-18T16:30:27.503Z",
-        "lastSentAt": "2026-11-18T16:30:27.503Z",
+        "lastSentAt": "2026-11-20T17:50:26.624Z",
         "publishedAt": "2026-11-18T20:53:29.223Z",
         "merges": {
           "windowDays": 30,
@@ -1036,6 +1056,8 @@
       }
     ],
     "confirmed": [
+      "robinhood-mainnet:0x03ccd61b1e726746d6d77e0db71224f10d55ca2cffeda8b847328ba338fc47d5",
+      "robinhood-mainnet:0x48fe6099b7f20750aa1b1b68791f5098b36ddc6cda54f0f13d8b3d4a1d334e6c",
       "robinhood-mainnet:0x58c7762747cdf0369fb2655eeb8a562fe310e401c1dfae55298a4646969c6b81",
       "robinhood-mainnet:0x9fbb057005bb5d6e7753025a96475bf6e8efc9d2b8e18aa48ca12a182e8d3eb5",
       "solana-mainnet:5XRgBiXJqmhcf3w1TuRq4vg5jSvFzMsFfc54M4pWxyiAQVv1WSyCid7kdWFpTK1kgYddNLAFn4CLinNZRxRdyWdC",
