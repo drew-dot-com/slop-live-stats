@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-21T19:47:20.561Z",
+  "builtAt": "2026-11-22T07:26:52.478Z",
   "sources": {
     "projects": [
       "asi",
@@ -69,12 +69,12 @@
     ]
   },
   "leaderboard": {
-    "generatedAt": "2026-11-21T06:22:39.119Z",
+    "generatedAt": "2026-11-22T03:04:00.258Z",
     "ruleVersion": "slop-score-v2",
     "window": {
       "days": 35,
-      "from": "2026-10-17T02:00:36.000Z",
-      "to": "2026-11-21T02:00:36.000Z"
+      "from": "2026-10-17T23:12:55.000Z",
+      "to": "2026-11-21T23:12:55.000Z"
     },
     "repositories": [
       {
@@ -240,59 +240,59 @@
         "projectId": "visual-strategy-canvas"
       }
     ],
-    "contributors": 184,
-    "outcomes": 8764,
-    "mergedPullRequests": 8492,
-    "substantiveReviews": 269,
+    "contributors": 183,
+    "outcomes": 8719,
+    "mergedPullRequests": 8437,
+    "substantiveReviews": 279,
     "evaluatedContributions": 3,
-    "invalidMarkers": 907,
+    "invalidMarkers": 865,
     "receiptCoverage": {
-      "valid": 4058,
-      "eligible": 8347
+      "valid": 3934,
+      "eligible": 8270
     },
-    "openPullRequests": 1226
+    "openPullRequests": 1164
   },
   "models": {
     "totals": {
-      "declarations": 3909,
-      "declarationsWithoutExactModel": 236,
+      "declarations": 3794,
+      "declarationsWithoutExactModel": 225,
       "signedDeclarations": 0,
-      "declaringContributors": 92,
-      "distinctModels": 105,
+      "declaringContributors": 89,
+      "distinctModels": 102,
       "distinctClients": 0,
-      "mergedPullRequests": 8492,
-      "mergedPullRequestsWithModel": 3658,
+      "mergedPullRequests": 8437,
+      "mergedPullRequestsWithModel": 3548,
       "mergedPullRequestsWithSignedRun": 0,
-      "acceptedReviews": 269,
-      "acceptedReviewsWithModel": 165
+      "acceptedReviews": 279,
+      "acceptedReviewsWithModel": 161
     },
     "top": [
       {
         "key": "openai/gpt-6.1-sol",
-        "declarations": 1534,
-        "contributors": 18,
-        "mergedPullRequests": 1529,
+        "declarations": 1529,
+        "contributors": 17,
+        "mergedPullRequests": 1524,
         "signedPullRequests": 0,
         "acceptedReviews": 5,
-        "topContributorShare": 0.5684485006518905
+        "topContributorShare": 0.5703073904512753
       },
       {
         "key": "meta/muse-spark",
-        "declarations": 530,
+        "declarations": 518,
         "contributors": 3,
-        "mergedPullRequests": 499,
+        "mergedPullRequests": 489,
         "signedPullRequests": 0,
-        "acceptedReviews": 31,
-        "topContributorShare": 0.8905660377358491
+        "acceptedReviews": 29,
+        "topContributorShare": 0.8918918918918919
       },
       {
         "key": "anthropic/claude-opus-5.5",
-        "declarations": 513,
+        "declarations": 453,
         "contributors": 22,
-        "mergedPullRequests": 477,
+        "mergedPullRequests": 418,
         "signedPullRequests": 0,
-        "acceptedReviews": 30,
-        "topContributorShare": 0.611439842209073
+        "acceptedReviews": 29,
+        "topContributorShare": 0.5838926174496645
       },
       {
         "key": "openai/gpt-6-astra",
@@ -305,12 +305,12 @@
       },
       {
         "key": "openai/gpt-5",
-        "declarations": 225,
+        "declarations": 206,
         "contributors": 5,
-        "mergedPullRequests": 214,
+        "mergedPullRequests": 196,
         "signedPullRequests": 0,
-        "acceptedReviews": 11,
-        "topContributorShare": 0.8844444444444445
+        "acceptedReviews": 10,
+        "topContributorShare": 0.8737864077669902
       },
       {
         "key": "openai/gpt-6",
@@ -332,12 +332,12 @@
       },
       {
         "key": "deepseek/deepseek-v4-flash",
-        "declarations": 101,
+        "declarations": 98,
         "contributors": 5,
-        "mergedPullRequests": 101,
+        "mergedPullRequests": 98,
         "signedPullRequests": 0,
         "acceptedReviews": 0,
-        "topContributorShare": 0.6039603960396039
+        "topContributorShare": 0.6224489795918368
       }
     ]
   },
@@ -1002,7 +1002,7 @@
     "approvedAt": null
   },
   "receipts": {
-    "builtAt": "2026-11-21T19:47:20.585Z",
+    "builtAt": "2026-11-22T07:26:52.510Z",
     "items": [
       {
         "anchor": "feed-2026-10",
