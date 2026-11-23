@@ -1,1 +1,18 @@
-{ "cleanUrls": true, "trailingSlash": false }
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/", "destination": "https://slop.cash/record", "statusCode": 301 },
+    { "source": "/index", "destination": "https://slop.cash/record", "statusCode": 301 },
+    { "source": "/receipts", "destination": "https://slop.cash/receipts", "statusCode": 301 },
+    { "source": "/referrals", "destination": "https://slop.cash/referrals", "statusCode": 301 },
+    { "source": "/buyback", "destination": "https://slop.cash/buyback", "statusCode": 301 },
+    { "source": "/october-allocation", "destination": "https://slop.cash/october-allocation", "statusCode": 301 },
+    { "source": "/sponsored-pools", "destination": "https://slop.cash/sponsored-pools", "statusCode": 301 },
+    { "source": "/privacy", "destination": "https://slop.cash/privacy", "statusCode": 301 },
+    { "source": "/data/snapshot.json", "destination": "https://slop.cash/data/record.json", "statusCode": 301 },
+    { "source": "/slop-mark-200.png", "destination": "https://slop.cash/slop-mark-200.png", "statusCode": 301 },
+    { "source": "/slop-mark-500.png", "destination": "https://slop.cash/slop-mark-500.png", "statusCode": 301 },
+    { "source": "/:path*", "destination": "https://slop.cash/record", "statusCode": 301 }
+  ]
+}
